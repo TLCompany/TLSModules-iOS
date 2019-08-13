@@ -2,7 +2,8 @@ use_frameworks!
 
 target 'TLSModules_Example' do
   pod 'TLSModules', :path => '../'
-
+  pod 'Alamofire'
+  
   target 'TLSModules_Tests' do
     inherit! :search_paths
 
