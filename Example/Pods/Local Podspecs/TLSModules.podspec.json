@@ -1,0 +1,22 @@
+{
+  "name": "TLSModules",
+  "version": "0.1.0",
+  "summary": "A short description of TLSModules.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jjeui0308@gmail.com/TLSModules",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jjeui0308@gmail.com": "jjeui0308@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/jjeui0308@gmail.com/TLSModules.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TLSModules/Classes/**/*"
+}

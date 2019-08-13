@@ -1,0 +1,6 @@
+framework module TLSModules {
+  umbrella header "TLSModules-umbrella.h"
+
+  export *
+  module * { export * }
+}
