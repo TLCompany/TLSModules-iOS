@@ -41,7 +41,7 @@ extension Date {
                 dateformatter.dateFormat = "hh:mm a"
                 return dateformatter.string(from: self)
             }
-        } else if (currentDay - day) <= 3 {
+        } else if currentMonth == month && (currentDay - day) <= 3 {
             //3일 이내: 2019.01.22(2일전)
             let dateformatter = DateFormatter()
             dateformatter.dateFormat = "yyy.MM.dd"
