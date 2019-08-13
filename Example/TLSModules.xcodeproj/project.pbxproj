@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02F6B11CEA1D626FB1AC6D8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		02F6B11CEA1D626FB1AC6D8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		13023275564E3724B3416C12 /* Pods_TLSModules_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TLSModules_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FDA5D62052F7F56C21D00E8 /* Pods_TLSModules_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TLSModules_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3189FD624D39C5213631B /* Pods-TLSModules_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLSModules_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TLSModules_Tests/Pods-TLSModules_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -44,9 +44,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7610A3014737AB28AACF5173 /* Pods-TLSModules_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLSModules_Tests.release.xcconfig"; path = "Target Support Files/Pods-TLSModules_Tests/Pods-TLSModules_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		7D58387B5B8DADC07EA5D885 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		7D58387B5B8DADC07EA5D885 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BF28D560C7E9BDCF5942DD0D /* Pods-TLSModules_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLSModules_Example.debug.xcconfig"; path = "Target Support Files/Pods-TLSModules_Example/Pods-TLSModules_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C75D939C2DC911B96F831E84 /* TLSModules.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TLSModules.podspec; path = ../TLSModules.podspec; sourceTree = "<group>"; };
+		C75D939C2DC911B96F831E84 /* TLSModules.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TLSModules.podspec; path = ../TLSModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				20F3189FD624D39C5213631B /* Pods-TLSModules_Tests.debug.xcconfig */,
 				7610A3014737AB28AACF5173 /* Pods-TLSModules_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,10 +213,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4W2UJDUY7L;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 4W2UJDUY7L;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -228,6 +229,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -511,6 +513,7 @@
 			baseConfigurationReference = BF28D560C7E9BDCF5942DD0D /* Pods-TLSModules_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4W2UJDUY7L;
 				INFOPLIST_FILE = TLSModules/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -526,6 +529,7 @@
 			baseConfigurationReference = 6064FA85098FBFCD3C5FCFA6 /* Pods-TLSModules_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4W2UJDUY7L;
 				INFOPLIST_FILE = TLSModules/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -540,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 20F3189FD624D39C5213631B /* Pods-TLSModules_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4W2UJDUY7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -562,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7610A3014737AB28AACF5173 /* Pods-TLSModules_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4W2UJDUY7L;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

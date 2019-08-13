@@ -8,30 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TLSModules'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of TLSModules.'
+  s.version          = '0.0.1'
+  s.summary          = 'TLSolution에서 사용하는 모듈 라이브러리 입니다.'
+  s.description      = 'TLSolution에서 진행되는 모든 프로젝트에서 기본적으로 사용되는 모듈들의 소스코드가 담겨있는 Library입니다.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/jjeui0308@gmail.com/TLSModules'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://www.tlsolution.co.kr'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jjeui0308@gmail.com' => 'jjeui0308@gmail.com' }
-  s.source           = { :git => 'https://github.com/jjeui0308@gmail.com/TLSModules.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'TLSModules/Classes/**/*'
-  
+  s.source           = { :git => 'https://github.com/jjeui0308@gmail.com/TLSModules.git', :tag => '0.0.1' }
+  s.ios.deployment_target = '12.0'
+  s.swift_version = '5.0'
+  s.source_files = 'Source/**/*'
+  s.platforms = {
+      "ios": "12.0"
+  }
   # s.resource_bundles = {
   #   'TLSModules' => ['TLSModules/Assets/*.png']
   # }
