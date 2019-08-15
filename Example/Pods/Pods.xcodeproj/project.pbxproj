@@ -121,7 +121,6 @@
 		A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA48D1E7D5DB7407928019B4D18908E /* SessionDelegate.swift */; };
 		A27488F7601691A5C289F3EF23E6D4E7 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67AA0ADA299C49FDAE6DCC264E15A0 /* Configuration.swift */; };
 		A5174F63D2FE4B0D01BBE018F09BC2A1 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420EA0BD7072FF1050C8CAE0D7442CDB /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		A544E1459BE8BA9A3DFDE60F027C7FF4 /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
 		A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40138B6D6DE6367F8B6CA84328BEDFB9 /* TLS+Date.swift */; };
 		A7A8DA06CE2C8D77216C28E3FF9AFB98 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB74755034DD3496B381168493DCDD5 /* World.swift */; };
 		A7B7DDC792B0646E6BBC93DEBCBF1A86 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DB70DB0A4DBE7F628683EBC56653BE /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -159,6 +158,12 @@
 		D2E776AE2302A1C600558722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776A023029F3000558722 /* User.swift */; };
 		D2E776B22302A24F00558722 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CAB8AD0876865C7DA3213F9D3A869 /* RequestManager.swift */; };
 		D2E776BB2302A3C200558722 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776B72302A39400558722 /* UserManager.swift */; };
+		D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */; };
+		D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
+		D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
+		D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
+		D2F4B1302304F29A00392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
+		D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
 		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D9A3F155F6630D910CC43A976EC7F /* SessionManager.swift */; };
 		D428498A1A70F3DB2F9D9C921989E6B8 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A55D55502CBDB4165AB831766AF6180 /* UIImage+Compare.m */; };
 		D4F927D4CCB0D70331C5D603D3BFE51F /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A091BC4A0F5EB1B4096D8B0E53700218 /* NBSMockedApplication.m */; };
@@ -465,6 +470,9 @@
 		D2E776B72302A39400558722 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D2E776BE2302A45F00558722 /* modules-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "modules-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2E776BF2302A52B00558722 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementManager.swift; sourceTree = "<group>"; };
+		D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithDateItemCell.swift; sourceTree = "<group>"; };
+		D2F4B12B2304EF8800392FCC /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		D3CA2B04461301665FFD1F17CDA0C857 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		D52F49EEDD8EC922E0875888E5553277 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
 		D5505C26F824918C4B7E94577B95136A /* TLSModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLSModules-dummy.m"; sourceTree = "<group>"; };
@@ -935,6 +943,23 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		D2F4B1232304E6BA00392FCC /* AnnouncementManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */,
+				D2F4B12B2304EF8800392FCC /* Announcement.swift */,
+			);
+			path = AnnouncementManager;
+			sourceTree = "<group>";
+		};
+		D2F4B1272304E73200392FCC /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */,
+			);
+			path = CustomTableViewCells;
+			sourceTree = "<group>";
+		};
 		D3F8902F65226C2AEA48D130E5E68505 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +1006,8 @@
 			isa = PBXGroup;
 			children = (
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
+				D2F4B1272304E73200392FCC /* CustomTableViewCells */,
+				D2F4B1232304E6BA00392FCC /* AnnouncementManager */,
 				D2E776B62302A39400558722 /* Authentication */,
 				D3F8902F65226C2AEA48D130E5E68505 /* Extensions */,
 				E534950BEF49EDC7D63F2568824C5207 /* Network */,
@@ -1418,6 +1445,7 @@
 			files = (
 				D2E776B22302A24F00558722 /* RequestManager.swift in Sources */,
 				58E9745FB683AFB066417E4655A93830 /* APIResult.swift in Sources */,
+				D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */,
 				15A3A353F6A64E48389F6774CF8DB68F /* Request.swift in Sources */,
 				91D71E5D9E6C26B4110AE56E2329B4C3 /* RequestResult.swift in Sources */,
 				A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */,
@@ -1425,13 +1453,15 @@
 				7BA61542DA603F63616D9BCEA4EDE1F1 /* TLS+Int.swift in Sources */,
 				C16E224E58966F15E6C01A1EDADC8389 /* TLS+Object.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
+				D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
 				EF35A3D7C97F02E98E7DA74AB299D579 /* TLS+UITableView.swift in Sources */,
-				A544E1459BE8BA9A3DFDE60F027C7FF4 /* TLS+UIView.swift in Sources */,
+				D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */,
 				670638E54F42B635413D11CBBCEC64E8 /* TLS+UIViewController.swift in Sources */,
 				4B54E09032DDFD55ECB298DDD6E80F2F /* TLSModules-dummy.m in Sources */,
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
+				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
 				D2E776BB2302A3C200558722 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1517,6 +1547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */,
+				D2F4B1302304F29A00392FCC /* AnnouncementManager.swift in Sources */,
 				630CBDE72266CD377612F188948873CF /* Pods-TLSModules_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

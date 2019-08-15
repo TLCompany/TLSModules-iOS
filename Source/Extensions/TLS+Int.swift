@@ -11,7 +11,7 @@ import Foundation
 extension Int {
     
     /// Integer로 되어 있는 돈의 금액(1000)을 단위가 찍힌 금액(1,000)으로 변경해주는 property
-    var formattedCurrency: String? {
+    public var formattedCurrency: String? {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .decimal

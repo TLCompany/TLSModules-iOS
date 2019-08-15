@@ -10,11 +10,11 @@ import UIKit
 
 extension UIView {
     
-    class func loadFromNibNamed(nibNamed: String, bundle : Bundle? = nil) -> UIView? {
+    public class func loadFromNibNamed(nibNamed: String, bundle : Bundle? = nil) -> UIView? {
         return UINib(nibName: nibNamed, bundle: bundle).instantiate(withOwner: self, options: nil)[0] as? UIView
     }
 
-    func fillUp() {
+    public func fillUp() {
         guard let superView = superview else { return }
         self.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -26,7 +26,7 @@ extension UIView {
     }
     
     /// 상하의 Gradient 색을 넣습니다.
-    func addVerticalGredient(colors: [CGColor], locations: [NSNumber], cornerRadius: CGFloat = 0.0) {
+    public func addVerticalGredient(colors: [CGColor], locations: [NSNumber], cornerRadius: CGFloat = 0.0) {
         let graidentLayer = CAGradientLayer()
         graidentLayer.colors = colors
         graidentLayer.locations = locations
@@ -36,7 +36,7 @@ extension UIView {
     }
     
     /// 좌우의 Graident 색을 넣습니다.
-    func addHorizontalGradient(colors: [CGColor]?, startPoint: CGPoint, endPoint: CGPoint, size: CGSize, cornerRadius: CGFloat = 0.0) {
+    public func addHorizontalGradient(colors: [CGColor]?, startPoint: CGPoint, endPoint: CGPoint, size: CGSize, cornerRadius: CGFloat = 0.0) {
         guard let colors = colors else { return }
         let graidentLayer = CAGradientLayer()
         graidentLayer.colors = colors
@@ -48,7 +48,7 @@ extension UIView {
         self.layer.addSublayer(graidentLayer)
     }
     
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    public func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -56,7 +56,7 @@ extension UIView {
     }
     
     // OUTPUT 1
-    func dropShadow(scale: Bool = true) {
+    public func dropShadow(scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
@@ -69,7 +69,7 @@ extension UIView {
     }
     
     // OUTPUT 2
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1) {
+    public func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1) {
         layer.masksToBounds = false
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
@@ -81,7 +81,7 @@ extension UIView {
     ///
     /// - Parameters:
     ///   - urlString: 다운로드할 이미지의 URL 텍스트
-    func downloadedImage(from urlString: String,
+    public func downloadedImage(from urlString: String,
                          completionHandler completion: @escaping ((UIImage?) -> Void)) {
         
         guard let url = URL(string: urlString) else {

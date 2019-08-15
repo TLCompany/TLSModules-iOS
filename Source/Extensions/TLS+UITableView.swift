@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
 
-    func removeExtraEmptyCells() {
+    public func removeExtraEmptyCells() {
         self.tableFooterView = UIView()
         self.tableFooterView?.isHidden = true
     }

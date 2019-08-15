@@ -11,7 +11,7 @@ import Foundation
 extension Date {
     
     /// TLS의 공식날짜 포맷의 텍스트
-    var formattedDateString: String {
+    public var formattedDateString: String {
         let currentYear = Calendar.current.component(.year, from: Date())
         let currentMonth = Calendar.current.component(.month, from: Date())
         let currentDay = Calendar.current.component(.day, from: Date())

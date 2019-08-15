@@ -10,7 +10,7 @@ import Foundation
 
 extension NSObject {
     
-    func showError(_ place: String, type: ErrorType) {
+    public func showError(_ place: String, type: ErrorType) {
         NSLog(place + type.message)
     }
     
@@ -20,7 +20,7 @@ extension NSObject {
     ///   - apiResult: 통신 결과
     ///   - successAction: 성공했을 때
     ///   - tryAgainAction: 토큰 갱신 후 리턴
-    func evaluate<T: Decodable>(apiResult: APIResult,
+    public func evaluate<T: Decodable>(apiResult: APIResult,
                                 successAction: ((T?) -> Void)? = nil,
                                 tryAgainAction: (() -> Void)? = nil) {
 
@@ -54,7 +54,7 @@ extension NSObject {
     ///   - apiResult: 통신 결과
     ///   - successAction: 성공했을 때
     ///   - tryAgainAction: 토큰 갱신 후 리턴
-    func evaluate(apiResult: APIResult,
+    public func evaluate(apiResult: APIResult,
                   successAction: (([String: Any]?) -> Void)? = nil,
                   failureAction: ((String) -> Void)? = nil,
                   tryAgainAction: (() -> Void)? = nil) {
@@ -89,7 +89,7 @@ extension NSObject {
     
 }
 
-enum ErrorType {
+public enum ErrorType {
     case unsafelyWrapped(taget: String)
     case `nil`(taget: String)
     case network(errMsg: String)

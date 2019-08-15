@@ -9,7 +9,7 @@ import UIKit
 
 extension UIStoryboard {
 
-    static func viewController(_ storyBoardName : String, _ viewControllerID : String? = nil) -> UIViewController? {
+    public static func viewController(_ storyBoardName : String, _ viewControllerID : String? = nil) -> UIViewController? {
         guard let viewControllerID = viewControllerID else {
             return UIStoryboard(name: storyBoardName, bundle: nil).instantiateInitialViewController()
         }

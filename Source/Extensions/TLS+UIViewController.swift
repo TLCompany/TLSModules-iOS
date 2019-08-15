@@ -16,7 +16,7 @@ extension UIViewController {
     ///   - title: 제목
     ///   - message: 메세지
     ///   - buttonTitle: 버튼 제목
-    func systemAlert(title: String? = nil,
+    public func systemAlert(title: String? = nil,
                      message: String,
                      buttonTitle: String,
                      _ completion: (() -> Void)? = nil) {
@@ -38,7 +38,7 @@ extension UIViewController {
     ///   - message: 메세지
     ///   - nActionCompletion: 부정 액션
     ///   - pActionCompletion: 긍정 액션
-    func systemAlert(title: String? = nil,
+    public func systemAlert(title: String? = nil,
                      pTitle : String,
                      nTitle : String,
                      message: String,
@@ -59,7 +59,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func open(_ url: URL, completionHander completion: ((Bool) -> Void)? = nil) {
+    public func open(_ url: URL, completionHander completion: ((Bool) -> Void)? = nil) {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: completion)
         } else {
