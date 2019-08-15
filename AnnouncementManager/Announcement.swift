@@ -23,5 +23,6 @@ open class Announcement {
         self.title = title
         self.content = content
         self.date = date
+        print("Asdf")
     }
 }
