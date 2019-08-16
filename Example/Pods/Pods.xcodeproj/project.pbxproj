@@ -155,6 +155,14 @@
 		CFA869102744DB995F3AC930E96E3AFF /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CB8DC4572596B9CDCADC7E48FDEA70 /* UIApplication+StrictKeyWindow.m */; };
 		D0664493DF417CB8D86DFAE07F9671E4 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF6C94A9010F7372E65282E089C720 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D1108B0B95C44070293DEC99A96E8B9E /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9F7CED7EAC322940D3C0EBA67F10C /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		D22803A92306475B0071D7D2 /* DScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A52306475A0071D7D2 /* DScrollView.swift */; };
+		D22803AA2306475B0071D7D2 /* DScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */; };
+		D22803AB2306475B0071D7D2 /* DScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A72306475A0071D7D2 /* DScrollView+.swift */; };
+		D22803AC2306475B0071D7D2 /* DScrollViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A82306475A0071D7D2 /* DScrollViewElement.swift */; };
+		D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */; };
+		D22803B223064F370071D7D2 /* TLScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803B123064F370071D7D2 /* TLScrollView.swift */; };
+		D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */; };
+		D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0282306D08700A68A8E /* SeparatorView.swift */; };
 		D2E776AE2302A1C600558722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776A023029F3000558722 /* User.swift */; };
 		D2E776B22302A24F00558722 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CAB8AD0876865C7DA3213F9D3A869 /* RequestManager.swift */; };
 		D2E776BB2302A3C200558722 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776B72302A39400558722 /* UserManager.swift */; };
@@ -162,8 +170,8 @@
 		D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
 		D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
 		D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
-		D2F4B1302304F29A00392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
 		D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
+		D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */; };
 		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D9A3F155F6630D910CC43A976EC7F /* SessionManager.swift */; };
 		D428498A1A70F3DB2F9D9C921989E6B8 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A55D55502CBDB4165AB831766AF6180 /* UIImage+Compare.m */; };
 		D4F927D4CCB0D70331C5D603D3BFE51F /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A091BC4A0F5EB1B4096D8B0E53700218 /* NBSMockedApplication.m */; };
@@ -466,6 +474,14 @@
 		D1459532682F9E57A845314DCA27EE5F /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		D1EFBADC58CC590895FE3C59AFCEA341 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		D22803A52306475A0071D7D2 /* DScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollView.swift; sourceTree = "<group>"; };
+		D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollViewContainer.swift; sourceTree = "<group>"; };
+		D22803A72306475A0071D7D2 /* DScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DScrollView+.swift"; sourceTree = "<group>"; };
+		D22803A82306475A0071D7D2 /* DScrollViewElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollViewElement.swift; sourceTree = "<group>"; };
+		D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
+		D22803B123064F370071D7D2 /* TLScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLScrollView.swift; sourceTree = "<group>"; };
+		D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
+		D2AFC0282306D08700A68A8E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		D2E776A023029F3000558722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D2E776B72302A39400558722 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D2E776BE2302A45F00558722 /* modules-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "modules-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -473,6 +489,7 @@
 		D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementManager.swift; sourceTree = "<group>"; };
 		D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithDateItemCell.swift; sourceTree = "<group>"; };
 		D2F4B12B2304EF8800392FCC /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListViewController.swift; sourceTree = "<group>"; };
 		D3CA2B04461301665FFD1F17CDA0C857 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		D52F49EEDD8EC922E0875888E5553277 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
 		D5505C26F824918C4B7E94577B95136A /* TLSModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLSModules-dummy.m"; sourceTree = "<group>"; };
@@ -935,6 +952,28 @@
 			);
 			sourceTree = "<group>";
 		};
+		D22803A3230647390071D7D2 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D22803A42306474B0071D7D2 /* DScrollView */,
+				D22803B123064F370071D7D2 /* TLScrollView.swift */,
+				D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */,
+				D2AFC0282306D08700A68A8E /* SeparatorView.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		D22803A42306474B0071D7D2 /* DScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D22803A52306475A0071D7D2 /* DScrollView.swift */,
+				D22803A72306475A0071D7D2 /* DScrollView+.swift */,
+				D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */,
+				D22803A82306475A0071D7D2 /* DScrollViewElement.swift */,
+			);
+			path = DScrollView;
+			sourceTree = "<group>";
+		};
 		D2E776B62302A39400558722 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,6 +987,8 @@
 			children = (
 				D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */,
 				D2F4B12B2304EF8800392FCC /* Announcement.swift */,
+				D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */,
+				D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */,
 			);
 			path = AnnouncementManager;
 			sourceTree = "<group>";
@@ -1006,6 +1047,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
+				D22803A3230647390071D7D2 /* UIComponents */,
 				D2F4B1272304E73200392FCC /* CustomTableViewCells */,
 				D2F4B1232304E6BA00392FCC /* AnnouncementManager */,
 				D2E776B62302A39400558722 /* Authentication */,
@@ -1447,6 +1489,7 @@
 				58E9745FB683AFB066417E4655A93830 /* APIResult.swift in Sources */,
 				D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */,
 				15A3A353F6A64E48389F6774CF8DB68F /* Request.swift in Sources */,
+				D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */,
 				91D71E5D9E6C26B4110AE56E2329B4C3 /* RequestResult.swift in Sources */,
 				A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */,
 				D2E776AE2302A1C600558722 /* User.swift in Sources */,
@@ -1454,14 +1497,22 @@
 				C16E224E58966F15E6C01A1EDADC8389 /* TLS+Object.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
 				D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */,
+				D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
+				D22803B223064F370071D7D2 /* TLScrollView.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
+				D22803AA2306475B0071D7D2 /* DScrollViewContainer.swift in Sources */,
+				D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */,
 				EF35A3D7C97F02E98E7DA74AB299D579 /* TLS+UITableView.swift in Sources */,
 				D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */,
 				670638E54F42B635413D11CBBCEC64E8 /* TLS+UIViewController.swift in Sources */,
+				D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */,
 				4B54E09032DDFD55ECB298DDD6E80F2F /* TLSModules-dummy.m in Sources */,
+				D22803A92306475B0071D7D2 /* DScrollView.swift in Sources */,
+				D22803AC2306475B0071D7D2 /* DScrollViewElement.swift in Sources */,
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
 				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
+				D22803AB2306475B0071D7D2 /* DScrollView+.swift in Sources */,
 				D2E776BB2302A3C200558722 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1548,7 +1599,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */,
-				D2F4B1302304F29A00392FCC /* AnnouncementManager.swift in Sources */,
 				630CBDE72266CD377612F188948873CF /* Pods-TLSModules_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
