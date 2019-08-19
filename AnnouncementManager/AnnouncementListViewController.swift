@@ -9,7 +9,23 @@ import UIKit
 
 public class AnnouncementListViewController: UIViewController {
 
-    public var announcements: [Announcement]?
+    public var announcements = [Announcement]() {
+        didSet {
+            emptyLabel.isHidden = !announcements.isEmpty
+        }
+    }
+    
+    public var listBackgroundColor: UIColor? {
+        didSet {
+            tableView.backgroundColor = listBackgroundColor
+        }
+    }
+    
+    public var separatorColor: UIColor? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -18,28 +34,44 @@ public class AnnouncementListViewController: UIViewController {
         tableView.removeExtraEmptyCells()
         tableView.contentInset = UIEdgeInsets(top: 12.0, left: 0, bottom: 0, right: 0)
         tableView.register(TitleWithDateItemCell.self, forCellReuseIdentifier: TitleWithDateItemCell.id)
+        tableView.backgroundColor = .listBackground
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
+    }()
+    
+    private let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "공지사항이 없습니다."
+        label.textColor = .textContent
+        label.isHidden = true
+        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
 
         title = "공지사항"
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         setUpLayout()
     }
 
     private func setUpLayout() {
         view.addSubview(tableView)
+        view.addSubview(emptyLabel)
+        
         tableView.fillUp()
+        emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
+
 extension AnnouncementListViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return announcements?.count ?? 0
+        return announcements.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +79,9 @@ extension AnnouncementListViewController: UITableViewDelegate, UITableViewDataSo
             return UITableViewCell()
         }
         
-        cell.announcement = announcements?[indexPath.row]
+        cell.announcement = announcements[indexPath.row]
+        cell.isLast = indexPath.row == announcements.count - 1
+        cell.separatorColor = self.separatorColor
         return cell
     }
     
@@ -62,7 +96,7 @@ extension AnnouncementListViewController: UITableViewDelegate, UITableViewDataSo
         cell.isSelected = !cell.isSelected
         
         let announcementDetailVC = AnnouncementDetailViewController()
-        announcementDetailVC.annoucement = announcements?[indexPath.row]
+        announcementDetailVC.announcement = announcements[indexPath.row]
         navigationController?.pushViewController(announcementDetailVC, animated: true)
     }
 }

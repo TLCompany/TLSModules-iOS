@@ -27,6 +27,18 @@ public class TitleWithDateItemCell: UITableViewCell {
         }
     }
     
+    public var separatorColor: UIColor? {
+        didSet {
+            separator.backgroundColor = self.separatorColor
+        }
+    }
+    
+    public var isLast: Bool = false {
+        didSet {
+            separator.isHidden = isLast ? true : false
+        }
+    }
+    
     //Private Properties
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -46,12 +58,7 @@ public class TitleWithDateItemCell: UITableViewCell {
         return label
     }()
     
-    private let underline: UIView = {
-        let view = UIView()
-        view.backgroundColor = .underline
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    private let separator = SeparatorView()
     
     
     private var underlineLeftConstraint: NSLayoutConstraint!
@@ -67,26 +74,26 @@ public class TitleWithDateItemCell: UITableViewCell {
     
     private func setUpLayout() {
         
-        addSubview(underline)
+        addSubview(separator)
         addSubview(dateLabel)
         addSubview(titleLabel)
-        underlineLeftConstraint = underline.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0)
+        underlineLeftConstraint = separator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0)
         underlineLeftConstraint.isActive = true
         
-        underlineRightConstraint = underline.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0)
+        underlineRightConstraint = separator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0)
         underlineRightConstraint.isActive = true
         
         titleYConstraint = titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         titleYConstraint.isActive = true
         
         NSLayoutConstraint.activate([
-            underline.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1.5),
-            underline.heightAnchor.constraint(equalToConstant: 0.5),
+            separator.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1.5),
+            separator.heightAnchor.constraint(equalToConstant: 0.5),
             
-            titleLabel.leadingAnchor.constraint(equalTo: underline.leadingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: separator.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: dateLabel.leadingAnchor, constant: -8.0),
             
-            dateLabel.trailingAnchor.constraint(equalTo: underline.trailingAnchor),
+            dateLabel.trailingAnchor.constraint(equalTo: separator.trailingAnchor),
             dateLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             ])
     }

@@ -155,12 +155,9 @@
 		CFA869102744DB995F3AC930E96E3AFF /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CB8DC4572596B9CDCADC7E48FDEA70 /* UIApplication+StrictKeyWindow.m */; };
 		D0664493DF417CB8D86DFAE07F9671E4 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF6C94A9010F7372E65282E089C720 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D1108B0B95C44070293DEC99A96E8B9E /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9F7CED7EAC322940D3C0EBA67F10C /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D22803A92306475B0071D7D2 /* DScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A52306475A0071D7D2 /* DScrollView.swift */; };
-		D22803AA2306475B0071D7D2 /* DScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */; };
-		D22803AB2306475B0071D7D2 /* DScrollView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A72306475A0071D7D2 /* DScrollView+.swift */; };
-		D22803AC2306475B0071D7D2 /* DScrollViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803A82306475A0071D7D2 /* DScrollViewElement.swift */; };
 		D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */; };
-		D22803B223064F370071D7D2 /* TLScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803B123064F370071D7D2 /* TLScrollView.swift */; };
+		D2594B2E230A540B005B9833 /* TLScrollSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B2C230A52D0005B9833 /* TLScrollSubview.swift */; };
+		D2594B33230A828D005B9833 /* AnnouncementManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */; };
 		D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */; };
 		D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0282306D08700A68A8E /* SeparatorView.swift */; };
 		D2E776AE2302A1C600558722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776A023029F3000558722 /* User.swift */; };
@@ -169,7 +166,6 @@
 		D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */; };
 		D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
 		D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
-		D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
 		D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
 		D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */; };
 		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D9A3F155F6630D910CC43A976EC7F /* SessionManager.swift */; };
@@ -474,12 +470,9 @@
 		D1459532682F9E57A845314DCA27EE5F /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		D1EFBADC58CC590895FE3C59AFCEA341 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		D22803A52306475A0071D7D2 /* DScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollView.swift; sourceTree = "<group>"; };
-		D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollViewContainer.swift; sourceTree = "<group>"; };
-		D22803A72306475A0071D7D2 /* DScrollView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DScrollView+.swift"; sourceTree = "<group>"; };
-		D22803A82306475A0071D7D2 /* DScrollViewElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DScrollViewElement.swift; sourceTree = "<group>"; };
 		D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
-		D22803B123064F370071D7D2 /* TLScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLScrollView.swift; sourceTree = "<group>"; };
+		D2594B2C230A52D0005B9833 /* TLScrollSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLScrollSubview.swift; sourceTree = "<group>"; };
+		D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementManagerDelegate.swift; sourceTree = "<group>"; };
 		D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
 		D2AFC0282306D08700A68A8E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		D2E776A023029F3000558722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -955,23 +948,18 @@
 		D22803A3230647390071D7D2 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D22803A42306474B0071D7D2 /* DScrollView */,
-				D22803B123064F370071D7D2 /* TLScrollView.swift */,
-				D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */,
 				D2AFC0282306D08700A68A8E /* SeparatorView.swift */,
+				D2594B2C230A52D0005B9833 /* TLScrollSubview.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
-		D22803A42306474B0071D7D2 /* DScrollView */ = {
+		D2594B2F230A7243005B9833 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D22803A52306475A0071D7D2 /* DScrollView.swift */,
-				D22803A72306475A0071D7D2 /* DScrollView+.swift */,
-				D22803A62306475A0071D7D2 /* DScrollViewContainer.swift */,
-				D22803A82306475A0071D7D2 /* DScrollViewElement.swift */,
+				D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */,
 			);
-			path = DScrollView;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D2E776B62302A39400558722 /* Authentication */ = {
@@ -986,6 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */,
+				D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */,
 				D2F4B12B2304EF8800392FCC /* Announcement.swift */,
 				D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */,
 				D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */,
@@ -1047,6 +1036,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
+				D2594B2F230A7243005B9833 /* ViewControllers */,
 				D22803A3230647390071D7D2 /* UIComponents */,
 				D2F4B1272304E73200392FCC /* CustomTableViewCells */,
 				D2F4B1232304E6BA00392FCC /* AnnouncementManager */,
@@ -1491,28 +1481,25 @@
 				15A3A353F6A64E48389F6774CF8DB68F /* Request.swift in Sources */,
 				D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */,
 				91D71E5D9E6C26B4110AE56E2329B4C3 /* RequestResult.swift in Sources */,
+				D2594B2E230A540B005B9833 /* TLScrollSubview.swift in Sources */,
 				A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */,
 				D2E776AE2302A1C600558722 /* User.swift in Sources */,
 				7BA61542DA603F63616D9BCEA4EDE1F1 /* TLS+Int.swift in Sources */,
 				C16E224E58966F15E6C01A1EDADC8389 /* TLS+Object.swift in Sources */,
+				D2594B33230A828D005B9833 /* AnnouncementManagerDelegate.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
 				D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */,
 				D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
-				D22803B223064F370071D7D2 /* TLScrollView.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
-				D22803AA2306475B0071D7D2 /* DScrollViewContainer.swift in Sources */,
 				D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */,
 				EF35A3D7C97F02E98E7DA74AB299D579 /* TLS+UITableView.swift in Sources */,
 				D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */,
 				670638E54F42B635413D11CBBCEC64E8 /* TLS+UIViewController.swift in Sources */,
 				D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */,
 				4B54E09032DDFD55ECB298DDD6E80F2F /* TLSModules-dummy.m in Sources */,
-				D22803A92306475B0071D7D2 /* DScrollView.swift in Sources */,
-				D22803AC2306475B0071D7D2 /* DScrollViewElement.swift in Sources */,
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
 				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
-				D22803AB2306475B0071D7D2 /* DScrollView+.swift in Sources */,
 				D2E776BB2302A3C200558722 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1598,7 +1585,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F4B12F2304F29100392FCC /* Announcement.swift in Sources */,
 				630CBDE72266CD377612F188948873CF /* Pods-TLSModules_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,6 @@ open class ScrollingViewController: UIViewController {
     
     internal let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .purple
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
