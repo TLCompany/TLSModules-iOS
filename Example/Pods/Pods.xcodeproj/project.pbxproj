@@ -157,7 +157,11 @@
 		D1108B0B95C44070293DEC99A96E8B9E /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9F7CED7EAC322940D3C0EBA67F10C /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */; };
 		D2594B2E230A540B005B9833 /* TLScrollSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B2C230A52D0005B9833 /* TLScrollSubview.swift */; };
-		D2594B33230A828D005B9833 /* AnnouncementManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */; };
+		D2594B37230A8D3E005B9833 /* PolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B35230A8D36005B9833 /* PolicyManager.swift */; };
+		D2594B39230A8DA2005B9833 /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B38230A8DA2005B9833 /* Policy.swift */; };
+		D2594B3F230A8FEA005B9833 /* TLSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B3D230A8F89005B9833 /* TLSManager.swift */; };
+		D262CA1C230B843900680578 /* ContentDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262CA1A230B83BD00680578 /* ContentDetailData.swift */; };
+		D262CA1F230B8E3500680578 /* TLSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */; };
 		D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */; };
 		D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0282306D08700A68A8E /* SeparatorView.swift */; };
 		D2E776AE2302A1C600558722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776A023029F3000558722 /* User.swift */; };
@@ -472,7 +476,11 @@
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
 		D2594B2C230A52D0005B9833 /* TLScrollSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLScrollSubview.swift; sourceTree = "<group>"; };
-		D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementManagerDelegate.swift; sourceTree = "<group>"; };
+		D2594B35230A8D36005B9833 /* PolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyManager.swift; sourceTree = "<group>"; };
+		D2594B38230A8DA2005B9833 /* Policy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
+		D2594B3D230A8F89005B9833 /* TLSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSManager.swift; sourceTree = "<group>"; };
+		D262CA1A230B83BD00680578 /* ContentDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailData.swift; sourceTree = "<group>"; };
+		D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSAppDelegate.swift; sourceTree = "<group>"; };
 		D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
 		D2AFC0282306D08700A68A8E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		D2E776A023029F3000558722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -962,6 +970,15 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		D2594B34230A8D15005B9833 /* PolicyManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2594B35230A8D36005B9833 /* PolicyManager.swift */,
+				D2594B38230A8DA2005B9833 /* Policy.swift */,
+			);
+			path = PolicyManager;
+			sourceTree = "<group>";
+		};
 		D2E776B62302A39400558722 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,10 +991,10 @@
 			isa = PBXGroup;
 			children = (
 				D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */,
-				D2594B30230A8191005B9833 /* AnnouncementManagerDelegate.swift */,
 				D2F4B12B2304EF8800392FCC /* Announcement.swift */,
 				D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */,
 				D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */,
+				D262CA1A230B83BD00680578 /* ContentDetailData.swift */,
 			);
 			path = AnnouncementManager;
 			sourceTree = "<group>";
@@ -1036,6 +1053,8 @@
 			isa = PBXGroup;
 			children = (
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
+				D2594B3D230A8F89005B9833 /* TLSManager.swift */,
+				D2594B34230A8D15005B9833 /* PolicyManager */,
 				D2594B2F230A7243005B9833 /* ViewControllers */,
 				D22803A3230647390071D7D2 /* UIComponents */,
 				D2F4B1272304E73200392FCC /* CustomTableViewCells */,
@@ -1046,6 +1065,7 @@
 				51D232903192C6D04AE0AC33A743FF8E /* Pod */,
 				028DC50D94BC193B6A9EC83F96FD511F /* Support Files */,
 				D2E776BE2302A45F00558722 /* modules-Bridging-Header.h */,
+				D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */,
 			);
 			name = TLSModules;
 			path = ../..;
@@ -1484,13 +1504,15 @@
 				D2594B2E230A540B005B9833 /* TLScrollSubview.swift in Sources */,
 				A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */,
 				D2E776AE2302A1C600558722 /* User.swift in Sources */,
+				D262CA1F230B8E3500680578 /* TLSAppDelegate.swift in Sources */,
 				7BA61542DA603F63616D9BCEA4EDE1F1 /* TLS+Int.swift in Sources */,
+				D2594B37230A8D3E005B9833 /* PolicyManager.swift in Sources */,
 				C16E224E58966F15E6C01A1EDADC8389 /* TLS+Object.swift in Sources */,
-				D2594B33230A828D005B9833 /* AnnouncementManagerDelegate.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
 				D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */,
 				D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
+				D2594B3F230A8FEA005B9833 /* TLSManager.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
 				D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */,
 				EF35A3D7C97F02E98E7DA74AB299D579 /* TLS+UITableView.swift in Sources */,
@@ -1500,6 +1522,7 @@
 				4B54E09032DDFD55ECB298DDD6E80F2F /* TLSModules-dummy.m in Sources */,
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
 				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
+				D262CA1C230B843900680578 /* ContentDetailData.swift in Sources */,
 				D2E776BB2302A3C200558722 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1623,6 +1646,7 @@
 				EB0DD8CEA1A69867A30267439C970440 /* Result.swift in Sources */,
 				8D2A6A90A6DDAF75EA52D471258545CC /* ServerTrustPolicy.swift in Sources */,
 				A1EC41966B261DCE460BCDE5124A1DBE /* SessionDelegate.swift in Sources */,
+				D2594B39230A8DA2005B9833 /* Policy.swift in Sources */,
 				D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */,
 				77E8F0EB9FFBE2E3EB0C77095C644606 /* TaskDelegate.swift in Sources */,
 				60B6C2A003864AAD3A426448152F67BE /* Timeline.swift in Sources */,

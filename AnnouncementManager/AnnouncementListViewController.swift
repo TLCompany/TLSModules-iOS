@@ -9,21 +9,55 @@ import UIKit
 
 public class AnnouncementListViewController: UIViewController {
 
-    public var announcements = [Announcement]() {
+    internal var announcements = [Announcement]() {
         didSet {
             emptyLabel.isHidden = !announcements.isEmpty
         }
     }
     
-    public var listBackgroundColor: UIColor? {
+    internal var listBackgroundColor = UIColor.listBackground {
         didSet {
             tableView.backgroundColor = listBackgroundColor
         }
     }
     
-    public var separatorColor: UIColor? {
+    internal var separatorColor = UIColor.separator {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    internal var dateColor = UIColor.date {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    internal var contentDetailData: ContentDetailData?
+    
+    internal var hInset: CGFloat = 20.0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    internal var listViewTopInset: CGFloat = 8.0 {
+        didSet {
+            tableView.contentInset = UIEdgeInsets(top: listViewTopInset, left: 0, bottom: 0, right: 0)
+        }
+    }
+    
+    internal var listItemBackgroundColor = UIColor.listRowBackground {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -32,7 +66,7 @@ public class AnnouncementListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.removeExtraEmptyCells()
-        tableView.contentInset = UIEdgeInsets(top: 12.0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 8.0, left: 0, bottom: 0, right: 0)
         tableView.register(TitleWithDateItemCell.self, forCellReuseIdentifier: TitleWithDateItemCell.id)
         tableView.backgroundColor = .listBackground
         tableView.separatorStyle = .none
@@ -56,6 +90,12 @@ public class AnnouncementListViewController: UIViewController {
         title = "공지사항"
         view.backgroundColor = .white
         setUpLayout()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
     }
 
     private func setUpLayout() {
@@ -82,6 +122,9 @@ extension AnnouncementListViewController: UITableViewDelegate, UITableViewDataSo
         cell.announcement = announcements[indexPath.row]
         cell.isLast = indexPath.row == announcements.count - 1
         cell.separatorColor = self.separatorColor
+        cell.hInset = self.hInset
+        cell.dateColor = self.dateColor
+        cell.backgroundColor = self.listItemBackgroundColor
         return cell
     }
     
@@ -97,6 +140,7 @@ extension AnnouncementListViewController: UITableViewDelegate, UITableViewDataSo
         
         let announcementDetailVC = AnnouncementDetailViewController()
         announcementDetailVC.announcement = announcements[indexPath.row]
+        announcementDetailVC.contentDetailData = self.contentDetailData
         navigationController?.pushViewController(announcementDetailVC, animated: true)
     }
 }

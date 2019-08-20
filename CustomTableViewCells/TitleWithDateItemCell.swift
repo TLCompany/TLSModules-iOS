@@ -7,14 +7,14 @@
 
 import UIKit
 
-public class TitleWithDateItemCell: UITableViewCell {
+internal class TitleWithDateItemCell: UITableViewCell {
     
     //Static Properties
     static let id = "TitleWithDateItemCell"
     static let height: CGFloat = 44.0
     
-    //Public Properties
-    public var announcement: Announcement? {
+    //Internal Properties
+    internal var announcement: Announcement? {
         didSet {
             guard let announcement = self.announcement else {
                 return
@@ -27,15 +27,29 @@ public class TitleWithDateItemCell: UITableViewCell {
         }
     }
     
-    public var separatorColor: UIColor? {
+    internal var separatorColor: UIColor? {
         didSet {
             separator.backgroundColor = self.separatorColor
         }
     }
     
-    public var isLast: Bool = false {
+    internal var isLast: Bool = false {
         didSet {
             separator.isHidden = isLast ? true : false
+        }
+    }
+    
+    internal var dateColor: UIColor? {
+        didSet {
+            dateLabel.textColor = dateColor
+        }
+    }
+    
+    internal var hInset: CGFloat = 20.0 {
+        didSet {
+            self.underlineLeftConstraint.constant = hInset
+            self.underlineRightConstraint.constant = -hInset
+            self.layoutIfNeeded()
         }
     }
     
@@ -57,10 +71,9 @@ public class TitleWithDateItemCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private let separator = SeparatorView()
-    
-    
+
     private var underlineLeftConstraint: NSLayoutConstraint!
     private var underlineRightConstraint: NSLayoutConstraint!
     private var titleYConstraint: NSLayoutConstraint!

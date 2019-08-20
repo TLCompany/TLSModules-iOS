@@ -9,7 +9,8 @@ import UIKit
 
 class AnnouncementDetailViewController: ScrollingViewController {
     
-    public var announcement: Announcement?
+    internal var announcement: Announcement?
+    internal var contentDetailData: ContentDetailData?
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -21,14 +22,6 @@ class AnnouncementDetailViewController: ScrollingViewController {
     }()
     
     private let separator = SeparatorView()
-    
-    private let button: UIButton = {
-        let button = UIButton(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
-        button.setTitle("OFF", for: .normal)
-        button.setTitle("ON", for: .selected)
-        button.addTarget(self, action: #selector(touchButton(_:)), for: .touchUpInside)
-        return button
-    }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
@@ -49,18 +42,36 @@ class AnnouncementDetailViewController: ScrollingViewController {
         return label
     }()
     
-    @objc
-    private func touchButton(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "공지사항"
         view.backgroundColor = .white
         setUpAnnouncement()
+        setUpContentDetailData()
     }
+    
+    private func setUpContentDetailData() {
+        
+        guard let contentDetailData = self.contentDetailData else {
+            print("\(#function), 😭 contentDetailData is nil...")
+            return
+        }
+        
+        view.backgroundColor = contentDetailData.backgroundColor
+        titleLabel.textColor = contentDetailData.titleColor
+        titleLabel.font = contentDetailData.titleFont
+        contentLabel.textColor = contentDetailData.contentColor
+        contentLabel.font = contentDetailData.contentFont
+        dateLabel.textColor = contentDetailData.dateColor
+        separator.backgroundColor = contentDetailData.separatorColor
+        titleLeftConstraint.constant = contentDetailData.hInset
+        titleRightConstraint.constant = -contentDetailData.hInset
+        view.layoutIfNeeded()
+    }
+    
+    private var titleLeftConstraint: NSLayoutConstraint!
+    private var titleRightConstraint: NSLayoutConstraint!
     
     private func setUpAnnouncement() {
         guard let announcement = self.announcement else {
@@ -71,6 +82,7 @@ class AnnouncementDetailViewController: ScrollingViewController {
         titleLabel.text = announcement.title
         dateLabel.text = announcement.date.formattedDateString
         contentLabel.text = announcement.content
+        
     }
     
     
@@ -82,10 +94,14 @@ class AnnouncementDetailViewController: ScrollingViewController {
         containerView.addSubview(dateLabel)
         containerView.addSubview(contentLabel)
         
+        titleLeftConstraint = titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20.0)
+        titleLeftConstraint.isActive = true
+        
+        titleRightConstraint = titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20.0)
+        titleRightConstraint.isActive = true
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12.0),
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20.0),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20.0),
             
             separator.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
             separator.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),

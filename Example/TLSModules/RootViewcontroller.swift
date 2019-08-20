@@ -29,7 +29,6 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
      
         announcementManager = AnnouncementManager(vc: self)
-        announcementManager?.delegate = self
         view.backgroundColor = .white
         title = "TLSolution Modules"
         setUpLayout()
@@ -76,17 +75,5 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             announcementManager?.go(with: self.annoucements)
         default: return
         }
-    }
-}
-
-
-extension RootViewController: AnnouncementManagerDelegate {
-    
-    func setListBackgroundColor(_ announcementManager: AnnouncementManager) -> UIColor? {
-        return .listBackground
-    }
-    
-    func setSeparatorColor(_ announcementManager: AnnouncementManager) -> UIColor? {
-        return .separator
     }
 }
