@@ -12,7 +12,7 @@ public class AnnouncementManager: VRTManager<Announcement> {
     private let announcementListVC = AnnouncementListViewController()
     private var contentDetailData = ContentDetailData()
     
-    public override func go(with items: [Announcement]) {
+    public override func launch(with items: [Announcement]) {
         announcementListVC.announcements = items
         announcementListVC.contentDetailData = self.contentDetailData
         vc.navigationController?.pushViewController(announcementListVC, animated: true)

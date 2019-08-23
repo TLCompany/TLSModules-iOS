@@ -16,7 +16,8 @@ class AnnouncementDetailViewController: ScrollingViewController {
         let label = UILabel()
         label.text = "공지사항의 제목을 보여줍니다."
         label.numberOfLines = 2
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
+        let font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
+        label.font = UIFontMetrics.init(forTextStyle: .body).scaledFont(for: font)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -27,7 +28,8 @@ class AnnouncementDetailViewController: ScrollingViewController {
         let label = UILabel()
         label.text = "0000.00.00"
         label.textColor = .date
-        label.font = UIFont.systemFont(ofSize: 12.0, weight: .bold)
+        let font = UIFont.systemFont(ofSize: 12.0, weight: .bold)
+        label.font = UIFontMetrics.init(forTextStyle: .body).scaledFont(for: font)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -37,7 +39,9 @@ class AnnouncementDetailViewController: ScrollingViewController {
         label.text = "공지사항의 내용을 보여줍니다."
         label.textColor = .textContent
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.adjustsFontForContentSizeCategory = true
+        let font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        label.font = UIFontMetrics.init(forTextStyle: .body).scaledFont(for: font)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,11 +62,17 @@ class AnnouncementDetailViewController: ScrollingViewController {
             return
         }
         
+        if let titleFont = contentDetailData.titleFont {
+            titleLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: titleFont)
+        }
+        
+        if let contentFont = contentDetailData.contentFont {
+            contentLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: contentFont)
+        }
+        
         view.backgroundColor = contentDetailData.backgroundColor
         titleLabel.textColor = contentDetailData.titleColor
-        titleLabel.font = contentDetailData.titleFont
         contentLabel.textColor = contentDetailData.contentColor
-        contentLabel.font = contentDetailData.contentFont
         dateLabel.textColor = contentDetailData.dateColor
         separator.backgroundColor = contentDetailData.separatorColor
         titleLeftConstraint.constant = contentDetailData.hInset

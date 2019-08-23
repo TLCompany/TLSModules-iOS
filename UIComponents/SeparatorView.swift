@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SeparatorView: UIView {
+open class SeparatorView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,7 +15,7 @@ class SeparatorView: UIView {
         backgroundColor = UIColor.init(hexString: "DEDEDE")
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

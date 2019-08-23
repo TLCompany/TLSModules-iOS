@@ -23,6 +23,7 @@ open class TLSAppDelegate: UIResponder, UIApplicationDelegate {
     
     public func setUpNavigationBar(tintColor: UIColor? = nil,
                                    backgroundColor: UIColor? = nil) {
+        
         UINavigationBar.appearance().tintColor = tintColor
         UINavigationBar.appearance().barTintColor = backgroundColor
         

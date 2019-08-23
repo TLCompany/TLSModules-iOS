@@ -7,11 +7,11 @@
 
 import UIKit
 
-public class AnnouncementListViewController: UIViewController {
+public class AnnouncementListViewController: ListViewController {
 
     internal var announcements = [Announcement]() {
         didSet {
-            emptyLabel.isHidden = !announcements.isEmpty
+            noListItemsLabel.isHidden = !announcements.isEmpty
         }
     }
     
@@ -61,50 +61,21 @@ public class AnnouncementListViewController: UIViewController {
         }
     }
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.removeExtraEmptyCells()
-        tableView.contentInset = UIEdgeInsets(top: 8.0, left: 0, bottom: 0, right: 0)
-        tableView.register(TitleWithDateItemCell.self, forCellReuseIdentifier: TitleWithDateItemCell.id)
-        tableView.backgroundColor = .listBackground
-        tableView.separatorStyle = .none
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    private let emptyLabel: UILabel = {
-        let label = UILabel()
-        label.text = "공지사항이 없습니다."
-        label.textColor = .textContent
-        label.isHidden = true
-        label.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
         title = "공지사항"
+        noItemDescription = "공지사항이 없습니다."
+        tableView.register(TitleWithDateItemCell.self, forCellReuseIdentifier: TitleWithDateItemCell.id)
+        tableView.delegate = self
+        tableView.dataSource = self
         view.backgroundColor = .white
-        setUpLayout()
     }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.tableView.reloadData()
-    }
-
-    private func setUpLayout() {
-        view.addSubview(tableView)
-        view.addSubview(emptyLabel)
-        
-        tableView.fillUp()
-        emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
 

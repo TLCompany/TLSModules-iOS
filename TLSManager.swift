@@ -12,7 +12,7 @@ protocol TLSManager { }
 /// View-Related-Task Manager
 public class VRTManager<T>: TLSManager {
     public var vc: UIViewController
-    public func go(with items: [T]) { }
+    public func launch(with items: [T]) { }
     
     public init(vc: UIViewController) {
         self.vc = vc

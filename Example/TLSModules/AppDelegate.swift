@@ -13,7 +13,7 @@ import TLSModules
 class AppDelegate: TLSAppDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        setUpNavigationBar(backgroundColor: .red)
+        
         setUpRootViewController(RootViewController(), isNavEmbedded: true)
         return true
     }

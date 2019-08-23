@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal class TitleWithDateItemCell: UITableViewCell {
+public class TitleWithDateItemCell: BaseTableViewCell {
     
     //Static Properties
     static let id = "TitleWithDateItemCell"
@@ -47,8 +47,8 @@ internal class TitleWithDateItemCell: UITableViewCell {
     
     internal var hInset: CGFloat = 20.0 {
         didSet {
-            self.underlineLeftConstraint.constant = hInset
-            self.underlineRightConstraint.constant = -hInset
+            self.leadingEdgeConstraint.constant = hInset
+            self.trailingEdgeConstraint.constant = -hInset
             self.layoutIfNeeded()
         }
     }
@@ -74,13 +74,11 @@ internal class TitleWithDateItemCell: UITableViewCell {
 
     private let separator = SeparatorView()
 
-    private var underlineLeftConstraint: NSLayoutConstraint!
-    private var underlineRightConstraint: NSLayoutConstraint!
+    private var leadingEdgeConstraint: NSLayoutConstraint!
+    private var trailingEdgeConstraint: NSLayoutConstraint!
     private var titleYConstraint: NSLayoutConstraint!
     
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+    public override func setThingsUp() {
         backgroundColor = .listRowBackground
         setUpLayout()
     }
@@ -90,11 +88,11 @@ internal class TitleWithDateItemCell: UITableViewCell {
         addSubview(separator)
         addSubview(dateLabel)
         addSubview(titleLabel)
-        underlineLeftConstraint = separator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0)
-        underlineLeftConstraint.isActive = true
+        leadingEdgeConstraint = separator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0)
+        leadingEdgeConstraint.isActive = true
         
-        underlineRightConstraint = separator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0)
-        underlineRightConstraint.isActive = true
+        trailingEdgeConstraint = separator.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0)
+        trailingEdgeConstraint.isActive = true
         
         titleYConstraint = titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         titleYConstraint.isActive = true
@@ -109,10 +107,5 @@ internal class TitleWithDateItemCell: UITableViewCell {
             dateLabel.trailingAnchor.constraint(equalTo: separator.trailingAnchor),
             dateLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             ])
-    }
-   
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

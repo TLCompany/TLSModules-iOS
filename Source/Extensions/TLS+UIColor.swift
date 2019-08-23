@@ -30,9 +30,12 @@ extension UIColor {
     
     public static var listRowBackground: UIColor? { return UIColor.init(hexString: "FAFAFA") }
     public static var date: UIColor? { return UIColor.init(hexString: "C1C1C1") }
+    public static var placeholder: UIColor? { return UIColor.init(hexString: "CECECE") }
     public static var separator: UIColor? { return UIColor.init(hexString: "DEDEDE") }
     public static var textContent: UIColor? { return UIColor.init(hexString: "585858") }
     public static var listBackground: UIColor? { return UIColor.init(hexString: "E3E3E3") }
+    public static var completed: UIColor? { return UIColor.init(hexString: "BA0000") }
+    public static var incompleted: UIColor? { return UIColor.init(hexString: "304786") }
 }
 
 
