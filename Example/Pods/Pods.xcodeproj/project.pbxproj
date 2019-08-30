@@ -154,50 +154,50 @@
 		CFA869102744DB995F3AC930E96E3AFF /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CB8DC4572596B9CDCADC7E48FDEA70 /* UIApplication+StrictKeyWindow.m */; };
 		D0664493DF417CB8D86DFAE07F9671E4 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF6C94A9010F7372E65282E089C720 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D1108B0B95C44070293DEC99A96E8B9E /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9F7CED7EAC322940D3C0EBA67F10C /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D20F842A230BBA450035C994 /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B38230A8DA2005B9833 /* Policy.swift */; };
-		D20F842F230BBACA0035C994 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F842D230BBAB40035C994 /* ListViewController.swift */; };
-		D20F8430230BBBEC0035C994 /* PolicyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F842B230BBA720035C994 /* PolicyListViewController.swift */; };
-		D20F8433230BBEF30035C994 /* RightArrowItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F8431230BBDF60035C994 /* RightArrowItemCell.swift */; };
-		D20F8435230BC7C00035C994 /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F8434230BC7C00035C994 /* PolicyDetailViewController.swift */; };
-		D20F8438230BD0010035C994 /* Inquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F8437230BD0010035C994 /* Inquery.swift */; };
-		D20F843B230BD1940035C994 /* InqueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F843A230BD1940035C994 /* InqueryManager.swift */; };
-		D20F843D230BD1DA0035C994 /* InqueryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F843C230BD1DA0035C994 /* InqueryListViewController.swift */; };
-		D20F843F230BD2DE0035C994 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F843E230BD2DE0035C994 /* BaseTableViewCell.swift */; };
-		D20F8441230BD3790035C994 /* InqueryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F8440230BD3790035C994 /* InqueryItemCell.swift */; };
-		D20F8443230BDD400035C994 /* InqueryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F8442230BDD400035C994 /* InqueryDetailViewController.swift */; };
-		D21531FA230F81B700DB7069 /* InqueryDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21531F8230F81A200DB7069 /* InqueryDetailData.swift */; };
-		D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */; };
-		D24FDA1C23151A2100306BF1 /* RoundedSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FDA1A23151A0800306BF1 /* RoundedSquareButton.swift */; };
-		D24FDA1F23151B6600306BF1 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FDA1D23151AC900306BF1 /* AuthenticationViewController.swift */; };
-		D24FDA2223151DF700306BF1 /* AuthPolicyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FDA2023151DF100306BF1 /* AuthPolicyListViewController.swift */; };
-		D24FDA252315231F00306BF1 /* AuthPolicyListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FDA232315231300306BF1 /* AuthPolicyListItemCell.swift */; };
-		D2594B37230A8D3E005B9833 /* PolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B35230A8D36005B9833 /* PolicyManager.swift */; };
-		D2594B3F230A8FEA005B9833 /* TLSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2594B3D230A8F89005B9833 /* TLSManager.swift */; };
-		D262CA1C230B843900680578 /* ContentDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262CA1A230B83BD00680578 /* ContentDetailData.swift */; };
-		D262CA1F230B8E3500680578 /* TLSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */; };
-		D26833B623177B8F003A8DBF /* ResourcesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26833B423177B84003A8DBF /* ResourcesProvider.swift */; };
-		D275EE5B2314BAEE0019E461 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275EE592314BAE70019E461 /* AuthManager.swift */; };
-		D275EE5E2314BB780019E461 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275EE5C2314BB0F0019E461 /* AuthUser.swift */; };
-		D275EE612314C0950019E461 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275EE5F2314C0900019E461 /* Logger.swift */; };
-		D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */; };
-		D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFC0282306D08700A68A8E /* SeparatorView.swift */; };
-		D2BA8131230E449B00BC2E39 /* NewInqueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA812F230E441100BC2E39 /* NewInqueryViewController.swift */; };
 		D2BA8134230E450500BC2E39 /* TLS+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */; };
 		D2CF6A0223161BD7001A9BBE /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2CF6A0123161BD7001A9BBE /* images.xcassets */; };
-		D2E776AE2302A1C600558722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776A023029F3000558722 /* User.swift */; };
 		D2E776B22302A24F00558722 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4CAB8AD0876865C7DA3213F9D3A869 /* RequestManager.swift */; };
-		D2E776BB2302A3C200558722 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E776B72302A39400558722 /* UserManager.swift */; };
-		D2E7BEC32317960200A2266B /* AuthVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26833B723179583003A8DBF /* AuthVerificationViewController.swift */; };
-		D2E7BEC82317A39800A2266B /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BEC62317A36400A2266B /* UnderlinedTextField.swift */; };
-		D2E7BECA2317B90E00A2266B /* AuthVerificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BEC92317B90E00A2266B /* AuthVerificationType.swift */; };
-		D2E7BECC2317D15900A2266B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BECB2317D15900A2266B /* PasswordViewController.swift */; };
-		D2E7BECE2317D24100A2266B /* PasswordGoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BECD2317D24100A2266B /* PasswordGoalType.swift */; };
 		D2E7BED42317EC4E00A2266B /* TLS+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BED32317EC4E00A2266B /* TLS+Dictionary.swift */; };
-		D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */; };
-		D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B12B2304EF8800392FCC /* Announcement.swift */; };
-		D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */; };
+		D2F361602318FC76006D832D /* Policy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613A2318FC5C006D832D /* Policy.swift */; };
+		D2F361612318FC7A006D832D /* PolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613B2318FC5C006D832D /* PolicyManager.swift */; };
+		D2F361622318FC81006D832D /* PolicyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613C2318FC5C006D832D /* PolicyListViewController.swift */; };
+		D2F361632318FC85006D832D /* PolicyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613D2318FC5C006D832D /* PolicyDetailViewController.swift */; };
+		D2F361642318FC9A006D832D /* InqueryDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361312318FC5C006D832D /* InqueryDetailData.swift */; };
+		D2F361652318FC9D006D832D /* NewInqueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361322318FC5C006D832D /* NewInqueryViewController.swift */; };
+		D2F361662318FCA0006D832D /* InqueryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361342318FC5C006D832D /* InqueryListViewController.swift */; };
+		D2F361672318FCA5006D832D /* InqueryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361352318FC5C006D832D /* InqueryDetailViewController.swift */; };
+		D2F361682318FCAA006D832D /* Inquery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361362318FC5C006D832D /* Inquery.swift */; };
+		D2F361692318FCAE006D832D /* InqueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361372318FC5C006D832D /* InqueryManager.swift */; };
+		D2F3616A2318FCB1006D832D /* InqueryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361382318FC5C006D832D /* InqueryItemCell.swift */; };
+		D2F3616B2318FCBD006D832D /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361412318FC5D006D832D /* UnderlinedTextField.swift */; };
+		D2F3616C2318FCCE006D832D /* RoundedSquareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361432318FC5D006D832D /* RoundedSquareButton.swift */; };
+		D2F3616D2318FCD2006D832D /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361452318FC5D006D832D /* SeparatorView.swift */; };
+		D2F3616E2318FCD5006D832D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361482318FC5D006D832D /* ListViewController.swift */; };
+		D2F3616F2318FCD9006D832D /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361492318FC5D006D832D /* ScrollingViewController.swift */; };
+		D2F361702318FCE1006D832D /* AuthVerificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611A2318FC37006D832D /* AuthVerificationType.swift */; };
+		D2F361712318FCE4006D832D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611B2318FC37006D832D /* UserManager.swift */; };
+		D2F361722318FCE7006D832D /* PasswordGoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611C2318FC37006D832D /* PasswordGoalType.swift */; };
+		D2F361732318FCED006D832D /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611D2318FC37006D832D /* PasswordViewController.swift */; };
+		D2F361742318FCF4006D832D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611E2318FC37006D832D /* User.swift */; };
+		D2F361752318FCF8006D832D /* AuthVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3611F2318FC37006D832D /* AuthVerificationViewController.swift */; };
+		D2F361762318FCFB006D832D /* AuthPolicyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361202318FC37006D832D /* AuthPolicyListViewController.swift */; };
+		D2F361772318FCFF006D832D /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361212318FC37006D832D /* AuthenticationViewController.swift */; };
+		D2F361782318FD06006D832D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361152318FC37006D832D /* BaseTableViewCell.swift */; };
+		D2F361792318FD09006D832D /* RightArrowItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361162318FC37006D832D /* RightArrowItemCell.swift */; };
+		D2F3617A2318FD0D006D832D /* AuthPolicyListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361172318FC37006D832D /* AuthPolicyListItemCell.swift */; };
+		D2F3617B2318FD10006D832D /* TitleWithDateItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361182318FC37006D832D /* TitleWithDateItemCell.swift */; };
+		D2F3617C2318FD17006D832D /* AnnouncementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361062318FC1E006D832D /* AnnouncementManager.swift */; };
+		D2F3617D2318FD1A006D832D /* AnnouncementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361072318FC1E006D832D /* AnnouncementDetailViewController.swift */; };
+		D2F3617E2318FD20006D832D /* AnnouncementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361082318FC1E006D832D /* AnnouncementListViewController.swift */; };
+		D2F3617F2318FD25006D832D /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361092318FC1E006D832D /* Announcement.swift */; };
+		D2F361802318FD2C006D832D /* ContentDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3610B2318FC1E006D832D /* ContentDetailData.swift */; };
+		D2F361812318FD4B006D832D /* TLSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3614B2318FC5D006D832D /* TLSManager.swift */; };
+		D2F361822318FD4E006D832D /* ResourcesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3614A2318FC5D006D832D /* ResourcesProvider.swift */; };
+		D2F361832318FD53006D832D /* TLSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613E2318FC5C006D832D /* TLSAppDelegate.swift */; };
+		D2F361842318FD56006D832D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F3613F2318FC5C006D832D /* Logger.swift */; };
+		D2F361852318FD61006D832D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361122318FC36006D832D /* AuthManager.swift */; };
+		D2F361862318FD8A006D832D /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361132318FC36006D832D /* AuthUser.swift */; };
 		D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
-		D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */; };
 		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D9A3F155F6630D910CC43A976EC7F /* SessionManager.swift */; };
 		D428498A1A70F3DB2F9D9C921989E6B8 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A55D55502CBDB4165AB831766AF6180 /* UIImage+Compare.m */; };
 		D4F927D4CCB0D70331C5D603D3BFE51F /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A091BC4A0F5EB1B4096D8B0E53700218 /* NBSMockedApplication.m */; };
@@ -498,51 +498,51 @@
 		D0A168D96B0363CD61BB2084719363F2 /* Nimble-Snapshots-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-Snapshots-dummy.m"; sourceTree = "<group>"; };
 		D1459532682F9E57A845314DCA27EE5F /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		D1EFBADC58CC590895FE3C59AFCEA341 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
-		D20F842B230BBA720035C994 /* PolicyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyListViewController.swift; sourceTree = "<group>"; };
-		D20F842D230BBAB40035C994 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		D20F8431230BBDF60035C994 /* RightArrowItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightArrowItemCell.swift; sourceTree = "<group>"; };
-		D20F8434230BC7C00035C994 /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
-		D20F8437230BD0010035C994 /* Inquery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquery.swift; sourceTree = "<group>"; };
-		D20F843A230BD1940035C994 /* InqueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqueryManager.swift; sourceTree = "<group>"; };
-		D20F843C230BD1DA0035C994 /* InqueryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqueryListViewController.swift; sourceTree = "<group>"; };
-		D20F843E230BD2DE0035C994 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		D20F8440230BD3790035C994 /* InqueryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqueryItemCell.swift; sourceTree = "<group>"; };
-		D20F8442230BDD400035C994 /* InqueryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqueryDetailViewController.swift; sourceTree = "<group>"; };
-		D21531F8230F81A200DB7069 /* InqueryDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InqueryDetailData.swift; sourceTree = "<group>"; };
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
-		D24FDA1A23151A0800306BF1 /* RoundedSquareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedSquareButton.swift; sourceTree = "<group>"; };
-		D24FDA1D23151AC900306BF1 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		D24FDA2023151DF100306BF1 /* AuthPolicyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPolicyListViewController.swift; sourceTree = "<group>"; };
-		D24FDA232315231300306BF1 /* AuthPolicyListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPolicyListItemCell.swift; sourceTree = "<group>"; };
-		D2594B35230A8D36005B9833 /* PolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyManager.swift; sourceTree = "<group>"; };
-		D2594B38230A8DA2005B9833 /* Policy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
-		D2594B3D230A8F89005B9833 /* TLSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSManager.swift; sourceTree = "<group>"; };
-		D262CA1A230B83BD00680578 /* ContentDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailData.swift; sourceTree = "<group>"; };
-		D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSAppDelegate.swift; sourceTree = "<group>"; };
-		D26833B423177B84003A8DBF /* ResourcesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesProvider.swift; sourceTree = "<group>"; };
-		D26833B723179583003A8DBF /* AuthVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationViewController.swift; sourceTree = "<group>"; };
-		D275EE592314BAE70019E461 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		D275EE5C2314BB0F0019E461 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
-		D275EE5F2314C0900019E461 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
-		D2AFC0282306D08700A68A8E /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
-		D2BA812F230E441100BC2E39 /* NewInqueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInqueryViewController.swift; sourceTree = "<group>"; };
 		D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TLS+NSAttributedString.swift"; sourceTree = "<group>"; };
 		D2CF6A0123161BD7001A9BBE /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		D2E776A023029F3000558722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D2E776B72302A39400558722 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D2E776BE2302A45F00558722 /* modules-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "modules-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2E776BF2302A52B00558722 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		D2E7BEC62317A36400A2266B /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
-		D2E7BEC92317B90E00A2266B /* AuthVerificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationType.swift; sourceTree = "<group>"; };
-		D2E7BECB2317D15900A2266B /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		D2E7BECD2317D24100A2266B /* PasswordGoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGoalType.swift; sourceTree = "<group>"; };
 		D2E7BED32317EC4E00A2266B /* TLS+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TLS+Dictionary.swift"; sourceTree = "<group>"; };
-		D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementManager.swift; sourceTree = "<group>"; };
-		D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithDateItemCell.swift; sourceTree = "<group>"; };
-		D2F4B12B2304EF8800392FCC /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
-		D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementListViewController.swift; sourceTree = "<group>"; };
+		D2F361062318FC1E006D832D /* AnnouncementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementManager.swift; sourceTree = "<group>"; };
+		D2F361072318FC1E006D832D /* AnnouncementDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementDetailViewController.swift; sourceTree = "<group>"; };
+		D2F361082318FC1E006D832D /* AnnouncementListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementListViewController.swift; sourceTree = "<group>"; };
+		D2F361092318FC1E006D832D /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		D2F3610B2318FC1E006D832D /* ContentDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailData.swift; sourceTree = "<group>"; };
+		D2F361122318FC36006D832D /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D2F361132318FC36006D832D /* AuthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
+		D2F361152318FC37006D832D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D2F361162318FC37006D832D /* RightArrowItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightArrowItemCell.swift; sourceTree = "<group>"; };
+		D2F361172318FC37006D832D /* AuthPolicyListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPolicyListItemCell.swift; sourceTree = "<group>"; };
+		D2F361182318FC37006D832D /* TitleWithDateItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleWithDateItemCell.swift; sourceTree = "<group>"; };
+		D2F3611A2318FC37006D832D /* AuthVerificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVerificationType.swift; sourceTree = "<group>"; };
+		D2F3611B2318FC37006D832D /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		D2F3611C2318FC37006D832D /* PasswordGoalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGoalType.swift; sourceTree = "<group>"; };
+		D2F3611D2318FC37006D832D /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		D2F3611E2318FC37006D832D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2F3611F2318FC37006D832D /* AuthVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVerificationViewController.swift; sourceTree = "<group>"; };
+		D2F361202318FC37006D832D /* AuthPolicyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPolicyListViewController.swift; sourceTree = "<group>"; };
+		D2F361212318FC37006D832D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		D2F361312318FC5C006D832D /* InqueryDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryDetailData.swift; sourceTree = "<group>"; };
+		D2F361322318FC5C006D832D /* NewInqueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewInqueryViewController.swift; sourceTree = "<group>"; };
+		D2F361342318FC5C006D832D /* InqueryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryListViewController.swift; sourceTree = "<group>"; };
+		D2F361352318FC5C006D832D /* InqueryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryDetailViewController.swift; sourceTree = "<group>"; };
+		D2F361362318FC5C006D832D /* Inquery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inquery.swift; sourceTree = "<group>"; };
+		D2F361372318FC5C006D832D /* InqueryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryManager.swift; sourceTree = "<group>"; };
+		D2F361382318FC5C006D832D /* InqueryItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryItemCell.swift; sourceTree = "<group>"; };
+		D2F3613A2318FC5C006D832D /* Policy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Policy.swift; sourceTree = "<group>"; };
+		D2F3613B2318FC5C006D832D /* PolicyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyManager.swift; sourceTree = "<group>"; };
+		D2F3613C2318FC5C006D832D /* PolicyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyListViewController.swift; sourceTree = "<group>"; };
+		D2F3613D2318FC5C006D832D /* PolicyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyDetailViewController.swift; sourceTree = "<group>"; };
+		D2F3613E2318FC5C006D832D /* TLSAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLSAppDelegate.swift; path = Source/TLSAppDelegate.swift; sourceTree = "<group>"; };
+		D2F3613F2318FC5C006D832D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		D2F361412318FC5D006D832D /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		D2F361432318FC5D006D832D /* RoundedSquareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedSquareButton.swift; sourceTree = "<group>"; };
+		D2F361452318FC5D006D832D /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		D2F361482318FC5D006D832D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D2F361492318FC5D006D832D /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
+		D2F3614A2318FC5D006D832D /* ResourcesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesProvider.swift; path = Source/ResourcesProvider.swift; sourceTree = "<group>"; };
+		D2F3614B2318FC5D006D832D /* TLSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLSManager.swift; path = Source/TLSManager.swift; sourceTree = "<group>"; };
 		D3CA2B04461301665FFD1F17CDA0C857 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		D52F49EEDD8EC922E0875888E5553277 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
 		D5505C26F824918C4B7E94577B95136A /* TLSModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLSModules-dummy.m"; sourceTree = "<group>"; };
@@ -1005,59 +1005,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		D20F8436230BCFF10035C994 /* InqueryManager */ = {
-			isa = PBXGroup;
-			children = (
-				D20F8437230BD0010035C994 /* Inquery.swift */,
-				D21531F8230F81A200DB7069 /* InqueryDetailData.swift */,
-				D20F843A230BD1940035C994 /* InqueryManager.swift */,
-				D20F843C230BD1DA0035C994 /* InqueryListViewController.swift */,
-				D20F8442230BDD400035C994 /* InqueryDetailViewController.swift */,
-				D2BA812F230E441100BC2E39 /* NewInqueryViewController.swift */,
-				D20F8440230BD3790035C994 /* InqueryItemCell.swift */,
-			);
-			path = InqueryManager;
-			sourceTree = "<group>";
-		};
-		D22803A3230647390071D7D2 /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				D2AFC0282306D08700A68A8E /* SeparatorView.swift */,
-				D24FDA1A23151A0800306BF1 /* RoundedSquareButton.swift */,
-				D2E7BEC62317A36400A2266B /* UnderlinedTextField.swift */,
-			);
-			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		D2594B2F230A7243005B9833 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				D2AFC0242306CCB100A68A8E /* ScrollingViewController.swift */,
-				D20F842D230BBAB40035C994 /* ListViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		D2594B34230A8D15005B9833 /* PolicyManager */ = {
-			isa = PBXGroup;
-			children = (
-				D2594B35230A8D36005B9833 /* PolicyManager.swift */,
-				D2594B38230A8DA2005B9833 /* Policy.swift */,
-				D20F842B230BBA720035C994 /* PolicyListViewController.swift */,
-				D20F8434230BC7C00035C994 /* PolicyDetailViewController.swift */,
-			);
-			path = PolicyManager;
-			sourceTree = "<group>";
-		};
-		D2B1E7E72313EC1F00B8E822 /* AuthManager */ = {
-			isa = PBXGroup;
-			children = (
-				D275EE5C2314BB0F0019E461 /* AuthUser.swift */,
-				D275EE592314BAE70019E461 /* AuthManager.swift */,
-			);
-			path = AuthManager;
-			sourceTree = "<group>";
-		};
 		D2CF69FC23161A4B001A9BBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,42 +1013,103 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D2E776B62302A39400558722 /* Authentication */ = {
+		D2F361052318FC1E006D832D /* AnnouncementManager */ = {
 			isa = PBXGroup;
 			children = (
-				D2E776A023029F3000558722 /* User.swift */,
-				D2E776B72302A39400558722 /* UserManager.swift */,
-				D24FDA1D23151AC900306BF1 /* AuthenticationViewController.swift */,
-				D24FDA2023151DF100306BF1 /* AuthPolicyListViewController.swift */,
-				D26833B723179583003A8DBF /* AuthVerificationViewController.swift */,
-				D2E7BEC92317B90E00A2266B /* AuthVerificationType.swift */,
-				D2E7BECB2317D15900A2266B /* PasswordViewController.swift */,
-				D2E7BECD2317D24100A2266B /* PasswordGoalType.swift */,
+				D2F361062318FC1E006D832D /* AnnouncementManager.swift */,
+				D2F361072318FC1E006D832D /* AnnouncementDetailViewController.swift */,
+				D2F361082318FC1E006D832D /* AnnouncementListViewController.swift */,
+				D2F361092318FC1E006D832D /* Announcement.swift */,
+				D2F3610B2318FC1E006D832D /* ContentDetailData.swift */,
 			);
-			path = Authentication;
+			name = AnnouncementManager;
+			path = Source/AnnouncementManager;
 			sourceTree = "<group>";
 		};
-		D2F4B1232304E6BA00392FCC /* AnnouncementManager */ = {
+		D2F361112318FC36006D832D /* AuthManager */ = {
 			isa = PBXGroup;
 			children = (
-				D2F4B1242304E6DD00392FCC /* AnnouncementManager.swift */,
-				D2F4B12B2304EF8800392FCC /* Announcement.swift */,
-				D2F4B13D2304F8B700392FCC /* AnnouncementListViewController.swift */,
-				D22803AE23064A780071D7D2 /* AnnouncementDetailViewController.swift */,
-				D262CA1A230B83BD00680578 /* ContentDetailData.swift */,
+				D2F361122318FC36006D832D /* AuthManager.swift */,
+				D2F361132318FC36006D832D /* AuthUser.swift */,
 			);
-			path = AnnouncementManager;
+			name = AuthManager;
+			path = Source/AuthManager;
 			sourceTree = "<group>";
 		};
-		D2F4B1272304E73200392FCC /* CustomTableViewCells */ = {
+		D2F361142318FC37006D832D /* CustomTableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				D20F843E230BD2DE0035C994 /* BaseTableViewCell.swift */,
-				D2F4B1282304E75800392FCC /* TitleWithDateItemCell.swift */,
-				D20F8431230BBDF60035C994 /* RightArrowItemCell.swift */,
-				D24FDA232315231300306BF1 /* AuthPolicyListItemCell.swift */,
+				D2F361152318FC37006D832D /* BaseTableViewCell.swift */,
+				D2F361162318FC37006D832D /* RightArrowItemCell.swift */,
+				D2F361172318FC37006D832D /* AuthPolicyListItemCell.swift */,
+				D2F361182318FC37006D832D /* TitleWithDateItemCell.swift */,
 			);
-			path = CustomTableViewCells;
+			name = CustomTableViewCells;
+			path = Source/CustomTableViewCells;
+			sourceTree = "<group>";
+		};
+		D2F361192318FC37006D832D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D2F3611A2318FC37006D832D /* AuthVerificationType.swift */,
+				D2F3611B2318FC37006D832D /* UserManager.swift */,
+				D2F3611C2318FC37006D832D /* PasswordGoalType.swift */,
+				D2F3611D2318FC37006D832D /* PasswordViewController.swift */,
+				D2F3611E2318FC37006D832D /* User.swift */,
+				D2F3611F2318FC37006D832D /* AuthVerificationViewController.swift */,
+				D2F361202318FC37006D832D /* AuthPolicyListViewController.swift */,
+				D2F361212318FC37006D832D /* AuthenticationViewController.swift */,
+			);
+			name = Authentication;
+			path = Source/Authentication;
+			sourceTree = "<group>";
+		};
+		D2F361302318FC5C006D832D /* InqueryManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2F361312318FC5C006D832D /* InqueryDetailData.swift */,
+				D2F361322318FC5C006D832D /* NewInqueryViewController.swift */,
+				D2F361342318FC5C006D832D /* InqueryListViewController.swift */,
+				D2F361352318FC5C006D832D /* InqueryDetailViewController.swift */,
+				D2F361362318FC5C006D832D /* Inquery.swift */,
+				D2F361372318FC5C006D832D /* InqueryManager.swift */,
+				D2F361382318FC5C006D832D /* InqueryItemCell.swift */,
+			);
+			name = InqueryManager;
+			path = Source/InqueryManager;
+			sourceTree = "<group>";
+		};
+		D2F361392318FC5C006D832D /* PolicyManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2F3613A2318FC5C006D832D /* Policy.swift */,
+				D2F3613B2318FC5C006D832D /* PolicyManager.swift */,
+				D2F3613C2318FC5C006D832D /* PolicyListViewController.swift */,
+				D2F3613D2318FC5C006D832D /* PolicyDetailViewController.swift */,
+			);
+			name = PolicyManager;
+			path = Source/PolicyManager;
+			sourceTree = "<group>";
+		};
+		D2F361402318FC5D006D832D /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D2F361412318FC5D006D832D /* UnderlinedTextField.swift */,
+				D2F361432318FC5D006D832D /* RoundedSquareButton.swift */,
+				D2F361452318FC5D006D832D /* SeparatorView.swift */,
+			);
+			name = UIComponents;
+			path = Source/UIComponents;
+			sourceTree = "<group>";
+		};
+		D2F361472318FC5D006D832D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2F361482318FC5D006D832D /* ListViewController.swift */,
+				D2F361492318FC5D006D832D /* ScrollingViewController.swift */,
+			);
+			name = ViewControllers;
+			path = Source/ViewControllers;
 			sourceTree = "<group>";
 		};
 		D3F8902F65226C2AEA48D130E5E68505 /* Extensions */ = {
@@ -1150,20 +1158,20 @@
 		DC1E15636032AAEAD5F734FC38D467C8 /* TLSModules */ = {
 			isa = PBXGroup;
 			children = (
+				D2F3613F2318FC5C006D832D /* Logger.swift */,
+				D2F3614A2318FC5D006D832D /* ResourcesProvider.swift */,
+				D2F3613E2318FC5C006D832D /* TLSAppDelegate.swift */,
+				D2F3614B2318FC5D006D832D /* TLSManager.swift */,
+				D2F361302318FC5C006D832D /* InqueryManager */,
+				D2F361392318FC5C006D832D /* PolicyManager */,
+				D2F361402318FC5D006D832D /* UIComponents */,
+				D2F361472318FC5D006D832D /* ViewControllers */,
+				D2F361192318FC37006D832D /* Authentication */,
+				D2F361112318FC36006D832D /* AuthManager */,
+				D2F361142318FC37006D832D /* CustomTableViewCells */,
+				D2F361052318FC1E006D832D /* AnnouncementManager */,
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
-				D262CA1D230B8E3000680578 /* TLSAppDelegate.swift */,
-				D2594B3D230A8F89005B9833 /* TLSManager.swift */,
-				D275EE5F2314C0900019E461 /* Logger.swift */,
-				D26833B423177B84003A8DBF /* ResourcesProvider.swift */,
 				D2CF69FC23161A4B001A9BBE /* Resources */,
-				D2B1E7E72313EC1F00B8E822 /* AuthManager */,
-				D20F8436230BCFF10035C994 /* InqueryManager */,
-				D2F4B1232304E6BA00392FCC /* AnnouncementManager */,
-				D2594B34230A8D15005B9833 /* PolicyManager */,
-				D2594B2F230A7243005B9833 /* ViewControllers */,
-				D22803A3230647390071D7D2 /* UIComponents */,
-				D2F4B1272304E73200392FCC /* CustomTableViewCells */,
-				D2E776B62302A39400558722 /* Authentication */,
 				D3F8902F65226C2AEA48D130E5E68505 /* Extensions */,
 				E534950BEF49EDC7D63F2568824C5207 /* Network */,
 				51D232903192C6D04AE0AC33A743FF8E /* Pod */,
@@ -1598,61 +1606,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2E7BEC32317960200A2266B /* AuthVerificationViewController.swift in Sources */,
 				D2E776B22302A24F00558722 /* RequestManager.swift in Sources */,
-				D26833B623177B8F003A8DBF /* ResourcesProvider.swift in Sources */,
-				D2E7BECC2317D15900A2266B /* PasswordViewController.swift in Sources */,
-				D20F843D230BD1DA0035C994 /* InqueryListViewController.swift in Sources */,
-				D2E7BEC82317A39800A2266B /* UnderlinedTextField.swift in Sources */,
+				D2F361682318FCAA006D832D /* Inquery.swift in Sources */,
+				D2F3616E2318FCD5006D832D /* ListViewController.swift in Sources */,
+				D2F361672318FCA5006D832D /* InqueryDetailViewController.swift in Sources */,
+				D2F3616F2318FCD9006D832D /* ScrollingViewController.swift in Sources */,
+				D2F361812318FD4B006D832D /* TLSManager.swift in Sources */,
+				D2F361832318FD53006D832D /* TLSAppDelegate.swift in Sources */,
+				D2F361802318FD2C006D832D /* ContentDetailData.swift in Sources */,
+				D2F3616B2318FCBD006D832D /* UnderlinedTextField.swift in Sources */,
+				D2F361652318FC9D006D832D /* NewInqueryViewController.swift in Sources */,
+				D2F3617C2318FD17006D832D /* AnnouncementManager.swift in Sources */,
+				D2F361612318FC7A006D832D /* PolicyManager.swift in Sources */,
+				D2F361632318FC85006D832D /* PolicyDetailViewController.swift in Sources */,
+				D2F3617B2318FD10006D832D /* TitleWithDateItemCell.swift in Sources */,
 				58E9745FB683AFB066417E4655A93830 /* NetworkResult.swift in Sources */,
-				D20F842F230BBACA0035C994 /* ListViewController.swift in Sources */,
-				D2F4B12E2304F22200392FCC /* AnnouncementManager.swift in Sources */,
-				D20F8430230BBBEC0035C994 /* PolicyListViewController.swift in Sources */,
 				15A3A353F6A64E48389F6774CF8DB68F /* Request.swift in Sources */,
-				D22803AF23064A780071D7D2 /* AnnouncementDetailViewController.swift in Sources */,
+				D2F361662318FCA0006D832D /* InqueryListViewController.swift in Sources */,
+				D2F361842318FD56006D832D /* Logger.swift in Sources */,
+				D2F361772318FCFF006D832D /* AuthenticationViewController.swift in Sources */,
+				D2F361642318FC9A006D832D /* InqueryDetailData.swift in Sources */,
+				D2F361762318FCFB006D832D /* AuthPolicyListViewController.swift in Sources */,
 				91D71E5D9E6C26B4110AE56E2329B4C3 /* RequestResult.swift in Sources */,
-				D20F8435230BC7C00035C994 /* PolicyDetailViewController.swift in Sources */,
-				D2BA8131230E449B00BC2E39 /* NewInqueryViewController.swift in Sources */,
+				D2F361822318FD4E006D832D /* ResourcesProvider.swift in Sources */,
+				D2F3616D2318FCD2006D832D /* SeparatorView.swift in Sources */,
+				D2F3616C2318FCCE006D832D /* RoundedSquareButton.swift in Sources */,
+				D2F361712318FCE4006D832D /* UserManager.swift in Sources */,
+				D2F361732318FCED006D832D /* PasswordViewController.swift in Sources */,
+				D2F3617A2318FD0D006D832D /* AuthPolicyListItemCell.swift in Sources */,
 				A78159CF20A8B0F66C22BC5666FE2BB8 /* TLS+Date.swift in Sources */,
+				D2F3617F2318FD25006D832D /* Announcement.swift in Sources */,
 				D2E7BED42317EC4E00A2266B /* TLS+Dictionary.swift in Sources */,
-				D2E776AE2302A1C600558722 /* User.swift in Sources */,
-				D262CA1F230B8E3500680578 /* TLSAppDelegate.swift in Sources */,
+				D2F3616A2318FCB1006D832D /* InqueryItemCell.swift in Sources */,
+				D2F361752318FCF8006D832D /* AuthVerificationViewController.swift in Sources */,
 				D2BA8134230E450500BC2E39 /* TLS+NSAttributedString.swift in Sources */,
-				D24FDA252315231F00306BF1 /* AuthPolicyListItemCell.swift in Sources */,
 				7BA61542DA603F63616D9BCEA4EDE1F1 /* TLS+Int.swift in Sources */,
-				D2594B37230A8D3E005B9833 /* PolicyManager.swift in Sources */,
+				D2F361742318FCF4006D832D /* User.swift in Sources */,
+				D2F3617D2318FD1A006D832D /* AnnouncementDetailViewController.swift in Sources */,
+				D2F361852318FD61006D832D /* AuthManager.swift in Sources */,
+				D2F361862318FD8A006D832D /* AuthUser.swift in Sources */,
+				D2F361722318FCE7006D832D /* PasswordGoalType.swift in Sources */,
+				D2F3617E2318FD20006D832D /* AnnouncementListViewController.swift in Sources */,
+				D2F361692318FCAE006D832D /* InqueryManager.swift in Sources */,
+				D2F361702318FCE1006D832D /* AuthVerificationType.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
-				D2F4B12A2304E84500392FCC /* TitleWithDateItemCell.swift in Sources */,
-				D20F8441230BD3790035C994 /* InqueryItemCell.swift in Sources */,
-				D2E7BECA2317B90E00A2266B /* AuthVerificationType.swift in Sources */,
-				D275EE5B2314BAEE0019E461 /* AuthManager.swift in Sources */,
-				D2AFC0262306CCFE00A68A8E /* ScrollingViewController.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
-				D2594B3F230A8FEA005B9833 /* TLSManager.swift in Sources */,
-				D24FDA1F23151B6600306BF1 /* AuthenticationViewController.swift in Sources */,
-				D20F843F230BD2DE0035C994 /* BaseTableViewCell.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
-				D21531FA230F81B700DB7069 /* InqueryDetailData.swift in Sources */,
-				D20F8443230BDD400035C994 /* InqueryDetailViewController.swift in Sources */,
-				D2AFC02A2306D0B000A68A8E /* SeparatorView.swift in Sources */,
+				D2F361782318FD06006D832D /* BaseTableViewCell.swift in Sources */,
+				D2F361602318FC76006D832D /* Policy.swift in Sources */,
 				EF35A3D7C97F02E98E7DA74AB299D579 /* TLS+UITableView.swift in Sources */,
-				D20F8433230BBEF30035C994 /* RightArrowItemCell.swift in Sources */,
-				D2F4B12D2304EFA000392FCC /* Announcement.swift in Sources */,
-				D24FDA1C23151A2100306BF1 /* RoundedSquareButton.swift in Sources */,
-				D20F8438230BD0010035C994 /* Inquery.swift in Sources */,
 				670638E54F42B635413D11CBBCEC64E8 /* TLS+UIViewController.swift in Sources */,
-				D20F842A230BBA450035C994 /* Policy.swift in Sources */,
-				D2F4B13F2304F8CD00392FCC /* AnnouncementListViewController.swift in Sources */,
 				4B54E09032DDFD55ECB298DDD6E80F2F /* TLSModules-dummy.m in Sources */,
-				D275EE5E2314BB780019E461 /* AuthUser.swift in Sources */,
-				D24FDA2223151DF700306BF1 /* AuthPolicyListViewController.swift in Sources */,
-				D20F843B230BD1940035C994 /* InqueryManager.swift in Sources */,
-				D275EE612314C0950019E461 /* Logger.swift in Sources */,
+				D2F361622318FC81006D832D /* PolicyListViewController.swift in Sources */,
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
 				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
-				D2E7BECE2317D24100A2266B /* PasswordGoalType.swift in Sources */,
-				D262CA1C230B843900680578 /* ContentDetailData.swift in Sources */,
-				D2E776BB2302A3C200558722 /* UserManager.swift in Sources */,
+				D2F361792318FD09006D832D /* RightArrowItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
