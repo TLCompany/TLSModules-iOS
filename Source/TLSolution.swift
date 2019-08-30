@@ -9,8 +9,5 @@ import Foundation
 
 public class TLSolution {
     
-    public static func sayHi() {
-        print("Hi")
-    }
 }
 

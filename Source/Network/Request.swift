@@ -9,11 +9,12 @@
 import Foundation
 import Alamofire
 
-public protocol Request {
+public protocol TLSRequest {
     var url: URL? { get }
     var baseURLStr: String { get }
     var type: HTTPMethod { get }
-    var body: [String: Any]? { get }
+    var body: [String: Any]? { get set }
     var tokenRenewalURL: String { get }
 }
+
 

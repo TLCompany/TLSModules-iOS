@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 새로운 문의사항 작성 화면 Controller
 class NewInqueryViewController: UIViewController {
     
     internal var completeAction: ((String) -> Void)?
@@ -38,7 +39,6 @@ class NewInqueryViewController: UIViewController {
     }
     
     private func setUpLayout() {
-        
         view.addSubview(inqueryTextView)
         
         leadingEdgeConstraint = inqueryTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0)

@@ -7,11 +7,14 @@
 
 import UIKit
 
+/// 문의사항 디테일 화면 Controller
 internal class InqueryDetailViewController: ScrollingViewController {
 
+    //Internal Properties
     internal var inquery: Inquery?
     internal var contentDetailData: InqueryDetailData?
     
+    //Private Properties
     private let separator = SeparatorView()
     
     private let dateLabel: UILabel = {

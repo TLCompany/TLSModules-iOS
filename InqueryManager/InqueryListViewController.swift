@@ -7,13 +7,16 @@
 
 import UIKit
 
+/// 문의사항 리스트 화면 Controller
 internal class InqueryListViewController: ListViewController {
     
+    //Internal Properties
     internal var inqueries = [Inquery]() {
         didSet {
             tableView.reloadData()
         }
     }
+    
     internal var contentDetailData: InqueryDetailData?
     internal var newAction: (() -> Void)?
     internal var answeredColor = UIColor.init(hexString: "BA0000")

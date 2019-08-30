@@ -15,7 +15,7 @@ public class UserManager<T: Decodable>: NSObject {
     public var user: T? {
         get {
             guard let userData = UserDefaults.standard.object(forKey: key) as? Data else {
-                showError(#function, type: .nil(taget: "userData"))
+                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "userData"))
                 return nil
             }
             let decoder = JSONDecoder()
@@ -25,7 +25,7 @@ public class UserManager<T: Decodable>: NSObject {
             let newUser = newValue as? User
             UserDefaults.standard.set(newUser?.data, forKey: key)
             UserDefaults.standard.synchronize()
-            NSLog("ClientManager", "😃 New user saved!")
+            Logger.showDebuggingMessage(at: #function, "New user saved!")
         }
     }
     

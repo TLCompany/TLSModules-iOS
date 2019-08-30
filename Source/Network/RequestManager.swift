@@ -9,17 +9,18 @@
 import Foundation
 import Alamofire
 
+public typealias APICompletion = (NetworkResult) -> Void
+public typealias JSONClosure = ([String: Any]?) -> Void
 
 public class RequestManager: NSObject {
     
-    typealias APICompletion = (APIResult) -> Void
     
-    func request(with request: Request,
+    public static func request(with request: TLSRequest,
                  _ user: User? = nil,
                  completionHandler completion: @escaping APICompletion) {
 
         guard let url = request.url else {
-            showError(#function, type: .unsafelyWrapped(taget: "url"))
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
             completion(.error(message: "\(#function), 😱 url is nil"))
             return
         }
@@ -28,27 +29,24 @@ public class RequestManager: NSObject {
         if let token = user?.token { header = ["authorization": token] }
         
         Alamofire.request(url, method: request.type,
-                          parameters: nil,
+                          parameters: request.body?.data,
                           encoding: JSONEncoding.default,
                           headers: header).response { (res) in
                             
             if let error = res.error {
-                self.showError(#function, type: .network(errMsg: error.localizedDescription))
+                Logger.showError(at: #function, type: .network(errMsg: error.localizedDescription))
                 completion(.error(message: error.localizedDescription))
                 return
             }
-                            
-            self.evaluateResponse(request: request,
-                                  dataRes: res,
-                                  user: user,
-                                  completion: completion)
+
+            self.evaluateResponse(by: request, with: res, user, completion)
         }
     }
     
-    private func evaluateResponse(request: Request,
-                                  dataRes: DefaultDataResponse,
-                                  user: User?,
-                                  completion: @escaping APICompletion) {
+    private static func evaluateResponse(by request: TLSRequest,
+                                        with dataRes: DefaultDataResponse,
+                                        _ user: User?,
+                                        _ completion: @escaping APICompletion) {
         
         guard let statusCode = dataRes.response?.statusCode else {
             completion(.error(message: "😱 statusCode is nil"))
@@ -80,9 +78,9 @@ public class RequestManager: NSObject {
         }
     }
 
-    typealias TokenRenewalResult = (isSuccessful: Bool, newToken: String?)
+    private typealias TokenRenewalResult = (isSuccessful: Bool, newToken: String?)
     
-    private func renewToken(with request: Request,
+    private static func renewToken(with request: TLSRequest,
                            of user: User,
                            completionHandler completion: @escaping ((TokenRenewalResult) -> Void)) {
     
@@ -116,6 +114,89 @@ public class RequestManager: NSObject {
                 }
 
                 completion((false, nil))
+        }
+    }
+    
+    
+    /// HTTP 서버통신 결과를 완료해주는 함수 - Generic 데이터 모델 리턴
+    ///
+    /// - Parameters:
+    ///   - apiResult: 통신 결과
+    ///   - successAction: 성공했을 때
+    ///   - tryAgainAction: 토큰 갱신 후 리턴
+    public static func evaluate<T: Decodable>(by result: NetworkResult,
+                                              _ successAction: ((T?) -> Void)?,
+                                              _ failureAction: ((NetworkResult) -> Void)?,
+                                              _ tryAgainAction: (() -> Void)? = nil) {
+        
+        switch result {
+        case .error(let message):
+            Logger.showError(at: #function, type: .network(errMsg: message))
+            failureAction?(result)
+        case .unknown:
+            Logger.showError(at: #function, type: .network(errMsg: "unknown error"))
+            failureAction?(result)
+        case .notAuthorised:
+            Logger.showError(at: #function, type: .network(errMsg: "not authorised"))
+            failureAction?(result)
+        case .notFound:
+            Logger.showError(at: #function, type: .network(errMsg: "no params sent with"))
+            failureAction?(result)
+        case .sucfulyFetched(_):
+            successAction?(result.model())
+        case .sucfulySent(_):
+            successAction?(result.model())
+        case .accepted:
+            successAction?(nil)
+        case .serverError:
+            Logger.showError(at: #function, type: .network(errMsg: "server error"))
+            failureAction?(result)
+        case .tryAgain:
+            tryAgainAction?()
+        case .notPermitted:
+            Logger.showError(at: #function, type: .network(errMsg: "not permitted"))
+            failureAction?(result)
+        }
+    }
+    
+    /// HTTP 서버통신 결과를 완료해주는 함수 - JSON 리턴
+    ///
+    /// - Parameters:
+    ///   - apiResult: 통신 결과
+    ///   - successAction: 성공했을 때
+    ///   - tryAgainAction: 토큰 갱신 후 리턴
+    public static func evaluate(by result: NetworkResult,
+                                _ successAction: JSONClosure?,
+                                _ failureAction: ((NetworkResult) -> Void)?,
+                                _ tryAgainAction: (() -> Void)? = nil) {
+        
+        switch result {
+        case .error(let message):
+            Logger.showError(at: #function, type: .network(errMsg: message))
+            failureAction?(result)
+        case .unknown:
+            Logger.showError(at: #function, type: .network(errMsg: "unknown error"))
+            failureAction?(result)
+        case .notAuthorised:
+            Logger.showError(at: #function, type: .network(errMsg: "not authorised"))
+            failureAction?(result)
+        case .notFound:
+            Logger.showError(at: #function, type: .network(errMsg: "no params sent with"))
+            failureAction?(result)
+        case .sucfulyFetched:
+            successAction?(result.json)
+        case .sucfulySent:
+            successAction?(result.json)
+        case .accepted:
+            successAction?(nil)
+        case .serverError:
+            Logger.showError(at: #function, type: .network(errMsg: "server error"))
+            failureAction?(result)
+        case .tryAgain:
+            Logger.showDebuggingMessage(at: #function, "Your token has expired... Try again!")
+            tryAgainAction?()
+        case .notPermitted:
+            failureAction?(result)
         }
     }
 

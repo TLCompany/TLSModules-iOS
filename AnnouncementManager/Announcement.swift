@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 공지사항의 데이터 모델
 open class Announcement {
     
     public let id: Int

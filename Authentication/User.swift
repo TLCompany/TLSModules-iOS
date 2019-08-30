@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 앱 사용자의 데이터 모델의 protocol
 public protocol User {
     var id: Int { get set }
     var clientSecret: String { get set }

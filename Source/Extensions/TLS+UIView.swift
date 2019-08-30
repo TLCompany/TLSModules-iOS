@@ -10,8 +10,8 @@ import UIKit
 
 extension UIView {
     
-    public class func loadFromNibNamed(nibNamed: String, bundle : Bundle? = nil) -> UIView? {
-        return UINib(nibName: nibNamed, bundle: bundle).instantiate(withOwner: self, options: nil)[0] as? UIView
+    public class func customInit(nibName: String, bundle : Bundle? = nil) -> UIView? {
+        return UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: self, options: nil)[0] as? UIView
     }
 
     public func fillUp() {
@@ -81,18 +81,18 @@ extension UIView {
     ///
     /// - Parameters:
     ///   - urlString: 다운로드할 이미지의 URL 텍스트
-    public func downloadedImage(from urlString: String,
+    public func imageDownloaded(from urlString: String,
                          completionHandler completion: @escaping ((UIImage?) -> Void)) {
         
         guard let url = URL(string: urlString) else {
-            showError(#function, type: .unsafelyWrapped(taget: "url"))
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
             completion(nil)
             return
         }
         
         DispatchQueue.global(qos: .utility).async {
             guard let imageData = try? Data(contentsOf: url) else {
-                self.showError(#function, type: .nil(taget: "imageData"))
+                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "imageData"))
                 return
             }
             

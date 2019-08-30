@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 문의사항의 데이터 모델
 open class Inquery: Decodable {
     public let id: Int
     public let content: String

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 문의사항 리스트 아이템 TableViewCell
 internal class InqueryItemCell: BaseTableViewCell {
 
     static let id = "InqueryItemCell"
@@ -67,7 +68,6 @@ internal class InqueryItemCell: BaseTableViewCell {
     }()
     
     private let separator = SeparatorView()
-    
     private var trailingEdgeConstraint: NSLayoutConstraint!
     private var leadingEdgeConstraint: NSLayoutConstraint!
     

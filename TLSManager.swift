@@ -10,7 +10,7 @@ import UIKit
 protocol TLSManager { }
 
 /// View-Related-Task Manager
-public class VRTManager<T>: TLSManager {
+open class VRTManager<T>: TLSManager {
     public var vc: UIViewController
     public func launch(with items: [T]) { }
     
@@ -20,6 +20,7 @@ public class VRTManager<T>: TLSManager {
 }
 
 /// Specific-Task-Oriented Manager
-public class STOManager: TLSManager {
+open class STOManager: TLSManager {
     
 }
+

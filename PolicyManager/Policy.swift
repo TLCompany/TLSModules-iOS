@@ -10,9 +10,11 @@ import Foundation
 open class Policy {
     public let title: String
     public let content: String
+    public var isMandatory: Bool = true
     
-    public init(title: String, content: String) {
+    public init(title: String, content: String, isMandatory: Bool = true) {
         self.title = title
         self.content = content
+        self.isMandatory = isMandatory
     }
 }

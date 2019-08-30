@@ -35,6 +35,7 @@ extension UIColor {
     public static var textContent: UIColor? { return UIColor.init(hexString: "585858") }
     public static var listBackground: UIColor? { return UIColor.init(hexString: "E3E3E3") }
     public static var completed: UIColor? { return UIColor.init(hexString: "BA0000") }
+    public static var warning: UIColor? { return UIColor.init(hexString: "B72222") }
     public static var incompleted: UIColor? { return UIColor.init(hexString: "304786") }
 }
 

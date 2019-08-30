@@ -27,7 +27,7 @@ import Foundation
 /// - serverError: StatusCode:500, 서버오류
 /// - notPermitted: StatusCode:406, 요청한 페이지가 요청한 콘텐츠 특성으로 응답할 수 없다.
 /// - tryAgain: 토큰만료, 다시 시도
-public enum APIResult {
+public enum NetworkResult {
     case error(message: String)
     case unknown
     case notAuthorised
