@@ -23,11 +23,11 @@ Pod::Spec.new do |s|
       "ios": "12.0"
   }
   
-  s.ios.resource_bundles = {
-      'TLSModules' => ['Resources/**/*.xcassets']
-  }
+  #  s.ios.resource_bundles = {
+  #   'TLSModules' => ['Resources/**/*.xcassets']
+  #}
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  #s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Alamofire'
 end
