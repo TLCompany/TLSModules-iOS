@@ -16,5 +16,6 @@ open class Policy {
         self.title = title
         self.content = content
         self.isMandatory = isMandatory
+        
     }
 }
