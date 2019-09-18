@@ -28,6 +28,26 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         }
     }
     
+    /// 동의를 했을 때의 이미지
+    public var checkedImage: UIImage? {
+        didSet {
+            allAgreeButton.setImage(checkedImage, for: .selected)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    /// 동의를 하지 않았을 때의 이미지
+    public var uncheckedImage: UIImage? {
+        didSet {
+            allAgreeButton.setImage(uncheckedImage, for: .normal)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     private var mandatoryOnes: [Policy] {
         return policies.compactMap {
             return $0.isMandatory ? $0 : nil
@@ -177,6 +197,8 @@ extension AuthPolicyListViewController: UITableViewDelegate, UITableViewDataSour
         
         cell.row = indexPath.row
         cell.policy = sortedPolicies[indexPath.row]
+        cell.checkedImage = self.checkedImage
+        cell.uncheckedImage = self.uncheckedImage
         
         cell.agreeAction = { [unowned self] isSelected in
             self.agreeCount += isSelected ? 1 : -1

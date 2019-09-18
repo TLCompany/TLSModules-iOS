@@ -14,6 +14,18 @@ internal class AuthPolicyListItemCell: BaseTableViewCell {
     
     internal var row: Int = 0
     
+    internal var checkedImage: UIImage? {
+        didSet {
+            agreeButton.setImage(checkedImage, for: .selected)
+        }
+    }
+    
+    internal var uncheckedImage: UIImage? {
+        didSet {
+            agreeButton.setImage(uncheckedImage, for: .selected)
+        }
+    }
+    
     internal var policy: Policy? {
         didSet {
             guard let policy = self.policy else {
