@@ -60,6 +60,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
     private let sendButton: RoundedSquareButton = {
         let button = RoundedSquareButton()
         button.setTitle("보내기", for: .normal)
+        button.backgroundColor = UIColor.init(hexString: "304786")
         button.addTarget(self, action: #selector(touchSend(_:)), for: .touchUpInside)
         return button
     }()
@@ -94,6 +95,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
     private let verifyButton: RoundedSquareButton = {
         let button = RoundedSquareButton()
         button.setTitle("인증", for: .normal)
+        button.backgroundColor = UIColor.init(hexString: "304786")
         button.addTarget(self, action: #selector(touchVerify(_:)), for: .touchUpInside)
         return button
     }()

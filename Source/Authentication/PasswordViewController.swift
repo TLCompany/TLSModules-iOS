@@ -68,6 +68,7 @@ public class PasswordViewController: AuthenticationViewController {
     private lazy var nextButton: RoundedSquareButton = {
         let button = RoundedSquareButton()
         button.setTitle(goalType.nextTitle, for: .normal)
+        button.backgroundColor = UIColor.init(hexString: "304786")
         button.addTarget(self, action: #selector(touchNext(_:)), for: .touchUpInside)
         return button
     }()

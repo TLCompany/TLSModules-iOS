@@ -16,13 +16,17 @@ internal class AuthPolicyListItemCell: BaseTableViewCell {
     
     internal var checkedImage: UIImage? {
         didSet {
-            agreeButton.setImage(checkedImage, for: .selected)
+            DispatchQueue.main.async {
+                self.agreeButton.setImage(self.checkedImage, for: .selected)
+            }
         }
     }
     
     internal var uncheckedImage: UIImage? {
         didSet {
-            agreeButton.setImage(uncheckedImage, for: .selected)
+            DispatchQueue.main.async {
+                self.agreeButton.setImage(self.uncheckedImage, for: .normal)
+            }
         }
     }
     

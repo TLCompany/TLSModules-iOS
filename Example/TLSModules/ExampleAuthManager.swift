@@ -20,6 +20,7 @@ class ExampleAuthManager: AuthManager<ExampleAuthUser> {
         
         let authPolicyVC = AuthPolicyListViewController()
         authPolicyVC.policies = self.policies
+        authPolicyVC.completeButtonBackgroundColor = .red
         authPolicyVC.completeAction = { [unowned self] in
             self.goToEmailVerification(completionHandler: completion)
         }

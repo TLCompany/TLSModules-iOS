@@ -16,7 +16,6 @@ public class RoundedSquareButton: UIButton {
         layer.cornerRadius = 5.0
         titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
         setTitleColor(.white, for: .normal)
-        backgroundColor = UIColor.init(hexString: "304786")
         translatesAutoresizingMaskIntoConstraints = false
         
     }

@@ -29,24 +29,10 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
     }
     
     /// 동의를 했을 때의 이미지
-    public var checkedImage: UIImage? {
-        didSet {
-            allAgreeButton.setImage(checkedImage, for: .selected)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
+    public var checkedImage: UIImage? = ResourcesProvider.image(by: "checkbox_checked")
+
     /// 동의를 하지 않았을 때의 이미지
-    public var uncheckedImage: UIImage? {
-        didSet {
-            allAgreeButton.setImage(uncheckedImage, for: .normal)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    public var uncheckedImage: UIImage? = ResourcesProvider.image(by: "checkbox_unchecked")
     
     private var mandatoryOnes: [Policy] {
         return policies.compactMap {
@@ -111,6 +97,7 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
     private let nextButton: RoundedSquareButton = {
         let button = RoundedSquareButton()
         button.setTitle("다음", for: .normal)
+        button.backgroundColor = UIColor.init(hexString: "304786")
         button.addTarget(self, action: #selector(touchNext(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -143,6 +130,9 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         setDescription(title: "약관동의", subtitle: "필수 약관을 읽어보시고 동의를 해주세요.")
         setUpTableView()
         nextButton.backgroundColor = completeButtonBackgroundColor
+        allAgreeButton.setImage(checkedImage, for: .selected)
+        allAgreeButton.setImage(uncheckedImage, for: .normal)
+        tableView.reloadData()
     }
     
     override func setUpLayout() {
