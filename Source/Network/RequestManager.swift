@@ -54,12 +54,13 @@ public class RequestManager: NSObject {
         }
 
         switch statusCode {
-        case 200: completion(.sucfulyFetched(data: dataRes.data))
-        case 201: completion(.sucfulySent(data: dataRes.data))
-        case 202: completion(.accepted)
-        case 400: completion(.unknown)
-        case 401: completion(.notAuthorised)
-        case 406: completion(.notPermitted)
+        case 200: completion(.success(data: dataRes.data))
+        case 201: completion(.sucfulyDataModified(data: dataRes.data))
+        case 400: completion(.invalidRequest)
+        case 401: completion(.failure(issue: dataRes.error?.localizedDescription))
+        case 403: completion(.notAuthroised)
+        case 404: completion(.noData)
+        case 409: completion(.cannotWrite)
         case 419:
             guard let user = user else {
                 completion(.error(message: "\(#function) 😱 user is nil..."))
@@ -73,7 +74,7 @@ public class RequestManager: NSObject {
 
                 completion(.tryAgain(with: newToken))
             }
-        case 500: completion(.serverError)
+        case 500: completion(.serverError(message: dataRes.error?.localizedDescription))
         default: return
         }
     }
@@ -126,36 +127,13 @@ public class RequestManager: NSObject {
     ///   - tryAgainAction: 토큰 갱신 후 리턴
     public static func evaluate<T: Decodable>(by result: NetworkResult,
                                               _ successAction: ((T?) -> Void)?,
-                                              _ failureAction: ((NetworkResult) -> Void)?,
+                                              _ failureAction: ((String?) -> Void)?,
                                               _ tryAgainAction: (() -> Void)? = nil) {
         
         switch result {
-        case .error(let message):
-            Logger.showError(at: #function, type: .network(errMsg: message))
-            failureAction?(result)
-        case .unknown:
-            Logger.showError(at: #function, type: .network(errMsg: "unknown error"))
-            failureAction?(result)
-        case .notAuthorised:
-            Logger.showError(at: #function, type: .network(errMsg: "not authorised"))
-            failureAction?(result)
-        case .notFound:
-            Logger.showError(at: #function, type: .network(errMsg: "no params sent with"))
-            failureAction?(result)
-        case .sucfulyFetched(_):
+        case .success, .sucfulyDataModified:
             successAction?(result.model())
-        case .sucfulySent(_):
-            successAction?(result.model())
-        case .accepted:
-            successAction?(nil)
-        case .serverError:
-            Logger.showError(at: #function, type: .network(errMsg: "server error"))
-            failureAction?(result)
-        case .tryAgain:
-            tryAgainAction?()
-        case .notPermitted:
-            Logger.showError(at: #function, type: .network(errMsg: "not permitted"))
-            failureAction?(result)
+        default: failureAction?(result.errorMessage)
         }
     }
     
@@ -167,36 +145,13 @@ public class RequestManager: NSObject {
     ///   - tryAgainAction: 토큰 갱신 후 리턴
     public static func evaluate(by result: NetworkResult,
                                 _ successAction: JSONClosure?,
-                                _ failureAction: ((NetworkResult) -> Void)?,
+                                _ failureAction: ((String?) -> Void)?,
                                 _ tryAgainAction: (() -> Void)? = nil) {
         
-        switch result {
-        case .error(let message):
-            Logger.showError(at: #function, type: .network(errMsg: message))
-            failureAction?(result)
-        case .unknown:
-            Logger.showError(at: #function, type: .network(errMsg: "unknown error"))
-            failureAction?(result)
-        case .notAuthorised:
-            Logger.showError(at: #function, type: .network(errMsg: "not authorised"))
-            failureAction?(result)
-        case .notFound:
-            Logger.showError(at: #function, type: .network(errMsg: "no params sent with"))
-            failureAction?(result)
-        case .sucfulyFetched:
-            successAction?(result.json)
-        case .sucfulySent:
-            successAction?(result.json)
-        case .accepted:
-            successAction?(nil)
-        case .serverError:
-            Logger.showError(at: #function, type: .network(errMsg: "server error"))
-            failureAction?(result)
-        case .tryAgain:
-            Logger.showDebuggingMessage(at: #function, "Your token has expired... Try again!")
-            tryAgainAction?()
-        case .notPermitted:
-            failureAction?(result)
+           switch result {
+            case .success, .sucfulyDataModified:
+                successAction?(result.json)
+            default: failureAction?(result.errorMessage)
         }
     }
 

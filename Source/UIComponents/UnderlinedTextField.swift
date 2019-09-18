@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 public class UnderlinedTextField: UITextField {
 
     private let underline = SeparatorView()
@@ -22,9 +23,8 @@ public class UnderlinedTextField: UITextField {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    public override func layoutSubviews() {
+        super.layoutSubviews()
         textColor = .black
         borderStyle = .none
         let paddingView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 10.0, height: 10.0)))
@@ -43,10 +43,6 @@ public class UnderlinedTextField: UITextField {
             underline.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1.5),
             underline.heightAnchor.constraint(equalToConstant: 0.5)
             ])
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }

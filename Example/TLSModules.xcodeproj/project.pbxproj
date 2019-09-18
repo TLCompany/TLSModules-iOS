@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D22445AC2318B24300E211FC /* ExampleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22445AB2318B24300E211FC /* ExampleRequest.swift */; };
+		D28518022331D4CB00F376BC /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28518012331D4CB00F376BC /* main.storyboard */; };
 		D2E7BEC52317966400A2266B /* ExampleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BEC42317966400A2266B /* ExampleAuthManager.swift */; };
 		D2E7BED02317DF9500A2266B /* ExampleAuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E7BECF2317DF9400A2266B /* ExampleAuthUser.swift */; };
 		E1376753B90E69840BEC21A6 /* Pods_TLSModules_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13023275564E3724B3416C12 /* Pods_TLSModules_Tests.framework */; };
@@ -49,6 +50,7 @@
 		BF28D560C7E9BDCF5942DD0D /* Pods-TLSModules_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLSModules_Example.debug.xcconfig"; path = "Target Support Files/Pods-TLSModules_Example/Pods-TLSModules_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C75D939C2DC911B96F831E84 /* TLSModules.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TLSModules.podspec; path = ../TLSModules.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D22445AB2318B24300E211FC /* ExampleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRequest.swift; sourceTree = "<group>"; };
+		D28518012331D4CB00F376BC /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		D2E7BEC42317966400A2266B /* ExampleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAuthManager.swift; sourceTree = "<group>"; };
 		D2E7BECF2317DF9400A2266B /* ExampleAuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAuthUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				D2E7BEC42317966400A2266B /* ExampleAuthManager.swift */,
 				D2E7BECF2317DF9400A2266B /* ExampleAuthUser.swift */,
 				D22445AB2318B24300E211FC /* ExampleRequest.swift */,
+				D28518012331D4CB00F376BC /* main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				D28518022331D4CB00F376BC /* main.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

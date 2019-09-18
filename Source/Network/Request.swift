@@ -13,7 +13,7 @@ public protocol TLSRequest {
     var url: URL? { get }
     var baseURLStr: String { get }
     var type: HTTPMethod { get }
-    var body: [String: Any]? { get set }
+    var body: [String: Any]? { get }
     var tokenRenewalURL: String { get }
 }
 

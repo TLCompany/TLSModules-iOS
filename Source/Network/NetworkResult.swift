@@ -15,33 +15,35 @@ import Foundation
 //202 보낸 요청에 대한 허용(저장X 불러오는 데이터X)
 //500 서버오류
 
-/// 통신결과의 타입을 알려주는 enumeration
-///
-/// - error: 예외적으로 일어나는 오류,
-/// - unknown: StatusCode:400, 서버가 요청을 인식하지 못함.
-/// - notAuthorised: StatusCode:401, 권한없음
-/// - notFound: StatusCode:404, 서버가 요청한 페이지를 찾지 못함.
-/// - sucfulyFetched: StatusCode:200, 요청한 데이터 불러오기 성공.
-/// - sucfulySent: StatusCode:201, 보낸 데이터가 디비 저장성공.
-/// - accepted: StatusCode:202, 보낸 요청에 대한 허용(저장X 불러오는 데이터X)
-/// - serverError: StatusCode:500, 서버오류
-/// - notPermitted: StatusCode:406, 요청한 페이지가 요청한 콘텐츠 특성으로 응답할 수 없다.
-/// - tryAgain: 토큰만료, 다시 시도
+
+
 public enum NetworkResult {
+    case success(data: Data?) // 200
+    case sucfulyDataModified(data: Data?) // 201
+    case invalidRequest // 400
+    case failure(issue: String?) //401
+    case notAuthroised // 403
+    case noData //404
+    case cannotWrite // 409
+    case serverError(message: String?) // 500
+    case tryAgain(with: String?) // 419
     case error(message: String)
-    case unknown
-    case notAuthorised
-    case notFound
-    case sucfulyFetched(data: Data?)
-    case sucfulySent(data: Data?)
-    case accepted
-    case serverError
-    case notPermitted
-    case tryAgain(with: String?)
     
+    var errorMessage: String? {
+        switch self {
+        case .success, .sucfulyDataModified, .tryAgain: return nil
+        case .invalidRequest: return "invalidRequest"
+        case .failure(let issue): return issue
+        case .notAuthroised: return "notAuthroised"
+        case .noData: return "noData"
+        case .cannotWrite: return "cannotWrite"
+        case .serverError(let message): return message
+        case .error(let message): return message
+        }
+    }
     var json: [String: Any]? {
         switch self {
-        case .sucfulySent(let data), .sucfulyFetched(let data):
+        case .success(let data), .sucfulyDataModified(let data):
             guard let data = data else {
                 NSLog("APIResult, data is nil")
                 return nil
@@ -53,7 +55,7 @@ public enum NetworkResult {
     
     func model<T: Decodable>() -> T? {
         switch self {
-        case .sucfulySent(let data), .sucfulyFetched(let data):
+        case .success(let data), .sucfulyDataModified(let data):
             guard let data = data else {
                 NSLog("APIResult, data is nil")
                 return nil
