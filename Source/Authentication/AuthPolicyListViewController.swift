@@ -121,6 +121,7 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         title = "회원가입"
         setDescription(title: "약관동의", subtitle: "필수 약관을 읽어보시고 동의를 해주세요.")
         setUpTableView()
+        nextButton.backgroundColor = completeButtonBackgroundColor
     }
     
     override func setUpLayout() {

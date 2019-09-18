@@ -12,6 +12,7 @@ open class AuthenticationViewController: UIViewController {
     
     public var hInset: CGFloat = 20.0
     public var vInset: CGFloat = 20.0
+    public var completeButtonBackgroundColor = UIColor.init(hexString: "304786")
     
     internal let titleLabel: UILabel = {
         let label = UILabel()

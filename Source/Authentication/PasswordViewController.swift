@@ -103,6 +103,7 @@ public class PasswordViewController: AuthenticationViewController {
         pw2TextField.delegate = self
         title = goalType.navTitle
         setDescription(title: goalType.title, subtitle: "영문 + 숫자를 포함한 8자리 이상을 입력해 주세요.")
+        nextButton.backgroundColor = completeButtonBackgroundColor
     }
     
     public override func viewDidAppear(_ animated: Bool) {

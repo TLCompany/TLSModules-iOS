@@ -150,6 +150,8 @@ public class AuthVerificationViewController: AuthenticationViewController {
         title = "회원가입"
         inputTextField.keyboardType = verificationType.keyboardType
         inputTextField.placeholder = verificationType.placeholder
+        verifyButton.backgroundColor = completeButtonBackgroundColor
+        nextButton.backgroundColor = completeButtonBackgroundColor
     }
     
     override func setDescription(title: String, subtitle: String) {
