@@ -92,6 +92,7 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         let button = RoundedSquareButton()
         button.setTitle("다음", for: .normal)
         button.addTarget(self, action: #selector(touchNext(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -155,6 +156,10 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AuthPolicyListItemCell.self, forCellReuseIdentifier: AuthPolicyListItemCell.id)
+    }
+    
+    deinit {
+        
     }
 }
 
