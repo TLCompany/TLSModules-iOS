@@ -14,7 +14,7 @@ open class AuthenticationViewController: UIViewController {
     public var vInset: CGFloat = 20.0
     public var completeButtonBackgroundColor = UIColor.init(hexString: "304786")
     
-    internal let titleLabel: UILabel = {
+    public let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .medium)
@@ -23,7 +23,7 @@ open class AuthenticationViewController: UIViewController {
         return label
     }()
     
-    internal let subtitleLabel: UILabel = {
+    public let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.init(hexString: "555555")
         label.font = UIFont.systemFont(ofSize: 11.0, weight: .regular)
@@ -56,12 +56,12 @@ open class AuthenticationViewController: UIViewController {
         view.layoutIfNeeded()
     }
     
-    internal func setDescription(title: String, subtitle: String) {
+    public func setDescription(title: String, subtitle: String) {
         titleLabel.text = title
         subtitleLabel.text = subtitle
     }
     
-    internal func setUpLayout() {
+    public func setUpLayout() {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         
