@@ -61,7 +61,7 @@ open class AuthenticationViewController: UIViewController {
         subtitleLabel.text = subtitle
     }
     
-    public func setUpLayout() {
+    open func setUpLayout() {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         

@@ -10,7 +10,7 @@ import UIKit
 /// 전체 View Controller의 화면이 ScrollView로 되어있다.
 open class ScrollingViewController: UIViewController {
 
-    internal let scrollView: UIScrollView = {
+    public let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView

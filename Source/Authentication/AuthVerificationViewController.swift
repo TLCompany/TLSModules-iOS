@@ -128,7 +128,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "회원가입"
+        title = verificationGoalType == .register ? "회원가입" : "비밀번호 찾기"
         inputTextField.keyboardType = verificationType.keyboardType
         inputTextField.placeholder = verificationType.placeholder
         sendButton.backgroundColor = completeButtonBackgroundColor

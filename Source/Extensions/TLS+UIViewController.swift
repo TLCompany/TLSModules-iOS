@@ -66,5 +66,15 @@ extension UIViewController {
             completion?(false)
         }
     }
+    
+    func frameFromTextInput(text: String,
+                            textSize: CGFloat,
+                            weight: UIFont.Weight = .regular,
+                            width: CGFloat) -> CGRect {
+        
+        let size = CGSize(width: width, height: 1000)
+        let option = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        return NSString(string: text).boundingRect(with: size, options: option, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize, weight: weight)], context: nil)
+    }
 }
 
