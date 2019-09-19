@@ -113,7 +113,7 @@ public class PasswordViewController: AuthenticationViewController {
         pwTextField.becomeFirstResponder()
     }
     
-    override func setUpLayout() {
+    override public func setUpLayout() {
         super.setUpLayout()
         
         view.addSubview(pwTextField)

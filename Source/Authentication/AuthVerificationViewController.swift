@@ -135,7 +135,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
         verifyButton.backgroundColor = completeButtonBackgroundColor
     }
     
-    override func setDescription(title: String, subtitle: String) {
+    override public func setDescription(title: String, subtitle: String) {
         if verificationGoalType == .register {
             titleLabel.text = verificationType.title
             subtitleLabel.text = verificationType.subtitle
@@ -151,7 +151,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
         inputTextField.becomeFirstResponder()
     }
     
-    override func setUpLayout() {
+    override public func setUpLayout() {
         super.setUpLayout()
         
         view.addSubview(sendButton)

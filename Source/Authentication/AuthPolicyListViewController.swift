@@ -135,7 +135,7 @@ public class AuthPolicyListViewController: AuthenticationViewController  {
         tableView.reloadData()
     }
     
-    override func setUpLayout() {
+    override public func setUpLayout() {
         super.setUpLayout()
         
         view.addSubview(tableView)
