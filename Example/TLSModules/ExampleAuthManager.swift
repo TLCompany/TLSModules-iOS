@@ -36,15 +36,7 @@ class ExampleAuthManager: AuthManager<ExampleAuthUser> {
         }
         
         authVerificationVC.sendAction = { input in
-            let type = authVerificationVC.verificationType == .email ? 0 : 1
-            let request = ExampleRequest.verification(body: ["email": input, "type": type])
-            RequestManager.request(with: request, completionHandler: { (result) in
-                RequestManager.evaluate(by: result, { (json) in
-                    authVerificationVC.handleVCodeSent(by: true)
-                }, { (_) in
-                    authVerificationVC.handleVCodeSent(by: false)
-                })
-            })
+            authVerificationVC.handleVCodeSent(by: true)
         }
         
         vc.navigationController?.pushViewController(authVerificationVC, animated: true)
@@ -59,15 +51,11 @@ class ExampleAuthManager: AuthManager<ExampleAuthUser> {
         }
         
         authVerificationVC.sendAction = { input in
-            let type = authVerificationVC.verificationType == .email ? 0 : 1
-            let request = ExampleRequest.verification(body: ["email": input, "type": type])
-            RequestManager.request(with: request, completionHandler: { (result) in
-                RequestManager.evaluate(by: result, { (json) in
-                    authVerificationVC.handleVCodeSent(by: true)
-                }, { (_) in
-                    authVerificationVC.handleVCodeSent(by: false)
-                })
-            })
+            authVerificationVC.handleVCodeSent(by: true)
+        }
+        
+        authVerificationVC.verifyAction = { [unowned self] (input, vcode) in
+            self.goToPassword(with: input, completionHandler: completion)
         }
         
         vc.navigationController?.pushViewController(authVerificationVC, animated: true)

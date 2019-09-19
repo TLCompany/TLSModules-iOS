@@ -16,6 +16,8 @@ public class AuthVerificationViewController: AuthenticationViewController {
     public var completeAction: ((String) -> Void)?
     /// 사용자가 이메일 또는 모바일 번호를 입력하고 인증번호를 받으려는 Event Action
     public var sendAction: ((String) -> Void)?
+    /// 사용자가 인증번호를 입력하고 인증을 눌렀을 때 Action
+    public var verifyAction: ((_ input: String, _ vcode: String) -> Void)?
     
     /// 인증번호를 앱 프로젝트에서 
     ///
@@ -106,45 +108,22 @@ public class AuthVerificationViewController: AuthenticationViewController {
     }
     
     private func verify() {
-        guard let input = inputTextField.text, let generatedOne = self.vcode else {
+        guard let input = inputTextField.text else {
             systemAlert(message: "\(verificationType.rawValue)\(verificationType.preposition) 입력하고 보내기 버튼을 먼저 눌러주세요.", buttonTitle: "확인") {
                 self.inputTextField.becomeFirstResponder()
             }
             return
         }
         
-        guard let enteredOne = verificationTextField.text, !enteredOne.isEmpty else {
+        guard let vcode = verificationTextField.text, !vcode.isEmpty else {
             systemAlert(message: "인증번호를 입력해 주세요.", buttonTitle: "확인") {
                 self.verificationTextField.becomeFirstResponder()
             }
             return
         }
         
-        guard generatedOne == enteredOne else {
-            systemAlert(message: "입력하신 인증번호가 올바르지 않습니다.", buttonTitle: "확인")
-            return
-        }
-        
-        systemAlert(message: "인증이 완료되었습니다.", buttonTitle: "확인") {
-            self.verificationTextField.text = ""
-            self.vcode = nil
-            if self.verificationGoalType == .register {
-                self.completeAction?(input)
-            } else {
-                let passwordVC = PasswordViewController()
-                passwordVC.goalType = .reset
-                passwordVC.completeAction = self.completeAction
-                self.navigationController?.pushViewController(passwordVC, animated: true)
-            }
-        }
+        verifyAction?(input, vcode)
     }
-    
-    private let nextButton: RoundedSquareButton = {
-        let button = RoundedSquareButton()
-        button.setTitle("다음", for: .normal)
-        button.addTarget(self, action: #selector(touchVerify(_:)), for: .touchUpInside)
-        return button
-    }()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -152,8 +131,8 @@ public class AuthVerificationViewController: AuthenticationViewController {
         title = "회원가입"
         inputTextField.keyboardType = verificationType.keyboardType
         inputTextField.placeholder = verificationType.placeholder
+        sendButton.backgroundColor = completeButtonBackgroundColor
         verifyButton.backgroundColor = completeButtonBackgroundColor
-        nextButton.backgroundColor = completeButtonBackgroundColor
     }
     
     override func setDescription(title: String, subtitle: String) {
@@ -179,7 +158,6 @@ public class AuthVerificationViewController: AuthenticationViewController {
         view.addSubview(inputTextField)
         view.addSubview(verificationTextField)
         view.addSubview(verifyButton)
-        view.addSubview(nextButton)
         
         NSLayoutConstraint.activate([
             sendButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
@@ -192,20 +170,15 @@ public class AuthVerificationViewController: AuthenticationViewController {
             inputTextField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -20.0),
             inputTextField.bottomAnchor.constraint(equalTo: sendButton.bottomAnchor),
             
-            verifyButton.trailingAnchor.constraint(equalTo: sendButton.trailingAnchor),
-            verifyButton.topAnchor.constraint(equalTo: sendButton.bottomAnchor, constant: 12.0),
-            verifyButton.widthAnchor.constraint(equalTo: sendButton.widthAnchor),
-            verifyButton.heightAnchor.constraint(equalTo: sendButton.heightAnchor),
-            
             verificationTextField.leadingAnchor.constraint(equalTo: inputTextField.leadingAnchor),
-            verificationTextField.topAnchor.constraint(equalTo: verifyButton.topAnchor),
-            verificationTextField.trailingAnchor.constraint(equalTo: inputTextField.trailingAnchor),
-            verificationTextField.bottomAnchor.constraint(equalTo: verifyButton.bottomAnchor),
+            verificationTextField.topAnchor.constraint(equalTo: sendButton.bottomAnchor, constant: 12.0),
+            verificationTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            verificationTextField.heightAnchor.constraint(equalToConstant: 44.0),
             
-            nextButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            nextButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            nextButton.topAnchor.constraint(equalTo: verifyButton.bottomAnchor, constant: 32.0),
-            nextButton.heightAnchor.constraint(equalToConstant: 44.0),
+            verifyButton.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            verifyButton.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            verifyButton.topAnchor.constraint(equalTo: verificationTextField.bottomAnchor, constant: 32.0),
+            verifyButton.heightAnchor.constraint(equalToConstant: 44.0),
             
             ])
     }
