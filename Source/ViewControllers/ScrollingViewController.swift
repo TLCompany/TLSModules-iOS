@@ -16,7 +16,7 @@ open class ScrollingViewController: UIViewController {
         return scrollView
     }()
     
-    internal let containerView: UIView = {
+    public let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -31,7 +31,7 @@ open class ScrollingViewController: UIViewController {
         setUpLayout()
     }
 
-    internal func setUpLayout() {
+    open func setUpLayout() {
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
         
