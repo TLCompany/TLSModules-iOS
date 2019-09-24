@@ -521,7 +521,7 @@
 		D2F3611C2318FC37006D832D /* PasswordGoalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGoalType.swift; sourceTree = "<group>"; };
 		D2F3611D2318FC37006D832D /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		D2F3611E2318FC37006D832D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D2F3611F2318FC37006D832D /* AuthVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVerificationViewController.swift; sourceTree = "<group>"; };
+		D2F3611F2318FC37006D832D /* AuthVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthVerificationViewController.swift; sourceTree = "<group>"; tabWidth = 5; };
 		D2F361202318FC37006D832D /* AuthPolicyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthPolicyListViewController.swift; sourceTree = "<group>"; };
 		D2F361212318FC37006D832D /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		D2F361312318FC5C006D832D /* InqueryDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InqueryDetailData.swift; sourceTree = "<group>"; };

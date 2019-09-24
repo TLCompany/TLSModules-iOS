@@ -19,16 +19,22 @@ public class AuthVerificationViewController: AuthenticationViewController {
     /// 사용자가 인증번호를 입력하고 인증을 눌렀을 때 Action
     public var verifyAction: ((_ input: String, _ vcode: String) -> Void)?
     
-    /// 인증번호를 앱 프로젝트에서 
-    ///
-    /// - Parameter isSuccessful: <#isSuccessful description#>
-    public func handleVCodeSent(by isSuccessful: Bool) {
-        if isSuccessful {
+    /// 인증번호를 서버에서 보낸 후의 이벤트를 실행한다.
+    public func handleVCodeSent(statusCode: Int) {
+        switch statusCode {
+        case 200:
             systemAlert(message: "인증번호가 보내졌습니다.", buttonTitle: "확인") {
+                self.isSent = true
                 self.verificationTextField.becomeFirstResponder()
             }
-        } else {
-            systemAlert(message: "인증번호 보내기 실패...", buttonTitle: "확인")
+        case 409:
+            let message = verificationGoalType == .register ? "이미 가입된 이메일입니다." : "가입되지 않은 이메일입니다."
+            systemAlert(message: message, buttonTitle: "확인") { self.isSent = false }
+        case 401:
+            systemAlert(message: "가입되지 않은 이메일입니다.", buttonTitle: "확인")
+        case 403:
+            systemAlert(message: "SNS계정은 비밀번호를 가지고 있지 않습니다.", buttonTitle: "확인")
+        default: break
         }
     }
     
@@ -45,7 +51,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
     private func textInputChanged(_ sender: UITextField) {
         switch sender {
         case self.inputTextField:
-            vcode = nil
+            isSent = false
             verificationTextField.text = ""
         default: return
         }
@@ -67,7 +73,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
         return button
     }()
     
-    private var vcode: String?
+    private var isSent = false
     
     @objc
     private func touchSend(_ sender: RoundedSquareButton) {
@@ -104,11 +110,8 @@ public class AuthVerificationViewController: AuthenticationViewController {
     
     @objc
     private func touchVerify(_ sender: RoundedSquareButton) {
-        verify()
-    }
-    
-    private func verify() {
-        guard let input = inputTextField.text else {
+        let input = inputTextField.text
+        guard input != nil && !input!.isEmpty && isSent else {
             systemAlert(message: "\(verificationType.rawValue)\(verificationType.preposition) 입력하고 보내기 버튼을 먼저 눌러주세요.", buttonTitle: "확인") {
                 self.inputTextField.becomeFirstResponder()
             }
@@ -122,7 +125,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
             return
         }
         
-        verifyAction?(input, vcode)
+        verifyAction?(input!, vcode)
     }
     
     override public func viewDidLoad() {

@@ -29,7 +29,22 @@ public enum NetworkResult {
     case tryAgain(with: String?) // 419
     case error(message: String)
     
-    var errorMessage: String? {
+    public var statusCode: Int {
+        switch self {
+        case .success: return 200
+            case .sucfulyDataModified: return 201
+            case .invalidRequest: return 400
+            case .failure: return 401
+            case .notAuthroised: return 403
+            case .noData: return 404
+            case .cannotWrite: return 409
+            case .serverError: return 500
+            case .tryAgain: return 419
+            case .error: return 999
+        }
+    }
+    
+    public var errorMessage: String? {
         switch self {
         case .success, .sucfulyDataModified, .tryAgain: return nil
         case .invalidRequest: return "invalidRequest"
@@ -41,7 +56,7 @@ public enum NetworkResult {
         case .error(let message): return message
         }
     }
-    var json: [String: Any]? {
+    public var json: [String: Any]? {
         switch self {
         case .success(let data), .sucfulyDataModified(let data):
             guard let data = data else {
@@ -53,7 +68,7 @@ public enum NetworkResult {
         }
     }
     
-    func model<T: Decodable>() -> T? {
+    public func model<T: Decodable>() -> T? {
         switch self {
         case .success(let data), .sucfulyDataModified(let data):
             guard let data = data else {
