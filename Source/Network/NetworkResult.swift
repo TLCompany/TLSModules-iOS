@@ -26,27 +26,28 @@ public enum NetworkResult {
     case noData //404
     case cannotWrite // 409
     case serverError(message: String?) // 500
+    case tokenExpired
     case tryAgain(with: String?) // 419
     case error(message: String)
     
     public var statusCode: Int {
         switch self {
         case .success: return 200
-            case .sucfulyDataModified: return 201
+        case .sucfulyDataModified, .tryAgain: return 201
             case .invalidRequest: return 400
             case .failure: return 401
             case .notAuthroised: return 403
             case .noData: return 404
             case .cannotWrite: return 409
             case .serverError: return 500
-            case .tryAgain: return 419
+            case .tokenExpired: return 419
             case .error: return 999
         }
     }
     
     public var errorMessage: String? {
         switch self {
-        case .success, .sucfulyDataModified, .tryAgain: return nil
+        case .success, .sucfulyDataModified, .tryAgain, .tokenExpired: return nil
         case .invalidRequest: return "invalidRequest"
         case .failure(let issue): return issue
         case .notAuthroised: return "notAuthroised"

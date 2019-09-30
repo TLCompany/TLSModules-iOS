@@ -67,7 +67,7 @@ extension UIViewController {
         }
     }
     
-    func frameFromTextInput(text: String,
+    public func frameFromTextInput(text: String,
                             textSize: CGFloat,
                             weight: UIFont.Weight = .regular,
                             width: CGFloat) -> CGRect {

@@ -35,9 +35,9 @@ class ExampleAuthManager: AuthManager<ExampleAuthUser> {
             Logger.showDebuggingMessage(pw)
         }
         
-        authVerificationVC.sendAction = { input in
-            authVerificationVC.handleVCodeSent(by: true)
-        }
+//        authVerificationVC.sendAction = { input in
+//            authVerificationVC.handleVCodeSent(statusCode: true)
+//        }
         
         vc.navigationController?.pushViewController(authVerificationVC, animated: true)
     }
@@ -50,9 +50,9 @@ class ExampleAuthManager: AuthManager<ExampleAuthUser> {
             Logger.showDebuggingMessage(email)
         }
         
-        authVerificationVC.sendAction = { input in
-            authVerificationVC.handleVCodeSent(by: true)
-        }
+//        authVerificationVC.sendAction = { input in
+//            authVerificationVC.handleVCodeSent(statusCode: true)
+//        }
         
         authVerificationVC.verifyAction = { [unowned self] (input, vcode) in
             self.goToPassword(with: input, completionHandler: completion)

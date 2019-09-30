@@ -61,33 +61,21 @@ public class RequestManager: NSObject {
         case 403: completion(.notAuthroised)
         case 404: completion(.noData)
         case 409: completion(.cannotWrite)
-        case 419:
-            guard let user = user else {
-                completion(.error(message: "\(#function) 😱 user is nil..."))
-                return
-            }
-            renewToken(with: request, of: user) { (isSucsful, newToken) in
-                guard isSucsful else {
-                    completion(.error(message: "\(#function) 😱 token renewal has failed... "))
-                    return
-                }
-
-                completion(.tryAgain(with: newToken))
-            }
+        case 419: completion(.tokenExpired)
         case 500: completion(.serverError(message: dataRes.error?.localizedDescription))
         default: return
         }
     }
 
-    private typealias TokenRenewalResult = (isSuccessful: Bool, newToken: String?)
+    public typealias TokenRenewalResult = (isSuccessful: Bool, newToken: String?)
     
-    private static func renewToken(with request: TLSRequest,
+    public static func renewToken(with request: TLSRequest,
                            of user: User,
                            completionHandler completion: @escaping ((TokenRenewalResult) -> Void)) {
-    
+        
         Alamofire.request(request.tokenRenewalURL,
-                          method:request.type,
-                          parameters: ["clientSecretKey": user.clientSecret],
+                          method: .post,
+                          parameters: ["Data": ["clientSecretKey": user.clientSecret]],
                           encoding: JSONEncoding.default,
                           headers: nil)
 
@@ -109,8 +97,8 @@ public class RequestManager: NSObject {
                     return
                 }
 
-                if statusCode == 200 {
-                    completion((true, json["token"] as? String))
+                if statusCode == 200, let dataJSON = json["Data"] as? [String: Any], let token = dataJSON["token"] as? String {
+                    completion((true, token))
                     return
                 }
 
@@ -133,6 +121,8 @@ public class RequestManager: NSObject {
         switch result {
         case .success, .sucfulyDataModified:
             successAction?(result.model())
+        case .tokenExpired:
+            tryAgainAction?()
         default: failureAction?(result.errorMessage)
         }
     }
@@ -151,6 +141,8 @@ public class RequestManager: NSObject {
            switch result {
             case .success, .sucfulyDataModified:
                 successAction?(result.json)
+            case .tokenExpired:
+                tryAgainAction?()
             default: failureAction?(result.errorMessage)
         }
     }

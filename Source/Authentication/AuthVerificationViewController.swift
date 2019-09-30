@@ -19,7 +19,7 @@ public class AuthVerificationViewController: AuthenticationViewController {
     /// 사용자가 인증번호를 입력하고 인증을 눌렀을 때 Action
     public var verifyAction: ((_ input: String, _ vcode: String) -> Void)?
     
-    /// 인증번호를 서버에서 보낸 후의 이벤트를 실행한다.
+    /// 인증번호를 앱 프로젝트에서
     public func handleVCodeSent(statusCode: Int) {
         switch statusCode {
         case 200:
