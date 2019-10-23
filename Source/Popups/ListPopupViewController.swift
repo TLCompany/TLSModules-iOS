@@ -11,6 +11,8 @@ final public class ListPopupViewController: BasePopupViewController {
     
     // Public Properties
     
+    public var selectAction: ((Int) -> Void)?
+    
     /// 팝업창에 들어갈 리스트의 이름들
     public var list = [String]() {
         didSet {
@@ -80,9 +82,7 @@ final public class ListPopupViewController: BasePopupViewController {
     
     @objc
     private func touchBottomButton(_ sender: UIButton) {
-        dismiss(animated: true) {
-            
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     override public func viewDidLoad() {
@@ -177,5 +177,11 @@ extension ListPopupViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 1.0
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.dismiss(animated: true) { self.selectAction?(indexPath.section) }
+        }
     }
 }

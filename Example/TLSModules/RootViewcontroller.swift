@@ -129,6 +129,9 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
         case 4:
             let listPopupVC = ListPopupViewController()
             listPopupVC.list = [Int](0...100).map { return "List Item \($0)" }
+            listPopupVC.selectAction = { [unowned self] section in
+                print(section)
+            }
             listPopupVC.modalPresentationStyle = .overCurrentContext
             present(listPopupVC, animated: true, completion: nil)
         default: return
