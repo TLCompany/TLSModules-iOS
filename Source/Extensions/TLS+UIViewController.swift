@@ -76,5 +76,29 @@ extension UIViewController {
         let option = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         return NSString(string: text).boundingRect(with: size, options: option, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: textSize, weight: weight)], context: nil)
     }
+    
+    public func showEnvironmentSetupAlert(completionHandler completion: (() -> Void)? = nil) {
+        AlertMessage(title: "Environment Mode Set-Up", message: "Choose Request Environment Mode", style: .actionSheet)
+            .addCancelButton(title: "cancel")
+            .addPositiveButton(title: "Development") {
+                self.setRequestEnvironmentMode(.development)
+                completion?()
+            }
+            .addPositiveButton(title: "Test") {
+                self.setRequestEnvironmentMode(.test)
+                completion?()
+            }
+            .addPositiveButton(title: "Production") {
+                self.setRequestEnvironmentMode(.production)
+                completion?()
+            }
+            .show(by: self)
+    }
+       
+    private func setRequestEnvironmentMode(_ environmentMode: RequestEnvironmentMode) {
+        UserDefaults.standard.set(environmentMode.identifier, forKey: .environmentMode)
+        UserDefaults.standard.synchronize()
+        Logger.showDebuggingMessage(at: #function, "😎 Environment Mode has been set to: \(environmentMode.identifier)")
+    }
 }
 
