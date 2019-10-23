@@ -14,6 +14,104 @@ public typealias JSONClosure = ([String: Any]?) -> Void
 
 public class RequestManager: NSObject {
     
+    public enum MediumType {
+        case image
+        case video
+        var text: String {
+            switch self {
+            case .image: return "image/jpeg"
+            case .video: return "video/mp4"
+            }
+        }
+    }
+       
+    public static func upload(with request: TLSRequest,
+                              _ user: User? = nil,
+                              urls: [URL],
+                              mediumType: MediumType,
+                              completionHandler completeAction: ((_ isSuccessful: Bool, _ body: [String: Any]?) -> Void)?) {
+       
+        guard let url = request.url else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
+            return
+        }
+       
+        var headers = [String: String]()
+        if let token = user?.token { headers = ["authorization": token] }
+
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            urls.enumerated().forEach {
+                multipartFormData.append($0.element, withName: "Files", fileName: "imageData", mimeType: "")
+            }
+        }, to: url, method: request.type, headers: headers) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseString(queue: .main, encoding: .utf8) { (response) in
+                        guard let data = response.data else {
+                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                            completeAction?(false, nil)
+                            return
+                        }
+
+                        guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                            completeAction?(false, nil)
+                            return
+                        }
+
+                        completeAction?(true, json)
+                    }
+                case .failure(_):
+                    completeAction?(false, nil)
+                }
+            }
+        }
+    }
+       
+    public static func upload(with request: TLSRequest,
+                              _ user: User? = nil,
+                               dataArray: [Data],
+                               mediumType: MediumType,
+                               completionHandler completeAction: ((_ isSuccessful: Bool, _ body: [String: Any]?) -> Void)?) {
+       
+        guard let url = request.url else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
+            return
+        }
+       
+        var headers = [String: String]()
+        if let token = user?.token { headers = ["authorization": token] }
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            dataArray.enumerated().forEach {
+                multipartFormData.append($0.element, withName: "Files", fileName: "imageData", mimeType: mediumType.text)
+            }
+        }, to: url, method: request.type, headers: headers) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseString(queue: .main, encoding: .utf8) { (response) in
+                        guard let data = response.data else {
+                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                            completeAction?(false, nil)
+                            return
+                        }
+
+                        guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
+                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                            completeAction?(false, nil)
+                            return
+                        }
+                        
+                        completeAction?(true, json)
+                    }
+                case .failure(_):
+                    completeAction?(false, nil)
+                }
+            }
+        }
+    }
     
     public static func request(with request: TLSRequest,
                  _ user: User? = nil,

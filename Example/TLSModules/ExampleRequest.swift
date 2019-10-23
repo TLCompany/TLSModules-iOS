@@ -11,6 +11,11 @@ import TLSModules
 import Alamofire
 
 enum ExampleRequest: TLSRequest {
+    
+    var environmentMode: RequestEnvironmentMode {
+        return .production
+    }
+    
     case verification(body: [String: Any])
     
     var url: URL? {

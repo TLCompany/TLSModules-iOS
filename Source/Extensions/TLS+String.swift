@@ -11,6 +11,11 @@ import UIKit
 
 extension String {
     
+    /// this string is used to store environmentMode in UserDefault
+    public static var environmentMode: String {
+        return "tls_environment_mode"
+    }
+    
     public func isValidPassword() -> Bool {
         let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)

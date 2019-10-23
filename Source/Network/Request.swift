@@ -15,6 +15,7 @@ public protocol TLSRequest {
     var type: HTTPMethod { get }
     var body: [String: Any]? { get }
     var tokenRenewalURL: String { get }
+    var environmentMode: RequestEnvironmentMode { get }
 }
 
 

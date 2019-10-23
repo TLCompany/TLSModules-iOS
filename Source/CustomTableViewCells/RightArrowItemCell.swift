@@ -44,7 +44,7 @@ public class RightArrowItemCell: BaseTableViewCell {
     
     private let rightImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "right_arrow")
+        imageView.image = UIImage(named: "right_arrow_gray")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

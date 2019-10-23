@@ -9,7 +9,7 @@ import UIKit
 
 let imageCache = NSCache<NSString, UIImage>()
 
-open class CustomImageView: UIImageView {
+open class CacheImageView: UIImageView {
 
     var imageURLString: String?
     
