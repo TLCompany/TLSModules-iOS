@@ -212,9 +212,9 @@ public class RequestManager: NSObject {
     ///   - successAction: 성공했을 때
     ///   - tryAgainAction: 토큰 갱신 후 리턴
     public static func evaluate<T: Decodable>(by result: NetworkResult,
-                                              _ successAction: ((T?) -> Void)?,
-                                              _ failureAction: ((String?) -> Void)?,
-                                              _ tryAgainAction: (() -> Void)? = nil) {
+                                              sAction successAction: ((T?) -> Void)?,
+                                              fAction failureAction: ((String?) -> Void)?,
+                                              tAction tryAgainAction: (() -> Void)? = nil) {
         
         switch result {
         case .success, .sucfulyDataModified:
@@ -232,9 +232,9 @@ public class RequestManager: NSObject {
     ///   - successAction: 성공했을 때
     ///   - tryAgainAction: 토큰 갱신 후 리턴
     public static func evaluate(by result: NetworkResult,
-                                _ successAction: JSONClosure?,
-                                _ failureAction: ((String?) -> Void)?,
-                                _ tryAgainAction: (() -> Void)? = nil) {
+                                sAction successAction: JSONClosure?,
+                                fAction failureAction: ((String?) -> Void)?,
+                                tAction tryAgainAction: (() -> Void)? = nil) {
         
            switch result {
             case .success, .sucfulyDataModified:
