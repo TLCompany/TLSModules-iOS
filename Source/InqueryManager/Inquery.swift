@@ -45,4 +45,31 @@ open class Inquery: Decodable {
         self.date = date
         self.isAnswered = isAnswered
     }
+    
+    public init?(json: JSON) {
+        guard let id = json["id"] as? Int else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "id"))
+            return nil
+        }
+        self.id = id
+        
+        guard let content = json["content"] as? String else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "content"))
+            return nil
+        }
+        self.content = content
+        
+        self.answer = json["answer"] as? String
+        self.isAnswered = self.answer == nil ? false : true
+        guard let dateString = json["createdAt"] as? String else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "dateString"))
+            return nil
+        }
+        
+        guard let date = String(dateString.split(separator: ".").first!).date else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "date"))
+            return nil
+        }
+        self.date = date
+    }
 }

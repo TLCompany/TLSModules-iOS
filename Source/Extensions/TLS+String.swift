@@ -28,10 +28,11 @@ extension String {
     }
     
     public var date: Date? {
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSZ"
-        dateformatter.locale = Locale(identifier: "ko_KR")
-        return dateformatter.date(from: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC")! as TimeZone
+        dateFormatter.formatterBehavior = .default
+        return dateFormatter.date(from: self)
     }
     
     public var isValidAsEmail: Bool {

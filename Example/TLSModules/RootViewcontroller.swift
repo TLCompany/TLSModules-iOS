@@ -16,7 +16,7 @@ class RootViewController: UIViewController {
     private var inqueryManager: InqueryManager?
     private var exampleAuthManager: ExampleAuthManager?
     
-    private var rowTitles = ["공지사항(Announcement)", "정책사항(Policy)", "문의사항(Inquery)", "회원가입(Authentication)"]
+    private var rowTitles = ["공지사항(Announcement)", "정책사항(Policy)", "문의사항(Inquery)", "회원가입(Authentication)", "PopupList"]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -126,6 +126,11 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             inqueryManager?.launch(with: self.inqueries)
         case 3:
             testAuth()
+        case 4:
+            let listPopupVC = ListPopupViewController()
+            listPopupVC.list = [Int](0...100).map { return "List Item \($0)" }
+            listPopupVC.modalPresentationStyle = .overCurrentContext
+            present(listPopupVC, animated: true, completion: nil)
         default: return
         }
     }

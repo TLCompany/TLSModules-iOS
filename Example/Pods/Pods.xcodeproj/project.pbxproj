@@ -154,6 +154,10 @@
 		CFA869102744DB995F3AC930E96E3AFF /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CB8DC4572596B9CDCADC7E48FDEA70 /* UIApplication+StrictKeyWindow.m */; };
 		D0664493DF417CB8D86DFAE07F9671E4 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDF6C94A9010F7372E65282E089C720 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D1108B0B95C44070293DEC99A96E8B9E /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA9F7CED7EAC322940D3C0EBA67F10C /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		D25B935C23603C9A00618781 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935723603C9A00618781 /* AlertMessage.swift */; };
+		D25B935D23603C9A00618781 /* ListPopupItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935823603C9A00618781 /* ListPopupItemCell.swift */; };
+		D25B935E23603C9A00618781 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935923603C9A00618781 /* BasePopupViewController.swift */; };
+		D25B936023603C9A00618781 /* ListPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935B23603C9A00618781 /* ListPopupViewController.swift */; };
 		D2AC7A722341E23A008706E8 /* CacheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC7A702341E223008706E8 /* CacheImageView.swift */; };
 		D2BA8134230E450500BC2E39 /* TLS+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */; };
 		D2C695B1235FF602002EF35F /* RequestEnvironmentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C695AF235FF5F0002EF35F /* RequestEnvironmentMode.swift */; };
@@ -200,7 +204,6 @@
 		D2F361852318FD61006D832D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361122318FC36006D832D /* AuthManager.swift */; };
 		D2F361862318FD8A006D832D /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F361132318FC36006D832D /* AuthUser.swift */; };
 		D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A168EB119DFC58E565D5FB621DC47A /* TLS+UIView.swift */; };
-		D2FA379A2332012100E84E0A /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA37982332011B00E84E0A /* AlertMessage.swift */; };
 		D3FA0AA634AAEA99AB3FABC36BB4958C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D9A3F155F6630D910CC43A976EC7F /* SessionManager.swift */; };
 		D428498A1A70F3DB2F9D9C921989E6B8 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A55D55502CBDB4165AB831766AF6180 /* UIImage+Compare.m */; };
 		D4F927D4CCB0D70331C5D603D3BFE51F /* NBSMockedApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A091BC4A0F5EB1B4096D8B0E53700218 /* NBSMockedApplication.m */; };
@@ -502,6 +505,10 @@
 		D1459532682F9E57A845314DCA27EE5F /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		D1EFBADC58CC590895FE3C59AFCEA341 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		D25B935723603C9A00618781 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		D25B935823603C9A00618781 /* ListPopupItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPopupItemCell.swift; sourceTree = "<group>"; };
+		D25B935923603C9A00618781 /* BasePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
+		D25B935B23603C9A00618781 /* ListPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPopupViewController.swift; sourceTree = "<group>"; };
 		D2AC7A702341E223008706E8 /* CacheImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImageView.swift; sourceTree = "<group>"; };
 		D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TLS+NSAttributedString.swift"; sourceTree = "<group>"; };
 		D2C695AF235FF5F0002EF35F /* RequestEnvironmentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEnvironmentMode.swift; sourceTree = "<group>"; };
@@ -548,7 +555,6 @@
 		D2F361492318FC5D006D832D /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
 		D2F3614A2318FC5D006D832D /* ResourcesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesProvider.swift; path = Source/ResourcesProvider.swift; sourceTree = "<group>"; };
 		D2F3614B2318FC5D006D832D /* TLSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLSManager.swift; path = Source/TLSManager.swift; sourceTree = "<group>"; };
-		D2FA37982332011B00E84E0A /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertMessage.swift; path = Source/AlertMessage.swift; sourceTree = "<group>"; };
 		D3CA2B04461301665FFD1F17CDA0C857 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		D52F49EEDD8EC922E0875888E5553277 /* Nimble-Snapshots.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Nimble-Snapshots.modulemap"; sourceTree = "<group>"; };
 		D5505C26F824918C4B7E94577B95136A /* TLSModules-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLSModules-dummy.m"; sourceTree = "<group>"; };
@@ -1011,6 +1017,18 @@
 			);
 			sourceTree = "<group>";
 		};
+		D25B935623603C9A00618781 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				D25B935723603C9A00618781 /* AlertMessage.swift */,
+				D25B935823603C9A00618781 /* ListPopupItemCell.swift */,
+				D25B935923603C9A00618781 /* BasePopupViewController.swift */,
+				D25B935B23603C9A00618781 /* ListPopupViewController.swift */,
+			);
+			name = Popups;
+			path = Source/Popups;
+			sourceTree = "<group>";
+		};
 		D2CF69FC23161A4B001A9BBE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,9 +1186,9 @@
 				D2F3613F2318FC5C006D832D /* Logger.swift */,
 				D2F3614A2318FC5D006D832D /* ResourcesProvider.swift */,
 				D2F3613E2318FC5C006D832D /* TLSAppDelegate.swift */,
-				D2FA37982332011B00E84E0A /* AlertMessage.swift */,
 				D2F3614B2318FC5D006D832D /* TLSManager.swift */,
 				0AD797DB3DF9B787C9C165ADC97BF64A /* TLSolution.swift */,
+				D25B935623603C9A00618781 /* Popups */,
 				D2F361302318FC5C006D832D /* InqueryManager */,
 				D2F361392318FC5C006D832D /* PolicyManager */,
 				D2F361402318FC5D006D832D /* UIComponents */,
@@ -1629,6 +1647,7 @@
 				D2F361612318FC7A006D832D /* PolicyManager.swift in Sources */,
 				D2F361632318FC85006D832D /* PolicyDetailViewController.swift in Sources */,
 				D2F3617B2318FD10006D832D /* TitleWithDateItemCell.swift in Sources */,
+				D25B935D23603C9A00618781 /* ListPopupItemCell.swift in Sources */,
 				58E9745FB683AFB066417E4655A93830 /* NetworkResult.swift in Sources */,
 				15A3A353F6A64E48389F6774CF8DB68F /* Request.swift in Sources */,
 				D2F361662318FCA0006D832D /* InqueryListViewController.swift in Sources */,
@@ -1648,13 +1667,14 @@
 				D2C695B1235FF602002EF35F /* RequestEnvironmentMode.swift in Sources */,
 				D2E7BED42317EC4E00A2266B /* TLS+Dictionary.swift in Sources */,
 				D2F3616A2318FCB1006D832D /* InqueryItemCell.swift in Sources */,
+				D25B935E23603C9A00618781 /* BasePopupViewController.swift in Sources */,
 				D2F361752318FCF8006D832D /* AuthVerificationViewController.swift in Sources */,
 				D2BA8134230E450500BC2E39 /* TLS+NSAttributedString.swift in Sources */,
-				D2FA379A2332012100E84E0A /* AlertMessage.swift in Sources */,
 				7BA61542DA603F63616D9BCEA4EDE1F1 /* TLS+Int.swift in Sources */,
 				D2F361742318FCF4006D832D /* User.swift in Sources */,
 				D2F3617D2318FD1A006D832D /* AnnouncementDetailViewController.swift in Sources */,
 				D2F361852318FD61006D832D /* AuthManager.swift in Sources */,
+				D25B936023603C9A00618781 /* ListPopupViewController.swift in Sources */,
 				D2F361862318FD8A006D832D /* AuthUser.swift in Sources */,
 				D2F361722318FCE7006D832D /* PasswordGoalType.swift in Sources */,
 				D2F3617E2318FD20006D832D /* AnnouncementListViewController.swift in Sources */,
@@ -1662,6 +1682,7 @@
 				D2F361702318FCE1006D832D /* AuthVerificationType.swift in Sources */,
 				F0F4BC188F60B797ABE37AED1A97928E /* TLS+String.swift in Sources */,
 				BD0117D34A94FB3F3621B72B0BC6E114 /* TLS+UIColor.swift in Sources */,
+				D25B935C23603C9A00618781 /* AlertMessage.swift in Sources */,
 				066A3385CA6B515F44B3A45AC4CFAF5A /* TLS+UIStoryboard.swift in Sources */,
 				D2F361782318FD06006D832D /* BaseTableViewCell.swift in Sources */,
 				D2F361602318FC76006D832D /* Policy.swift in Sources */,
