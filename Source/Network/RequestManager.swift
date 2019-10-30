@@ -150,17 +150,31 @@ public class RequestManager: NSObject {
             completion(.error(message: "😱 statusCode is nil"))
             return
         }
-
+        guard let data = dataRes.data else {
+            completion(.error(message: "😱 data is nil"))
+            return
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
+            completion(.error(message: "😱 json is nil"))
+            return
+        }
+        
+        guard let message = json["message"] as? String else {
+            completion(.error(message: "😱 message is nil"))
+            return
+        }
+        
         switch statusCode {
-        case 200: completion(.success(data: dataRes.data))
-        case 201: completion(.sucfulyDataModified(data: dataRes.data))
-        case 400: completion(.invalidRequest)
-        case 401: completion(.failure(issue: dataRes.error?.localizedDescription))
-        case 403: completion(.notAuthroised)
-        case 404: completion(.noData)
-        case 409: completion(.cannotWrite)
+        case 200: completion(.success(message: message, data: dataRes.data))
+        case 201: completion(.sucfulyDataModified(message: message, data: dataRes.data))
+        case 400: completion(.invalidRequest(message: message))
+        case 401: completion(.failure(message: message))
+        case 403: completion(.notAuthroised(message: message))
+        case 404: completion(.noData(message: message))
+        case 409: completion(.cannotWrite(message: message))
         case 419: completion(.tokenExpired)
-        case 500: completion(.serverError(message: dataRes.error?.localizedDescription))
+        case 500: completion(.serverError(message: message))
         default: return
         }
     }

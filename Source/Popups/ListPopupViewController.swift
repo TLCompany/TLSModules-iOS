@@ -161,7 +161,7 @@ extension ListPopupViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListPopupItemCell.id, for: indexPath) as! ListPopupItemCell
-        cell.title = list[indexPath.row]
+        cell.title = list[indexPath.section]
         return cell
     }
     
