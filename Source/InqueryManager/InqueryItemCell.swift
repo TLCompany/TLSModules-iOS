@@ -8,22 +8,22 @@
 import UIKit
 
 /// 문의사항 리스트 아이템 TableViewCell
-internal class InqueryItemCell: BaseTableViewCell {
+internal class InquiryItemCell: BaseTableViewCell {
 
     static let id = "InqueryItemCell"
     static let height: CGFloat = 50.5
     
     //Internal Properties
-    internal var inquery: Inquery? {
+    internal var inquiry: Inquiry? {
         didSet {
-            guard let inquery = self.inquery else {
+            guard let inquiry = self.inquiry else {
                 print("\(#function) 😭 inquery is nil...")
                 return
             }
-            titleLabel.text = inquery.content
-            dateLabel.text = inquery.date.formattedDateString
-            completionLabel.text = inquery.isAnswered ? "답변 완료" : "답변 미완료"
-            completionLabel.textColor = inquery.isAnswered ? answeredColor : unansweredColor
+            titleLabel.text = inquiry.content
+            dateLabel.text = inquiry.date.formattedDateString
+            completionLabel.text = inquiry.isAnswered ? "답변 완료" : "답변 미완료"
+            completionLabel.textColor = inquiry.isAnswered ? answeredColor : unansweredColor
         }
     }
     

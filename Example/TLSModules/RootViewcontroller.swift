@@ -13,7 +13,7 @@ class RootViewController: UIViewController {
 
     private var announcementManager: AnnouncementManager?
     private var policyManager: PolicyManager?
-    private var inqueryManager: InqueryManager?
+    private var inquiryManager: InquiryManager?
     private var exampleAuthManager: ExampleAuthManager?
     
     private var rowTitles = ["공지사항(Announcement)", "정책사항(Policy)", "문의사항(Inquery)", "회원가입(Authentication)", "PopupList"]
@@ -34,11 +34,11 @@ class RootViewController: UIViewController {
         
         announcementManager = AnnouncementManager(vc: self)
         policyManager = PolicyManager(vc: self)
-        inqueryManager = InqueryManager(vc: self)
-        inqueryManager?.newAction = { [unowned self] text in
-            let newInquery = Inquery(id: 1, content: text, answer: nil, date: Date(), isAnswered: false)
-            self.inqueries.insert(newInquery, at: 0)
-            self.inqueryManager?.refresh(with: self.inqueries)
+        inquiryManager = InquiryManager(vc: self)
+        inquiryManager?.newAction = { [unowned self] text in
+            let newInquery = Inquiry(id: 1, content: text, answer: nil, date: Date(), isAnswered: false)
+            self.inquiries.insert(newInquery, at: 0)
+            self.inquiryManager?.refresh(with: self.inquiries)
         }
         
         exampleAuthManager = ExampleAuthManager(vc: self)
@@ -69,13 +69,13 @@ class RootViewController: UIViewController {
                                       Policy(title: "개인정보 취급방침", content: content),]
     
     private let inqeury = "네이버 클라우드 플랫폼 서비스를 이용해주셔서 감사합니다. 당사는 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제 30조의 2(개인정보 이용내역의 통지)에 따라, 고객님께서 네이버 클라우드 플랫폼에 제공하신 개인정보의 이용내역 현황을 알려 드립니다. 자세한 이용내역 현황은 아래와 같습니다. 1. 수집하는 개인정보의 항목 회사는 회원가입, 원활한 고객상담, 서비스 제공을 위해 최초 회원가입 당시 최소한의 개인정보를 수집하고자 하며 부가서비스 및 맞춤서비스 제공, 이벤트 응모 등을 위해 추가 수집이 필요한 경우 이용자 동의를 받고 있습니다."
-    fileprivate lazy var inqueries = [Inquery(id: 1, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
-                                        Inquery(id: 2, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
-                                        Inquery(id: 3, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
-                                        Inquery(id: 4, content: inqeury, answer: nil, date: Date(), isAnswered: false),
-                                        Inquery(id: 5,content: inqeury, answer: nil, date: Date(), isAnswered: false),
-                                        Inquery(id: 6,content: inqeury, answer: nil, date: Date(), isAnswered: false),
-                                        Inquery(id: 7,content: inqeury, answer: nil, date: Date(), isAnswered: false)]
+    fileprivate lazy var inquiries = [Inquiry(id: 1, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
+                                        Inquiry(id: 2, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
+                                        Inquiry(id: 3, content: inqeury, answer: inqeury, date: Date(), isAnswered: true),
+                                        Inquiry(id: 4, content: inqeury, answer: nil, date: Date(), isAnswered: false),
+                                        Inquiry(id: 5,content: inqeury, answer: nil, date: Date(), isAnswered: false),
+                                        Inquiry(id: 6,content: inqeury, answer: nil, date: Date(), isAnswered: false),
+                                        Inquiry(id: 7,content: inqeury, answer: nil, date: Date(), isAnswered: false)]
 }
 
 extension RootViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,19 +111,19 @@ extension RootViewController: UITableViewDelegate, UITableViewDataSource {
             policyManager?.listViewTopInset = 100.0
             policyManager?.launch(with: self.policies)
         case 2:
-            inqueryManager?.listBackgroundColor = .red
-            inqueryManager?.hInset = 50.0
-            inqueryManager?.listItemBackgroundColor = .yellow
-            inqueryManager?.listViewTopInset = 100.0
-            inqueryManager?.answeredColor = .brown
-            inqueryManager?.unansweredColor = .purple
-            inqueryManager?.answerBackgroundColor = .red
-            inqueryManager?.answeredColor = .yellow
-            inqueryManager?.answerFont = UIFont.systemFont(ofSize: 30.0, weight: .bold)
-            inqueryManager?.detailContentFont = UIFont.systemFont(ofSize: 30.0, weight: .bold)
-            inqueryManager?.detailBackgroundColor = .brown
-            inqueryManager?.detailContentColor = .red
-            inqueryManager?.launch(with: self.inqueries)
+            inquiryManager?.listBackgroundColor = .red
+            inquiryManager?.hInset = 50.0
+            inquiryManager?.listItemBackgroundColor = .yellow
+            inquiryManager?.listViewTopInset = 100.0
+            inquiryManager?.answeredColor = .brown
+            inquiryManager?.unansweredColor = .purple
+            inquiryManager?.answerBackgroundColor = .red
+            inquiryManager?.answeredColor = .yellow
+            inquiryManager?.answerFont = UIFont.systemFont(ofSize: 30.0, weight: .bold)
+            inquiryManager?.detailContentFont = UIFont.systemFont(ofSize: 30.0, weight: .bold)
+            inquiryManager?.detailBackgroundColor = .brown
+            inquiryManager?.detailContentColor = .red
+            inquiryManager?.launch(with: self.inquiries)
         case 3:
             testAuth()
         case 4:

@@ -8,16 +8,16 @@
 import UIKit
 
 /// 문의사항 리스트 화면 Controller
-internal class InqueryListViewController: ListViewController {
+internal class InquiryListViewController: ListViewController {
     
     //Internal Properties
-    internal var inqueries = [Inquery]() {
+    internal var inquiries = [Inquiry]() {
         didSet {
             tableView.reloadData()
         }
     }
     
-    internal var contentDetailData: InqueryDetailData?
+    internal var contentDetailData: InquiryDetailData?
     internal var newAction: (() -> Void)?
     internal var answeredColor = UIColor.init(hexString: "BA0000")
     internal var unansweredColor = UIColor.init(hexString: "304786")
@@ -57,7 +57,7 @@ internal class InqueryListViewController: ListViewController {
         let inqueryButton = UIBarButtonItem(title: "문의하기", style: .plain, target: self, action: #selector(touchNewInquery(_:)))
         navigationItem.rightBarButtonItem = inqueryButton
         noItemDescription = "문의사항이 없습니다."
-        tableView.register(InqueryItemCell.self, forCellReuseIdentifier: InqueryItemCell.id)
+        tableView.register(InquiryItemCell.self, forCellReuseIdentifier: InquiryItemCell.id)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -68,38 +68,38 @@ internal class InqueryListViewController: ListViewController {
     }
 }
 
-extension InqueryListViewController: UITableViewDelegate, UITableViewDataSource {
+extension InquiryListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return inqueries.count
+        return inquiries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: InqueryItemCell.id, for: indexPath) as? InqueryItemCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: InquiryItemCell.id, for: indexPath) as? InquiryItemCell else {
             return UITableViewCell()
         }
         
-        cell.inquery = inqueries[indexPath.row]
         cell.hInset = self.hInset
         cell.answeredColor = self.answeredColor
         cell.unansweredColor = self.unansweredColor
         cell.backgroundColor = self.listItemBackgroundColor
+        cell.inquiry = inquiries[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return InqueryItemCell.height
+        return InquiryItemCell.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? InqueryItemCell else {
+        guard let cell = tableView.cellForRow(at: indexPath) as? InquiryItemCell else {
             return
         }
         cell.isSelected = !cell.isSelected
         
-        let inqueryDetailVC = InqueryDetailViewController()
-        inqueryDetailVC.inquery = inqueries[indexPath.row]
-        inqueryDetailVC.contentDetailData = self.contentDetailData
-        navigationController?.pushViewController(inqueryDetailVC, animated: true)
+        let inquiryDetailVC = InquiryDetailViewController()
+        inquiryDetailVC.inquery = inquiries[indexPath.row]
+        inquiryDetailVC.contentDetailData = self.contentDetailData
+        navigationController?.pushViewController(inquiryDetailVC, animated: true)
     }
 }

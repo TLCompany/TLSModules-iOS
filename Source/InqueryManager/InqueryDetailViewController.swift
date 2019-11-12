@@ -8,11 +8,11 @@
 import UIKit
 
 /// 문의사항 디테일 화면 Controller
-internal class InqueryDetailViewController: ScrollingViewController {
+internal class InquiryDetailViewController: ScrollingViewController {
 
     //Internal Properties
-    internal var inquery: Inquery?
-    internal var contentDetailData: InqueryDetailData?
+    internal var inquery: Inquiry?
+    internal var contentDetailData: InquiryDetailData?
     
     //Private Properties
     private let separator = SeparatorView()

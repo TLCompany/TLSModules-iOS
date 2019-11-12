@@ -8,7 +8,7 @@
 import Foundation
 
 /// 문의사항의 데이터 모델
-open class Inquery: Decodable {
+open class Inquiry: Decodable {
     public let id: Int
     public let content: String
     public let answer: String?

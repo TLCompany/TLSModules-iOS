@@ -8,7 +8,7 @@
 import UIKit
 
 /// 새로운 문의사항 작성 화면 Controller
-class NewInqueryViewController: UIViewController {
+class NewInquiryViewController: UIViewController {
     
     internal var completeAction: ((String) -> Void)?
     
@@ -80,7 +80,7 @@ class NewInqueryViewController: UIViewController {
     }
 }
 
-extension NewInqueryViewController: UITextViewDelegate {
+extension NewInquiryViewController: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         textView.attributedText = NSAttributedString.lineSpaced(by: 8.0, text: textView.text)

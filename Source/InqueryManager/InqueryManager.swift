@@ -8,7 +8,7 @@
 import UIKit
 
 /// 문의사항 리스트/디테일/작성 화면들의 매니져
-public class InqueryManager: VRTManager<Inquery> {
+public class InquiryManager: VRTManager<Inquiry> {
     
     /// 새로운 문의사항이 작성되었을 때 Event Action, 문의사항 내용의 문자열을 Return한다.
     public var newAction: ((String) -> Void)?
@@ -75,32 +75,32 @@ public class InqueryManager: VRTManager<Inquery> {
     public var unansweredColor = UIColor.init(hexString: "304786")
     
     //Private Properties
-    private var contentDetailData = InqueryDetailData()
-    private let inqueryListVC = InqueryListViewController()
+    private var contentDetailData = InquiryDetailData()
+    private let inquiryLIstVC = InquiryListViewController()
     
-    override public func launch(with items: [Inquery]) {
-        inqueryListVC.inqueries = items
-        inqueryListVC.newAction = {
-            let newInqueryVC = NewInqueryViewController()
+    override public func launch(with items: [Inquiry]) {
+        inquiryLIstVC.inquiries = items
+        inquiryLIstVC.newAction = {
+            let newInqueryVC = NewInquiryViewController()
             newInqueryVC.completeAction = { [unowned self] inqueryText in
                 self.newAction?(inqueryText)
             }
-            self.inqueryListVC.navigationController?.pushViewController(newInqueryVC, animated: true)
+            self.inquiryLIstVC.navigationController?.pushViewController(newInqueryVC, animated: true)
         }
-        inqueryListVC.listViewTopInset = self.listViewTopInset
-        inqueryListVC.listBackgroundColor = self.listBackgroundColor
-        inqueryListVC.listItemBackgroundColor = self.listItemBackgroundColor
-        inqueryListVC.answeredColor = self.answeredColor
-        inqueryListVC.unansweredColor = self.unansweredColor
-        inqueryListVC.contentDetailData = self.contentDetailData
-        vc.navigationController?.pushViewController(inqueryListVC, animated: true)
+        inquiryLIstVC.listViewTopInset = self.listViewTopInset
+        inquiryLIstVC.listBackgroundColor = self.listBackgroundColor
+        inquiryLIstVC.listItemBackgroundColor = self.listItemBackgroundColor
+        inquiryLIstVC.answeredColor = self.answeredColor
+        inquiryLIstVC.unansweredColor = self.unansweredColor
+        inquiryLIstVC.contentDetailData = self.contentDetailData
+        vc.navigationController?.pushViewController(inquiryLIstVC, animated: true)
     }
     
     /// 문의사항의 리스트 데이터 모델을 다시 넣어준다.
     ///
     /// - Parameter items: 문의사항 데이터 모델 배열
-    public func refresh(with items: [Inquery]) {
-        inqueryListVC.inqueries = items
+    public func refresh(with items: [Inquiry]) {
+        inquiryLIstVC.inquiries = items
     }
     
 }
