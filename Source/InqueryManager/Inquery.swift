@@ -13,14 +13,16 @@ open class Inquiry: Decodable {
     public let content: String
     public let answer: String?
     public let date: Date
-    public let isAnswered: Bool
+    
+    public var isAnswered: Bool {
+        return self.answer == nil ? false : true
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case content = "content"
         case answer = "answer"
         case date = "date"
-        case isAnswered = "isAnswered"
     }
     
     required public init(from decoder: Decoder) throws {
@@ -30,7 +32,6 @@ open class Inquiry: Decodable {
         self.content = try values.decode(String.self, forKey: .content)
         self.answer = try values.decode(String.self, forKey: .answer)
         self.date = try values.decode(Date.self, forKey: .date)
-        self.isAnswered = try values.decode(Bool.self, forKey: .isAnswered)
     }
     
     public init(id: Int,
@@ -43,7 +44,6 @@ open class Inquiry: Decodable {
         self.content = content
         self.answer = answer
         self.date = date
-        self.isAnswered = isAnswered
     }
     
     public init?(json: JSON) {
@@ -60,7 +60,6 @@ open class Inquiry: Decodable {
         self.content = content
         
         self.answer = json["answer"] as? String
-        self.isAnswered = self.answer == nil ? false : true
         guard let dateString = json["createdAt"] as? String else {
             Logger.showError(at: #function, type: .unsafelyWrapped(taget: "dateString"))
             return nil
