@@ -46,11 +46,16 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
     }
     
-    public func lineSpaced(_ spacing: CGFloat) -> NSAttributedString {
+    public func lineSpaced(_ spacing: CGFloat,
+                           textColor: UIColor,
+                           font: UIFont) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = spacing
         let attributedString = NSMutableAttributedString(string: self)
-        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: attributedString.length))
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.paragraphStyle : paragraphStyle,
+                                                         .foregroundColor: textColor,
+                                                         .font: font]
+        attributedString.addAttributes(attributes, range: NSRange(location: 0, length: attributedString.length))
         return attributedString
     }
 }
