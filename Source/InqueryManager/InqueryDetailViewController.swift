@@ -34,8 +34,7 @@ internal class InquiryDetailViewController: ScrollingViewController {
         label.textColor = .textContent
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
-        let font = UIFont.systemFont(ofSize: 13.0, weight: .regular)
-        label.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,8 +45,7 @@ internal class InquiryDetailViewController: ScrollingViewController {
         label.textColor = .white
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
-        let font = UIFont.systemFont(ofSize: 13.0, weight: .regular)
-        label.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -76,15 +74,10 @@ internal class InquiryDetailViewController: ScrollingViewController {
             print("\(#function), 😭 contentDetailData is nil...")
             return
         }
-        if let contentFont = contentDetailData.contentFont {
-            contentLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: contentFont)
-        }
-        
+    
         view.backgroundColor = contentDetailData.backgroundColor
         contentLabel.textColor = contentDetailData.contentColor
-        
         answerLabel.textColor = contentDetailData.answerTextColor
-        answerLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: contentDetailData.answerFont)
         answerBackgroundView.backgroundColor = contentDetailData.answerBackgroundColor
         
     }

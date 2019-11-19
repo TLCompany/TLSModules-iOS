@@ -28,8 +28,7 @@ class AnnouncementDetailViewController: ScrollingViewController {
         let label = UILabel()
         label.text = "0000.00.00"
         label.textColor = .date
-        let font = UIFont.systemFont(ofSize: 12.0, weight: .bold)
-        label.font = UIFontMetrics.init(forTextStyle: .body).scaledFont(for: font)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -40,8 +39,7 @@ class AnnouncementDetailViewController: ScrollingViewController {
         label.textColor = .textContent
         label.numberOfLines = 0
         label.adjustsFontForContentSizeCategory = true
-        let font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
-        label.font = UIFontMetrics.init(forTextStyle: .body).scaledFont(for: font)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,14 +58,6 @@ class AnnouncementDetailViewController: ScrollingViewController {
         guard let contentDetailData = self.contentDetailData else {
             print("\(#function), 😭 contentDetailData is nil...")
             return
-        }
-        
-        if let titleFont = contentDetailData.titleFont {
-            titleLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: titleFont)
-        }
-        
-        if let contentFont = contentDetailData.contentFont {
-            contentLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: contentFont)
         }
         
         view.backgroundColor = contentDetailData.backgroundColor

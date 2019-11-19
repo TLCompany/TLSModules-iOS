@@ -17,8 +17,7 @@ internal class PolicyDetailViewController: ScrollingViewController {
         label.text = "정책사항 내용을 보여줍니다."
         label.textColor = .textContent
         label.numberOfLines = 0
-        let font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
-        label.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,10 +38,6 @@ internal class PolicyDetailViewController: ScrollingViewController {
         guard let contentDetailData = self.contentDetailData else {
             print("\(#function), 😭 contentDetailData is nil...")
             return
-        }
-        
-        if let contentFont = contentDetailData.contentFont {
-            contentLabel.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: contentFont)
         }
         
         view.backgroundColor = contentDetailData.backgroundColor
