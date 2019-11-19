@@ -58,4 +58,26 @@ extension String {
         attributedString.addAttributes(attributes, range: NSRange(location: 0, length: attributedString.length))
         return attributedString
     }
+    
+    public func lineSpaced(_ spacing: CGFloat) -> NSAttributedString {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = spacing
+        let attributedString = NSMutableAttributedString(string: self)
+        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: attributedString.length))
+        return attributedString
+    }
+    
+    public func characterSpaced(by spacing: CGFloat,
+                                textColor: UIColor,
+                                font: UIFont) -> NSAttributedString {
+        
+        let attributedString = NSMutableAttributedString(string: self)
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.kern : spacing,
+                                                        .foregroundColor: textColor,
+                                                        .font: font]
+        attributedString.addAttributes(attributes, range: NSRange(location: 0, length: attributedString.length))
+        return attributedString
+    }
+    
+    
 }
