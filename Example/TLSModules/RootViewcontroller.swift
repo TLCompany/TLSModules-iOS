@@ -31,7 +31,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         announcementManager = AnnouncementManager(vc: self)
         policyManager = PolicyManager(vc: self)
         inquiryManager = InquiryManager(vc: self)

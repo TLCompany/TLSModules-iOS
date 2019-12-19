@@ -158,6 +158,7 @@
 		D25B935D23603C9A00618781 /* ListPopupItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935823603C9A00618781 /* ListPopupItemCell.swift */; };
 		D25B935E23603C9A00618781 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935923603C9A00618781 /* BasePopupViewController.swift */; };
 		D25B936023603C9A00618781 /* ListPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B935B23603C9A00618781 /* ListPopupViewController.swift */; };
+		D2A07F7523AB03BD002E8D52 /* TLS+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D247F43323AA1F8000EA9203 /* TLS+UIFont.swift */; };
 		D2AC7A722341E23A008706E8 /* CacheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC7A702341E223008706E8 /* CacheImageView.swift */; };
 		D2BA8134230E450500BC2E39 /* TLS+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */; };
 		D2C695B1235FF602002EF35F /* RequestEnvironmentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C695AF235FF5F0002EF35F /* RequestEnvironmentMode.swift */; };
@@ -505,6 +506,7 @@
 		D1459532682F9E57A845314DCA27EE5F /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		D1EFBADC58CC590895FE3C59AFCEA341 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		D2236C2F65FA695A297E933C15CFFB85 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		D247F43323AA1F8000EA9203 /* TLS+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TLS+UIFont.swift"; sourceTree = "<group>"; };
 		D25B935723603C9A00618781 /* AlertMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		D25B935823603C9A00618781 /* ListPopupItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListPopupItemCell.swift; sourceTree = "<group>"; };
 		D25B935923603C9A00618781 /* BasePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
@@ -1150,6 +1152,7 @@
 				B90AFB81DBCE083BABB43BEC301535A4 /* TLS+UIViewController.swift */,
 				D2BA8132230E44FC00BC2E39 /* TLS+NSAttributedString.swift */,
 				D2E7BED32317EC4E00A2266B /* TLS+Dictionary.swift */,
+				D247F43323AA1F8000EA9203 /* TLS+UIFont.swift */,
 			);
 			name = Extensions;
 			path = Source/Extensions;
@@ -1693,6 +1696,7 @@
 				F8E952ECDDB47396655A5E765232505D /* TLSolution.swift in Sources */,
 				D2AC7A722341E23A008706E8 /* CacheImageView.swift in Sources */,
 				D2F4B13B2304F58900392FCC /* TLS+UIView.swift in Sources */,
+				D2A07F7523AB03BD002E8D52 /* TLS+UIFont.swift in Sources */,
 				D2F361792318FD09006D832D /* RightArrowItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
