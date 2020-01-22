@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AnnouncementDetailViewController: ScrollingViewController {
+public class AnnouncementDetailViewController: ScrollingViewController {
     
-    internal var announcement: Announcement?
+    public var announcement: Announcement?
     internal var contentDetailData: ContentDetailData?
     
     private let titleLabel: UILabel = {
@@ -44,13 +44,21 @@ class AnnouncementDetailViewController: ScrollingViewController {
         return label
     }()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         title = "공지사항"
         view.backgroundColor = .white
         setUpAnnouncement()
         setUpContentDetailData()
+    }
+    
+    public func addCloseButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(touchClose(_:)))
+    }
+    
+    @objc private func touchClose(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     private func setUpContentDetailData() {
@@ -86,7 +94,7 @@ class AnnouncementDetailViewController: ScrollingViewController {
     }
     
     
-    override func setUpLayout() {
+    override public func setUpLayout() {
         super.setUpLayout()
         
         containerView.addSubview(titleLabel)
