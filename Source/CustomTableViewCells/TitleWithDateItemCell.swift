@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class TitleWithDateItemCell: BaseTableViewCell {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class TitleWithDateItemCell: BaseTableViewCell {
     
     //Static Properties
     static let id = "TitleWithDateItemCell"

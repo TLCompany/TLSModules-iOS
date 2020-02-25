@@ -7,7 +7,8 @@
 
 import Foundation
 
-public protocol AuthUser {
+@available(*, deprecated, message: "View-related classes are not supported.")
+internal protocol AuthUser {
     var email: String? { get set }
     var mobile: String? { get set }
     var password: String { get set }

@@ -9,7 +9,8 @@ import UIKit
 
 let imageCache = NSCache<NSString, UIImage>()
 
-open class CacheImageView: UIImageView {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class CacheImageView: UIImageView {
 
     var imageURLString: String?
     

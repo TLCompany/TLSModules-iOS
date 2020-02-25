@@ -7,7 +7,8 @@
 
 import UIKit
 
-open class SeparatorView: UIView {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class SeparatorView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 internal class PolicyListViewController: ListViewController {
 
     internal var policies = [Policy]()

@@ -8,7 +8,8 @@
 
 import UIKit
 
-open class ListViewController: UIViewController {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class ListViewController: UIViewController {
 
     public lazy var tableView: UITableView = {
         let tableView = UITableView()

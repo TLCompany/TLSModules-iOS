@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 새로운 문의사항 작성 화면 Controller
 class NewInquiryViewController: UIViewController {
     

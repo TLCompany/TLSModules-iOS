@@ -7,7 +7,8 @@
 
 import Foundation
 
-open class AuthManager<T>: VRTManager<AuthUser> {
+@available(*, deprecated, message: "View-related classes are not supported.")
+internal class AuthManager<T>: VRTManager<AuthUser> {
     
     open func execute(completionHandler completion: ((T) -> Void)?) {
       

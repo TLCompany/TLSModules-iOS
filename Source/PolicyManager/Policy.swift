@@ -7,7 +7,8 @@
 
 import Foundation
 
-open class Policy {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class Policy {
     public let title: String
     public let content: String
     public var isMandatory: Bool = true

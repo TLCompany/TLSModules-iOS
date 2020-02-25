@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class RightArrowItemCell: BaseTableViewCell {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class RightArrowItemCell: BaseTableViewCell {
     
     static let id = "RightArrowItemCell"
     static let height: CGFloat = 44.5

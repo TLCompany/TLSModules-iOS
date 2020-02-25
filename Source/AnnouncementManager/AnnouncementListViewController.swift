@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class AnnouncementListViewController: ListViewController {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class AnnouncementListViewController: ListViewController {
 
     internal var announcements = [Announcement]() {
         didSet {

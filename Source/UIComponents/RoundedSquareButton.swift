@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 @IBDesignable
-public class RoundedSquareButton: UIButton {
+class RoundedSquareButton: UIButton {
     
     public override func layoutSubviews() {
         super.layoutSubviews()

@@ -7,8 +7,9 @@
 
 import Foundation
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 비밀번호 화면(PasswordViewController)의 목표 타입: 회원가입인지 아니면 비밀번호 변경인지
-public enum PasswordGoalType {
+enum PasswordGoalType {
     case register, reset
     
     var navTitle: String {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 공지사항 리스트/디테일 화면들의 매니져
 public class AnnouncementManager: VRTManager<Announcement> {
     

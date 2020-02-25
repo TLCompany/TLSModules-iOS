@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class AnnouncementDetailViewController: ScrollingViewController {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class AnnouncementDetailViewController: ScrollingViewController {
     
     public var announcement: Announcement?
     internal var contentDetailData: ContentDetailData?

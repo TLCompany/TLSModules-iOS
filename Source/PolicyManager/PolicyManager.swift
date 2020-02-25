@@ -7,7 +7,8 @@
 
 import UIKit
 
-public class PolicyManager: VRTManager<Policy> {
+@available(*, deprecated, message: "View-related classes are not supported.")
+class PolicyManager: VRTManager<Policy> {
     
     /// 정책사항 리스트 화면에서 TableView의 backgroundColor
     public var listBackgroundColor = UIColor.listBackground

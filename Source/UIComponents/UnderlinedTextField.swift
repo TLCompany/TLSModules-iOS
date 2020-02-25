@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 @IBDesignable
-public class UnderlinedTextField: UITextField {
+class UnderlinedTextField: UITextField {
 
     private let underline = SeparatorView()
     

@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 모든 Authentication 관련된 화면들의 조상 View Controller
-open class AuthenticationViewController: UIViewController {
+class AuthenticationViewController: UIViewController {
     
     public var hInset: CGFloat = 20.0
     public var vInset: CGFloat = 20.0

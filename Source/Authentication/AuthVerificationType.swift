@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 인증타입: 이메일인지 모바일 번호인지
-public enum AuthVerificationType: String {
+internal  enum AuthVerificationType: String {
     case email = "이메일"
     case mobile = "휴대폰 번호"
     
@@ -48,11 +49,12 @@ public enum AuthVerificationType: String {
     }
 }
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 인증의 목적 타입
 ///
 /// - register: 회원가입
 /// - reset: 비밀번호 재설정
-public enum VerificationGoalType {
+internal  enum VerificationGoalType {
     case register
     case reset
 }

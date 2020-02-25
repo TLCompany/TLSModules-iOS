@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// Authentication 관련된 인증(이메일 또는 모바일) View Controller
-public class AuthVerificationViewController: AuthenticationViewController {
+class AuthVerificationViewController: AuthenticationViewController {
     
     public var verificationType: AuthVerificationType = .email
     public var verificationGoalType: VerificationGoalType = .register

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 문의사항 디테일 화면 Controller
 internal class InquiryDetailViewController: ScrollingViewController {
 

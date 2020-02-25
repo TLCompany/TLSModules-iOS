@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 정책사항 동의 화면
-public class AuthPolicyListViewController: AuthenticationViewController  {
+class AuthPolicyListViewController: AuthenticationViewController  {
 
     /// 해당 서비스의 정책사항들
     public var policies = [Policy]()

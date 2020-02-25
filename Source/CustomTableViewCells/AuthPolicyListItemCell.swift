@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 internal class AuthPolicyListItemCell: BaseTableViewCell {
     
     static let id = "AuthPolicyListItemCell"

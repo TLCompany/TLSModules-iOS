@@ -9,6 +9,7 @@ import UIKit
 
 protocol TLSManager { }
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// View-Related-Task Manager
 open class VRTManager<T>: TLSManager {
     public var vc: UIViewController

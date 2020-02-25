@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 문의사항 리스트/디테일/작성 화면들의 매니져
 public class InquiryManager: VRTManager<Inquiry> {
     

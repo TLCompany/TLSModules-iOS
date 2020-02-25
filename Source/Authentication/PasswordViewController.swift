@@ -7,8 +7,9 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 비밀번호 설정/재설정 화면의 Controller
-public class PasswordViewController: AuthenticationViewController {
+class PasswordViewController: AuthenticationViewController {
 
     public var goalType: PasswordGoalType = .register
     /// 비밀번호가 정상적으로 입력되고 사용자가 완료를 했을 때, 비밀번호를 return 하는 closure 변수

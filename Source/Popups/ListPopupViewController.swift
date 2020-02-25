@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 final public class ListPopupViewController: BasePopupViewController {
     
     // Public Properties

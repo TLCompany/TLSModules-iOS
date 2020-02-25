@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, message: "View-related classes are not supported.")
 /// 문의사항 리스트 화면 Controller
 internal class InquiryListViewController: ListViewController {
     
