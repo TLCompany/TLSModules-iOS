@@ -24,8 +24,162 @@ public class RequestManager: NSObject {
             }
         }
     }
+
+    private let _request: Request
+    private var _user: User?
+    private var dataRequest: DataRequest?
+    
+    public init(request: Request, user: User? = nil) {
+        self._request = request
+        self._user = user
+    }
+    
+    /**
+     HTTP RESTful 요청을 한다.
+     - Parameters:
+        - errorAction: 요청과 응답시 에러가 발생됬을 때 클로져
+        - failureAction: 요청이 실패 시 (응답코드 = 500) 클로져
+        - positiveSuccess: 요청 성공, 200번 사이에 응답 결과를 받았을 때의 클로져
+        - negativeSuccess: 요청 성공, 400번 사이에 응답 결과를 받았을 때의 클로져
+        - retryAction: 요청 성공, 토큰 만료시 클로져
+     */
+    public func request(errorAction: ((_ errorMessage: String?) -> Void)? = nil,
+                        failureAction: ((_ message: String?) -> Void)? = nil,
+                        positiveSuccess: ((Int, JSON) -> Void)?,
+                        negativeSuccess: ((Int, JSON) -> Void)?,
+                        retryAction: (() -> Void)?) {
+        
+        guard let urlString = self._request.url?.absoluteURL else {
+            errorAction?("")
+            return
+        }
+        
+        let dataRequest = AF.request(urlString)
+        dataRequest.responseJSON { (response) in
+            if let error = response.error {
+                failureAction?(error.errorDescription)
+                return
+            }
+            
+            guard let status = response.response?.statusCode else {
+                errorAction?("Status is nil")
+                return
+            }
+            
+            guard status != 419 else {
+                retryAction?()
+                return
+            }
+            
+            guard let data = response.data else {
+                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                errorAction?("data is nil")
+                return
+            }
+
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSON   else {
+                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                errorAction?("JSONSerialisation has failed")
+                return
+            }
+            
+            switch status {
+            case 200...299: positiveSuccess?(status, json)
+            case 400...499: positiveSuccess?(status, json)
+            default: errorAction?("invalid status")
+            }
+        }
+    }
+    
+    
+    /**
+     바이너리 데이터 타입의 첨부와 함께 요청을 한다.
+     - Parameters:
+        - request: 요청 데이터 모델
+        - user: User 데이터 모델
+        - attachments: DataAttachment 모델의 배열
+        - completionAction: 요청 완료시 클로져 함수
+     */
+    public static func request(request: Request,
+                              user: User? = nil,
+                              attachments: [DataAttachment],
+                              completionHandler completeAction: ((_ isSuccessful: Bool, _ body: JSON?) -> Void)?) {
+        
+        guard let url = request.url else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
+            return
+        }
        
-    public static func upload(with request: TLSRequest,
+         var headerDictionary = [String: String]()
+        if let token = user?.token { headerDictionary = ["authorization": token] }
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            attachments.enumerated().forEach {
+                multipartFormData.append($0.element.data, withName: $0.element.name, fileName: $0.element.fileName, mimeType: $0.element.type.text)
+            }
+        }, to: url.absoluteString, method: .post, headers: HTTPHeaders.init(headerDictionary))
+            .responseJSON { (response) in
+                guard let data = response.data else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                    completeAction?(false, nil)
+                    return
+                }
+
+                guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                    completeAction?(false, nil)
+                    return
+                }
+                
+                completeAction?(true, json)
+        }
+    }
+    
+    /**
+     로컬에 저장되어 있는  미디어 파일 URL의 첨부와 함께 요청을 한다.
+     - Parameters:
+        - request: 요청 데이터 모델
+        - user: User 데이터 모델
+        - attachments: URLAttachment 모델의 배열
+        - completionAction: 요청 완료시 클로져 함수
+     */
+    public static func request(request: Request,
+                              user: User? = nil,
+                              attachments: [URLAttachment],
+                              completionHandler completeAction: ((_ isSuccessful: Bool, _ body: JSON?) -> Void)?) {
+        
+        guard let url = request.url else {
+            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
+            return
+        }
+       
+         var headerDictionary = [String: String]()
+        if let token = user?.token { headerDictionary = ["authorization": token] }
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            attachments.enumerated().forEach {
+                multipartFormData.append($0.element.url, withName: $0.element.name, fileName: $0.element.fileName, mimeType: $0.element.type.text)
+            }
+        }, to: url.absoluteString, method: .post, headers: HTTPHeaders.init(headerDictionary))
+            .responseJSON { (response) in
+                guard let data = response.data else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                    completeAction?(false, nil)
+                    return
+                }
+
+                guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                    completeAction?(false, nil)
+                    return
+                }
+                
+                completeAction?(true, json)
+        }
+    }
+    
+    @available(*, deprecated, message: "as Alamofire is updated up to 5.0.0, this function is not supported.")
+    public static func upload(with request: Request,
                               _ user: User? = nil,
                               urls: [URL],
                               mediumType: MediumType,
@@ -36,40 +190,33 @@ public class RequestManager: NSObject {
             return
         }
        
-        var headers = [String: String]()
-        if let token = user?.token { headers = ["authorization": token] }
-
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
+         var headerDictionary = [String: String]()
+        if let token = user?.token { headerDictionary = ["authorization": token] }
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
             urls.enumerated().forEach {
-                multipartFormData.append($0.element, withName: "Files", fileName: "imageData", mimeType: "")
+                multipartFormData.append($0.element, withName: "Files", fileName: "imageData", mimeType: mediumType.text)
             }
-        }, to: url, method: request.type, headers: headers) { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let upload, _, _):
-                    upload.responseString(queue: .main, encoding: .utf8) { (response) in
-                        guard let data = response.data else {
-                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
-                            completeAction?(false, nil)
-                            return
-                        }
-
-                        guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else {
-                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
-                            completeAction?(false, nil)
-                            return
-                        }
-
-                        completeAction?(true, json)
-                    }
-                case .failure(_):
+        }, to: url.absoluteString, method: .post, headers: HTTPHeaders.init(headerDictionary))
+            .responseJSON { (response) in
+                guard let data = response.data else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
                     completeAction?(false, nil)
+                    return
                 }
-            }
+
+                guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                    completeAction?(false, nil)
+                    return
+                }
+                
+                completeAction?(true, json)
         }
     }
        
-    public static func upload(with request: TLSRequest,
+    @available(*, deprecated, message: "as Alamofire is updated up to 5.0.0, this function is not supported.")
+    public static func upload(with request: Request,
                               _ user: User? = nil,
                                dataArray: [Data],
                                mediumType: MediumType,
@@ -80,42 +227,41 @@ public class RequestManager: NSObject {
             return
         }
        
-        var headers = [String: String]()
-        if let token = user?.token { headers = ["authorization": token] }
+         var headerDictionary = [String: String]()
+        if let token = user?.token { headerDictionary = ["authorization": token] }
         
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
+        AF.upload(multipartFormData: { (multipartFormData) in
             dataArray.enumerated().forEach {
                 multipartFormData.append($0.element, withName: "Files", fileName: "imageData", mimeType: mediumType.text)
             }
-        }, to: url, method: request.type, headers: headers) { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let upload, _, _):
-                    upload.responseString(queue: .main, encoding: .utf8) { (response) in
-                        guard let data = response.data else {
-                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
-                            completeAction?(false, nil)
-                            return
-                        }
-
-                        guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
-                            Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
-                            completeAction?(false, nil)
-                            return
-                        }
-                        
-                        completeAction?(true, json)
-                    }
-                case .failure(_):
+        }, to: url.absoluteString, method: .post, headers: HTTPHeaders.init(headerDictionary))
+            .responseJSON { (response) in
+                guard let data = response.data else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
                     completeAction?(false, nil)
+                    return
                 }
-            }
+
+                guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]   else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                    completeAction?(false, nil)
+                    return
+                }
+                
+                completeAction?(true, json)
         }
     }
     
-    public static func request(with request: TLSRequest,
-                 _ user: User? = nil,
-                 completionHandler completion: @escaping APICompletion) {
+    /**
+     기본적인 RESTful 요청을 한다.
+     - Parameters:
+        - request: 요청 데이터 모델
+        - user: User 데이터 모델
+        - completion: 요청 완료시 클로져 함수
+     */
+    public static func request(with request: Request,
+                               _ user: User? = nil,
+                               completionHandler completion: @escaping APICompletion) {
 
         guard let url = request.url else {
             Logger.showError(at: #function, type: .unsafelyWrapped(taget: "url"))
@@ -123,26 +269,26 @@ public class RequestManager: NSObject {
             return
         }
         
-        var header = [String: String]()
-        if let token = user?.token { header = ["authorization": token] }
+        var headerDictionary = [String: String]()
+        if let token = user?.token { headerDictionary = ["authorization": token] }
         
-        Alamofire.request(url, method: request.type,
+        AF.request(url, method: request.type,
                           parameters: request.body?.data,
                           encoding: JSONEncoding.default,
-                          headers: header).response { (res) in
+                          headers: HTTPHeaders.init(headerDictionary)).response { (res) in
                             
             if let error = res.error {
                 Logger.showError(at: #function, type: .network(errMsg: error.localizedDescription))
                 completion(.error(message: error.localizedDescription))
                 return
             }
-
+                            
             self.evaluateResponse(by: request, with: res, user, completion)
         }
     }
     
-    private static func evaluateResponse(by request: TLSRequest,
-                                        with dataRes: DefaultDataResponse,
+    private static func evaluateResponse(by request: Request,
+                                        with dataRes: AFDataResponse<Data?>,
                                         _ user: User?,
                                         _ completion: @escaping APICompletion) {
         
@@ -181,11 +327,11 @@ public class RequestManager: NSObject {
 
     public typealias TokenRenewalResult = (isSuccessful: Bool, newToken: String?)
     
-    public static func renewToken(with request: TLSRequest,
+    public static func renewToken(with request: Request,
                            of user: User,
                            completionHandler completion: @escaping ((TokenRenewalResult) -> Void)) {
         
-        Alamofire.request(request.tokenRenewalURL,
+        AF.request(request.tokenRenewalURL,
                           method: .post,
                           parameters: ["Data": ["clientSecretKey": user.clientSecret]],
                           encoding: JSONEncoding.default,

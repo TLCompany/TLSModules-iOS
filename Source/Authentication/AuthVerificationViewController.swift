@@ -39,8 +39,6 @@ class AuthVerificationViewController: AuthenticationViewController {
         }
     }
     
-    private let requestManager = RequestManager()
-    
     private let inputTextField: UnderlinedTextField = {
         let textField = UnderlinedTextField()
         textField.returnKeyType = UIReturnKeyType.go

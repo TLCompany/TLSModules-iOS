@@ -10,7 +10,7 @@ import Foundation
 import TLSModules
 import Alamofire
 
-enum ExampleRequest: TLSRequest {
+enum ExampleRequest: TLSModules.Request {
     
     var environmentMode: RequestEnvironmentMode {
         return .production
@@ -49,6 +49,4 @@ enum ExampleRequest: TLSRequest {
     var tokenRenewalURL: String {
         return ""
     }
-    
-    
 }

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public protocol TLSRequest {
+public protocol Request {
     var url: URL? { get }
     var baseURLStr: String { get }
     var type: HTTPMethod { get }
