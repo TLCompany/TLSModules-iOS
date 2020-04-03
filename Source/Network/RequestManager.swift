@@ -27,7 +27,6 @@ public class RequestManager: NSObject {
 
     private let _request: Request
     private var _user: User?
-    private var dataRequest: DataRequest?
     
     public init(request: Request, user: User? = nil) {
         self._request = request
@@ -47,50 +46,99 @@ public class RequestManager: NSObject {
                         failureAction: ((_ message: String?) -> Void)? = nil,
                         positiveSuccess: ((Int, JSON) -> Void)?,
                         negativeSuccess: ((Int, JSON) -> Void)?,
-                        retryAction: (() -> Void)?) {
+                        retryAction: ((String?) -> Void)?) {
         
-        guard let urlString = self._request.url?.absoluteURL else {
-            errorAction?("")
+        guard let url = self._request.url else {
+            errorAction?("url is nil")
             return
         }
         
-        let dataRequest = AF.request(urlString)
-        dataRequest.responseJSON { (response) in
+        var headerDictionary = [String: String]()
+        if let token = _user?.token { headerDictionary = ["authorization": token] }
+    
+        let dateRequest = AF.request(url,
+                                     method: HTTPMethod(rawValue: _request.method.rawValue),
+                                     parameters: _request.body?.data,
+                                     encoding: JSONEncoding.default,
+                                     headers: HTTPHeaders(headerDictionary))
+        dateRequest.responseJSON { (response) in
+            DispatchQueue.main.async {
+                if let error = response.error {
+                    failureAction?(error.errorDescription)
+                    return
+                }
+                
+                guard let status = response.response?.statusCode else {
+                    errorAction?("Status is nil")
+                    return
+                }
+                
+                guard status != 419 else {
+                    self.renewToken { (accessToken) in
+                        retryAction?(accessToken)
+                    }
+                    return
+                }
+                
+                guard let data = response.data else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
+                    errorAction?("data is nil")
+                    return
+                }
+                
+                guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSON   else {
+                    Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                    errorAction?("JSONSerialisation has failed")
+                    return
+                }
+                
+                switch status {
+                case 200...299: positiveSuccess?(status, json)
+                case 400...499: negativeSuccess?(status, json)
+                default: errorAction?("invalid status")
+                }
+            }
+        }.resume()
+    }
+    
+    private func renewToken(completionHandler  completion: ((String?) -> Void)?) {
+        guard let clientSecretKey = _user?.clientSecret else {
+            completion?(nil)
+            return
+        }
+        
+        let body: JSON = ["clientSecretKey": clientSecretKey]
+        let _dateRequest = AF.request(_request.tokenRenewalURL,
+                                      method:.post,
+                                      parameters: body.data,
+                                      encoding: JSONEncoding.default)
+        _dateRequest.responseJSON(completionHandler: { (response) in
             if let error = response.error {
-                failureAction?(error.errorDescription)
-                return
-            }
-            
-            guard let status = response.response?.statusCode else {
-                errorAction?("Status is nil")
-                return
-            }
-            
-            guard status != 419 else {
-                retryAction?()
+                Logger.showError(at: #function, type: .error(errMsg: error.localizedDescription))
+                completion?(nil)
                 return
             }
             
             guard let data = response.data else {
                 Logger.showError(at: #function, type: .unsafelyWrapped(taget: "data"))
-                errorAction?("data is nil")
-                return
-            }
-
-            guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSON   else {
-                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
-                errorAction?("JSONSerialisation has failed")
+                completion?(nil)
                 return
             }
             
-            switch status {
-            case 200...299: positiveSuccess?(status, json)
-            case 400...499: positiveSuccess?(status, json)
-            default: errorAction?("invalid status")
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? JSON   else {
+                Logger.showError(at: #function, type: .unsafelyWrapped(taget: "json"))
+                completion?(nil)
+                return
             }
-        }
+            
+            guard let dataJSON = json["Data"] as? JSON, let accessToken = dataJSON["accessToken"] as? String else {
+                completion?(nil)
+                return
+            }
+            
+            completion?(accessToken)
+        }).resume()
     }
-    
     
     /**
      바이너리 데이터 타입의 첨부와 함께 요청을 한다.
@@ -272,7 +320,7 @@ public class RequestManager: NSObject {
         var headerDictionary = [String: String]()
         if let token = user?.token { headerDictionary = ["authorization": token] }
         
-        AF.request(url, method: request.type,
+        AF.request(url, method: request.method,
                           parameters: request.body?.data,
                           encoding: JSONEncoding.default,
                           headers: HTTPHeaders.init(headerDictionary)).response { (res) in

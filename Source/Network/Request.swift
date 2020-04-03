@@ -12,7 +12,7 @@ import Alamofire
 public protocol Request {
     var url: URL? { get }
     var baseURLStr: String { get }
-    var type: HTTPMethod { get }
+    var method: HTTPMethod { get }
     var body: [String: Any]? { get }
     var tokenRenewalURL: String { get }
     var environmentMode: RequestEnvironmentMode { get }

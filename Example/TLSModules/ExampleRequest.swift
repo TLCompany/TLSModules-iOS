@@ -11,7 +11,7 @@ import TLSModules
 import Alamofire
 
 enum ExampleRequest: TLSModules.Request {
-    
+
     var environmentMode: RequestEnvironmentMode {
         return .production
     }
@@ -29,7 +29,7 @@ enum ExampleRequest: TLSModules.Request {
         return "http://192.160.0.67:8008"
     }
     
-    var type: HTTPMethod {
+    var method: HTTPMethod {
         switch self {
         case .verification: return .post
         }
