@@ -30,7 +30,7 @@ extension String {
     public var date: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")! as TimeZone
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         dateFormatter.formatterBehavior = .default
         return dateFormatter.date(from: self)
     }

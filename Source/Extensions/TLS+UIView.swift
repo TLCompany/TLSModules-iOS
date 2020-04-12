@@ -32,7 +32,7 @@ extension UIView {
         graidentLayer.locations = locations
         graidentLayer.frame = self.frame
         graidentLayer.cornerRadius = cornerRadius
-        self.layer.addSublayer(graidentLayer)
+        self.layer.insertSublayer(graidentLayer, at: 0)
     }
     
     /// 좌우의 Graident 색을 넣습니다.
@@ -45,7 +45,7 @@ extension UIView {
         graidentLayer.frame = CGRect(origin: self.bounds.origin, size: size)
         graidentLayer.cornerRadius = cornerRadius
         graidentLayer.masksToBounds = true
-        self.layer.addSublayer(graidentLayer)
+        self.layer.insertSublayer(graidentLayer, at: 0)
     }
     
     public func roundCorners(corners: UIRectCorner, radius: CGFloat) {
