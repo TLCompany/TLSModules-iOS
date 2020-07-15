@@ -10,7 +10,7 @@ import Foundation
 /**
  바이너리 데이터를 보내는 첨부 데이터 모델
 */
-public class DataAttachment: MediumAttachment {
+open class DataAttachment: MediumAttachment {
     let data: Data
     var name: String
     var fileName: String

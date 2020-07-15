@@ -10,7 +10,7 @@ import Foundation
 /**
  multipart form data를 첨부해서 요청할 때의 데이터 모델의 프로토콜
 */
-internal protocol MediumAttachment {
+public protocol MediumAttachment {
     var name: String { get set }
     var fileName: String { get set }
     var type: MediumType { get set }
