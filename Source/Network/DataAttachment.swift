@@ -11,10 +11,10 @@ import Foundation
  바이너리 데이터를 보내는 첨부 데이터 모델
 */
 open class DataAttachment: MediumAttachment {
-    let data: Data
-    var name: String
-    var fileName: String
-    var type: MediumType
+    public let data: Data
+    public var name: String
+    public var fileName: String
+    public var type: MediumType
     
     init(data: Data,
          name: String,
