@@ -16,10 +16,10 @@ open class URLAttachment: MediumAttachment {
     public var fileName: String
     public var type: MediumType
     
-    init(url: URL,
-         name: String,
-         fileName: String,
-         type: MediumType) {
+    public init(url: URL,
+                name: String,
+                fileName: String,
+                type: MediumType) {
         
         self.url = url
         self.name = name

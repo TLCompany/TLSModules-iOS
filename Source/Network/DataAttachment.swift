@@ -16,10 +16,10 @@ open class DataAttachment: MediumAttachment {
     public var fileName: String
     public var type: MediumType
     
-    init(data: Data,
-         name: String,
-         fileName: String,
-         type: MediumType) {
+    public init(data: Data,
+                name: String,
+                fileName: String,
+                type: MediumType) {
         
         self.data = data
         self.name = name
